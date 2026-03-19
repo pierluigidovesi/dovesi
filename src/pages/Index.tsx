@@ -232,7 +232,7 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
 );
 
 const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: string; link: string; linkText: string; suffix?: string }) => (
-  <li>
+  <li className="leading-snug py-0.5">
     <strong>[{date}]</strong>{" "}
     {text && `${text} `}
     <A href={link}>{linkText}</A>
