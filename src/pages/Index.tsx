@@ -241,12 +241,12 @@ const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: 
 );
 
 const TalkItem = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (
-  <li className="pb-1">
+  <li className="leading-snug">
     <span className="font-medium text-foreground">{title}</span>
     {tag && <span className="text-primary text-sm ml-2 italic">({tag})</span>}
-    <br />
-    <span className="text-muted-foreground text-[16px]">{detail}</span>
     {" — "}
+    <span className="text-muted-foreground text-[16px]">{detail}</span>
+    {" · "}
     <A href={href}>{linkLabel}</A>
   </li>
 );
