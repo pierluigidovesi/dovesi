@@ -33,7 +33,7 @@ const Index = () => {
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20">
         {/* Hero */}
         <header className="mb-16">
-          
+          <h2 className="text-2xl font-semibold text-foreground mb-5">About</h2>
 
           <div className="mt-6 relative">
             <img
@@ -167,15 +167,6 @@ const Index = () => {
           </p>
         </Section>
 
-        {/* Community */}
-        <Section id="community" title="Community">
-          <ul className="space-y-1">
-            <li>Mentor at Women in AI</li>
-            <li>Workshop organizer: CV4GOOD @ ECCV 2026</li>
-            <li>Reviewer: CVPR, ECCV, ICCV, ICRA</li>
-            <li>Speaker: ICLR, Nordic HPC Summit, Warsaw AI Summit, GAIA, AIAW, Redeye, Auto.AI, Nordic Industry Days</li>
-          </ul>
-        </Section>
 
         {/* soul.md */}
         <section id="soulmd" className="mt-20 pt-10 border-t border-border">
