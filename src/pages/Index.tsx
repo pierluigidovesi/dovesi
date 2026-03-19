@@ -33,7 +33,7 @@ const Index = () => {
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20">
         {/* Hero */}
         <header className="mb-16">
-          <h1 className="text-4xl font-semibold text-foreground mb-1">About</h1>
+          
 
           <div className="mt-6 relative">
             <img
