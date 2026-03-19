@@ -167,15 +167,6 @@ const Index = () => {
           </p>
         </Section>
 
-        {/* Community */}
-        <Section id="community" title="Community">
-          <ul className="space-y-1">
-            <li>Mentor at Women in AI</li>
-            <li>Workshop organizer: CV4GOOD @ ECCV 2026</li>
-            <li>Reviewer: CVPR, ECCV, ICCV, ICRA</li>
-            <li>Speaker: ICLR, Nordic HPC Summit, Warsaw AI Summit, GAIA, AIAW, Redeye, Auto.AI, Nordic Industry Days</li>
-          </ul>
-        </Section>
 
         {/* soul.md */}
         <section id="soulmd" className="mt-20 pt-10 border-t border-border">
