@@ -113,7 +113,7 @@ const Index = () => {
 
         {/* Timeline */}
         <Section id="timeline" title="Timeline">
-          <div className="space-y-6">
+          <div className="border-l-2 border-border pl-6 ml-1 space-y-6">
             <TimelineItem years="2025 – Present" org="The Good AI Lab" role="Co-Founder & Chair" featured>
               An independent AI lab working on foundational AI research and innovation projects for social good. Partnerships with Doctors Without Borders (MSF). Organizing CV4GOOD at ECCV 2026.
               {" → "}<A href="https://thegoodailab.org">thegoodailab.org</A>
