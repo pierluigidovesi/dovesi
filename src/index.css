@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,32 +7,32 @@
 @layer base {
   :root {
     --background: 40 33% 97%;
-    --foreground: 30 10% 12%;
+    --foreground: 24 10% 15%;
 
     --card: 40 33% 97%;
-    --card-foreground: 30 10% 12%;
+    --card-foreground: 24 10% 15%;
 
     --popover: 40 33% 97%;
-    --popover-foreground: 30 10% 12%;
+    --popover-foreground: 24 10% 15%;
 
-    --primary: 170 40% 35%;
+    --primary: 4 60% 45%;
     --primary-foreground: 40 33% 97%;
 
-    --secondary: 35 20% 92%;
-    --secondary-foreground: 30 10% 12%;
+    --secondary: 35 25% 93%;
+    --secondary-foreground: 24 10% 15%;
 
-    --muted: 35 15% 93%;
-    --muted-foreground: 30 8% 46%;
+    --muted: 35 20% 93%;
+    --muted-foreground: 24 8% 42%;
 
-    --accent: 170 40% 35%;
+    --accent: 4 60% 45%;
     --accent-foreground: 40 33% 97%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 15% 88%;
-    --input: 35 15% 88%;
-    --ring: 170 40% 35%;
+    --border: 35 18% 85%;
+    --input: 35 18% 85%;
+    --ring: 4 60% 45%;
 
     --radius: 0.5rem;
 
@@ -47,33 +47,33 @@
   }
 
   .dark {
-    --background: 30 10% 5%;
-    --foreground: 35 15% 88%;
+    --background: 24 12% 7%;
+    --foreground: 35 20% 85%;
 
-    --card: 30 10% 5%;
-    --card-foreground: 35 15% 88%;
+    --card: 24 12% 7%;
+    --card-foreground: 35 20% 85%;
 
-    --popover: 30 10% 5%;
-    --popover-foreground: 35 15% 88%;
+    --popover: 24 12% 7%;
+    --popover-foreground: 35 20% 85%;
 
-    --primary: 170 55% 50%;
-    --primary-foreground: 30 10% 5%;
+    --primary: 4 65% 55%;
+    --primary-foreground: 24 12% 7%;
 
-    --secondary: 30 8% 14%;
-    --secondary-foreground: 35 15% 88%;
+    --secondary: 24 8% 14%;
+    --secondary-foreground: 35 20% 85%;
 
-    --muted: 30 8% 14%;
-    --muted-foreground: 35 10% 55%;
+    --muted: 24 8% 14%;
+    --muted-foreground: 30 10% 55%;
 
-    --accent: 170 55% 50%;
-    --accent-foreground: 30 10% 5%;
+    --accent: 4 65% 55%;
+    --accent-foreground: 24 12% 7%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 8% 18%;
-    --input: 30 8% 18%;
-    --ring: 170 55% 50%;
+    --border: 24 8% 18%;
+    --input: 24 8% 18%;
+    --ring: 4 65% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -97,8 +97,10 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+    line-height: 1.7;
   }
 }
