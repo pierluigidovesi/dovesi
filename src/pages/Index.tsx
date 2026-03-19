@@ -82,7 +82,7 @@ const Index = () => {
             <TalkItem title="Nordic HPC Summit 2025" detail="Keynote — Building The Good AI Lab: where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
             <TalkItem title="Redeye AI Theme Event 2025" detail="The Good AI Lab · Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
             <TalkItem title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
-            <TalkItem title="Auto.AI Europe 2025" detail="Data Alchemy — Adapting and Creating with Limited Data" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
+            <TalkItem title="Auto.AI Europe 2024" detail="Data Alchemy — Adapting and Creating with Limited Data" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
             <TalkItem title="Nordic Industry Days 2024" detail="Supercomputing for AI, EuroHPC · Copenhagen, Sep 2024" href="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" />
             <TalkItem title="GAIA Conference 2024" detail="Adapting Like Humans: Embodied AI Beyond Datasets and Domains" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
           </ul>
