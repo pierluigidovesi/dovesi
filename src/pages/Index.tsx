@@ -78,13 +78,13 @@ const Index = () => {
         <Section id="talks" title="Talks & Podcasts">
           <ul className="space-y-3">
             <TalkItem title="ICLR 2026 — AI4Peace Workshop" detail="Autonomous Systems and IHL · Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
-            <TalkItem title="Warsaw AI Summit 2026" detail="Mar 2026" href="https://warsawaisummit.com/" />
+            <TalkItem title="Warsaw AI Summit 2026" detail="Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
             <TalkItem title="Nordic HPC Summit 2025" detail="Keynote — Building The Good AI Lab: where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
             <TalkItem title="Redeye AI Theme Event 2025" detail="The Good AI Lab · Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
             <TalkItem title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
-            <TalkItem title="Auto.AI Europe 2024" detail="Data Alchemy — Adapting and Creating with Limited Data" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
+            <TalkItem title="Auto.AI Europe 2024" detail="Data Alchemy — Adapting and Creating with Limited Data · Sep 2024" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
             <TalkItem title="Nordic Industry Days 2024" detail="Supercomputing for AI, EuroHPC · Copenhagen, Sep 2024" href="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" />
-            <TalkItem title="GAIA Conference 2024" detail="Adapting Like Humans: Embodied AI Beyond Datasets and Domains" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
+            <TalkItem title="GAIA Conference 2024" detail="Adapting Like Humans: Embodied AI Beyond Datasets and Domains · Apr 2024" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
           </ul>
         </Section>
 
@@ -92,18 +92,18 @@ const Index = () => {
         <Section id="news" title="News">
           <ul className="space-y-2">
             <NewsItem date="Apr 2026" text="Invited speaker at" link="https://aiforpeaceworkshop.github.io/" linkText="ICLR 2026 AI4Peace Workshop" suffix=" (Rio de Janeiro) — autonomous systems and international humanitarian law" />
-            <NewsItem date="Mar 2026" text="Speaker at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
+            <NewsItem date="Mar 2026" text="Keynote at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
             <NewsItem date="2026" text="Organizing the" link="https://thegoodailab.org" linkText="CV4GOOD Workshop at ECCV 2026" suffix=" — Computer Vision for Humanitarian Action, with MSF" />
             <NewsItem date="Jan 2026" text="Published" link="https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars" linkText='"From Self-Driving Cars to Self-Driving Wars"' suffix=" — autonomy, AI weapons, and the illusion of control" />
             <NewsItem date="Dec 2025" text="" link="https://thegoodailab.org/blog/msf-from-principles-to-practice" linkText='"From Principles to Practice"' suffix=" — our work with Doctors Without Borders" />
             <NewsItem date="Oct 2025" text="" link="https://thegoodailab.org/blog/msf-partnership" linkText="GAL and MSF announce partnership" suffix=" to bring responsible AI to humanitarian work" />
             <NewsItem date="Sep 2025" text="" link="https://thegoodailab.org/blog/vocalign" linkText="VocAlign" suffix=" published — source-free domain adaptation for open-vocabulary segmentation" />
             <NewsItem date="Oct 2025" text="Keynote at" link="https://nordichpcsummit.enccs.se/" linkText="Nordic HPC Summit 2025" suffix=' (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility"' />
-            <NewsItem date="2024" text="Speaker at" link="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" linkText="Auto.AI Europe" suffix=' — "Data Alchemy: Adapting and Creating with Limited Data"' />
             <NewsItem date="Mar 2025" text="Presented GAL at" link="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkText="Redeye AI Theme Event 2025" />
             <NewsItem date="Jan 2025" text="Featured on" link="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkText="AIAW Podcast E143" suffix=" — Revolutionizing AI and Autonomous Systems" />
             <NewsItem date="Sep 2024" text="Speaker at" link="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" linkText="Nordic Industry Days 2024" suffix=" (Copenhagen) — Supercomputing for AI, EuroHPC" />
-            <NewsItem date="2024" text="Speaker at" link="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" linkText="GAIA Conference 2024" suffix=' — "Adapting Like Humans: Embodied AI Beyond Datasets and Domains"' />
+            <NewsItem date="Sep 2024" text="Speaker at" link="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" linkText="Auto.AI Europe" suffix=' — "Data Alchemy: Adapting and Creating with Limited Data"' />
+            <NewsItem date="Apr 2024" text="Speaker at" link="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" linkText="GAIA Conference 2024" suffix=' — "Adapting Like Humans: Embodied AI Beyond Datasets and Domains"' />
             <NewsItem date="Oct 2023" text="" link="https://arxiv.org/abs/2307.15063" linkText="HAMLET" suffix=" accepted at ICCV 2023" />
             <NewsItem date="Oct 2022" text="" link="https://arxiv.org/abs/2207.10667" linkText="OnDA" suffix=" accepted at ECCV 2022" />
             <NewsItem date="May 2020" text="" link="https://arxiv.org/abs/1910.00541" linkText="Real-Time Semantic Stereo Matching" suffix=" accepted at ICRA 2020" />
@@ -113,7 +113,7 @@ const Index = () => {
 
         {/* Timeline */}
         <Section id="timeline" title="Timeline">
-          <div className="space-y-6">
+          <div className="border-l-2 border-border pl-6 ml-1 space-y-6">
             <TimelineItem years="2025 – Present" org="The Good AI Lab" role="Co-Founder & Chair" featured>
               An independent AI lab working on foundational AI research and innovation projects for social good. Partnerships with Doctors Without Borders (MSF). Organizing CV4GOOD at ECCV 2026.
               {" → "}<A href="https://thegoodailab.org">thegoodailab.org</A>
@@ -232,7 +232,7 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
 );
 
 const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: string; link: string; linkText: string; suffix?: string }) => (
-  <li>
+  <li className="leading-snug py-0.5">
     <strong>[{date}]</strong>{" "}
     {text && `${text} `}
     <A href={link}>{linkText}</A>
@@ -241,12 +241,12 @@ const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: 
 );
 
 const TalkItem = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (
-  <li className="pb-1">
+  <li className="leading-snug">
     <span className="font-medium text-foreground">{title}</span>
     {tag && <span className="text-primary text-sm ml-2 italic">({tag})</span>}
-    <br />
-    <span className="text-muted-foreground text-[16px]">{detail}</span>
     {" — "}
+    <span className="text-muted-foreground text-[16px]">{detail}</span>
+    {" · "}
     <A href={href}>{linkLabel}</A>
   </li>
 );
