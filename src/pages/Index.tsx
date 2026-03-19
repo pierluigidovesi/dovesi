@@ -92,7 +92,7 @@ const Index = () => {
         <Section id="news" title="News">
           <ul className="space-y-2">
             <NewsItem date="Apr 2026" text="Invited speaker at" link="https://aiforpeaceworkshop.github.io/" linkText="ICLR 2026 AI4Peace Workshop" suffix=" (Rio de Janeiro) — autonomous systems and international humanitarian law" />
-            <NewsItem date="Mar 2026" text="Speaker at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
+            <NewsItem date="Mar 2026" text="Keynote at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
             <NewsItem date="2026" text="Organizing the" link="https://thegoodailab.org" linkText="CV4GOOD Workshop at ECCV 2026" suffix=" — Computer Vision for Humanitarian Action, with MSF" />
             <NewsItem date="Jan 2026" text="Published" link="https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars" linkText='"From Self-Driving Cars to Self-Driving Wars"' suffix=" — autonomy, AI weapons, and the illusion of control" />
             <NewsItem date="Dec 2025" text="" link="https://thegoodailab.org/blog/msf-from-principles-to-practice" linkText='"From Principles to Practice"' suffix=" — our work with Doctors Without Borders" />
