@@ -15,7 +15,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      {/* Simple top nav - not sticky, just sits there */}
       <nav className="max-w-[680px] mx-auto px-6 pt-8 pb-2">
         <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm tracking-widest uppercase">
           {["About", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
@@ -31,7 +30,7 @@ const Index = () => {
       </nav>
 
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20">
-        {/* Hero */}
+        {/* About */}
         <header className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-5">About</h2>
 
@@ -49,19 +48,18 @@ const Index = () => {
           <div className="mt-4 space-y-4" id="about">
             <p>
               I'm Co-Founder and Chair of{" "}
-              <A href="https://thegoodailab.org">The Good AI Lab (GAL)</A>, an independent AI lab working on foundational AI research and innovation projects for social good. We are a non-profit AI research collective — scientists, professors, engineers, researchers, and developers — coming together from top universities, labs, and companies. Hand-in-hand with charitable non-profit organisations, we promote and develop AI applications that drive tangible improvements. Our current partnerships include Doctors Without Borders (MSF).
+              <A href="https://thegoodailab.org">The Good AI Lab</A>, a non-profit AI research collective working on foundational research and innovation for social good — currently partnering with Doctors Without Borders (MSF).
             </p>
             <p>
-              By day, I lead the Robotics and Autonomous Systems team at AMD Silo AI, where I work on multimodal AI, generative models, and embodied intelligence for autonomous vehicles and robots.
+              By day, I lead the Robotics and Autonomous Systems team at AMD Silo AI, working on multimodal AI, generative models, and embodied intelligence.
             </p>
             <p>
-              My research spans unsupervised domain adaptation, real-time perception, and generative AI, with publications at CVPR, ECCV, ICCV, and ICRA.
+              My research spans domain adaptation, real-time perception, and generative AI, with publications at CVPR, ECCV, ICCV, and ICRA.
             </p>
           </div>
 
-          {/* Social - inline text links like hoanh.space */}
           <p className="mt-6 text-[16px]">
-            You can find me at{" "}
+            Find me at{" "}
             <A href="https://thegoodailab.org">The Good AI Lab</A>,{" "}
             <A href="https://github.com/pierluigidovesi">GitHub</A>,{" "}
             <A href="https://scholar.google.com/citations?user=t55rm6EAAAAJ&hl=en">Google Scholar</A>,{" "}
@@ -74,18 +72,18 @@ const Index = () => {
 
         <hr className="border-border mb-14" />
 
-        {/* Featured Talks & Podcasts - moved up */}
+        {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
-          <ul className="space-y-3">
-            <TalkItem title="ICLR 2026 — AI4Peace Workshop" detail="Autonomous Systems and IHL · Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
-            <TalkItem title="Warsaw AI Summit 2026" detail="Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
-            <TalkItem title="Nordic HPC Summit 2025" detail="Keynote — Building The Good AI Lab: where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
-            <TalkItem title="Redeye AI Theme Event 2025" detail="The Good AI Lab · Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
-            <TalkItem title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
-            <TalkItem title="Auto.AI Europe 2024" detail="Data Alchemy — Adapting and Creating with Limited Data · Sep 2024" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
-            <TalkItem title="Nordic Industry Days 2024" detail="Supercomputing for AI, EuroHPC · Copenhagen, Sep 2024" href="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" />
-            <TalkItem title="GAIA Conference 2024" detail="Adapting Like Humans: Embodied AI Beyond Datasets and Domains · Apr 2024" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
-          </ul>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <TalkTile title="ICLR 2026 — AI4Peace" detail="Autonomous Systems and IHL · Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
+            <TalkTile title="Warsaw AI Summit 2026" detail="Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
+            <TalkTile title="Nordic HPC Summit 2025" detail="Where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
+            <TalkTile title="Redeye AI Theme Event" detail="The Good AI Lab · Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
+            <TalkTile title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
+            <TalkTile title="Auto.AI Europe 2024" detail="Data Alchemy — Limited Data · Sep 2024" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
+            <TalkTile title="Nordic Industry Days 2024" detail="Supercomputing for AI · Copenhagen, Sep 2024" href="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" />
+            <TalkTile title="GAIA Conference 2024" detail="Embodied AI Beyond Datasets · Apr 2024" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
+          </div>
         </Section>
 
         {/* News */}
@@ -111,37 +109,28 @@ const Index = () => {
           </ul>
         </Section>
 
-        {/* Timeline */}
+        {/* Timeline — dotted line with dots */}
         <Section id="timeline" title="Timeline">
-          <div className="border-l-2 border-border pl-6 ml-1 space-y-6">
-            <TimelineItem years="2025 – Present" org="The Good AI Lab" role="Co-Founder & Chair" featured>
-              An independent AI lab working on foundational AI research and innovation projects for social good. Partnerships with Doctors Without Borders (MSF). Organizing CV4GOOD at ECCV 2026.
-              {" → "}<A href="https://thegoodailab.org">thegoodailab.org</A>
-            </TimelineItem>
-            <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead">
-              Multimodal AI, generative models, and embodied intelligence for autonomous vehicles and robots.
-            </TimelineItem>
-            <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist">
-              Deployed LLMs for coding, autonomous systems, diffusion models. Before AMD's acquisition of Silo AI.
-            </TimelineItem>
-            <TimelineItem years="2019 – 2023" org="Univrses" role="Deep Learning Engineer" subtitle="consulting at Zenseact">
-              Domain adaptation, real-time perception, semantic segmentation for autonomous driving.
-            </TimelineItem>
-            <TimelineItem years="2017 – 2019" org="KTH Royal Institute of Technology" role="MSc Systems, Control & Robotics" />
-            <TimelineItem years="2013 – 2017" org="University of Bologna & Tongji University" role="BSc Automation Engineering" />
-          </div>
-        </Section>
-
-        {/* Projects */}
-        <Section id="projects" title="Projects">
-          <div className="space-y-4">
-            <p>
-              <strong>MSF AI Training Program</strong> — A two-level AI training program designed for Doctors Without Borders (MSF Italy), covering responsible AI adoption for humanitarian staff.
-            </p>
-            <p>
-              <strong>"From Self-Driving Cars to Self-Driving Wars"</strong> — A long-form essay on the pipeline from autonomous driving to autonomous weapons and the illusion of human control.{" "}
-              <A href="https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars">Read →</A>
-            </p>
+          <div className="relative ml-3">
+            {/* Vertical line */}
+            <div className="absolute left-0 top-2 bottom-2 w-px border-l-2 border-dashed border-border" />
+            <div className="space-y-8">
+              <TimelineItem years="2025 – Present" org="The Good AI Lab" role="Co-Founder & Chair" featured>
+                Non-profit AI research for social good. Partnering with MSF. Organizing CV4GOOD at ECCV 2026.
+                {" → "}<A href="https://thegoodailab.org">thegoodailab.org</A>
+              </TimelineItem>
+              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead">
+                Multimodal AI, generative models, and embodied intelligence.
+              </TimelineItem>
+              <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist">
+                LLMs, autonomous systems, diffusion models. Before AMD's acquisition.
+              </TimelineItem>
+              <TimelineItem years="2019 – 2023" org="Univrses" role="Deep Learning Engineer" subtitle="consulting at Zenseact">
+                Domain adaptation, real-time perception for autonomous driving.
+              </TimelineItem>
+              <TimelineItem years="2017 – 2019" org="KTH Royal Institute of Technology" role="MSc Systems, Control & Robotics" />
+              <TimelineItem years="2013 – 2017" org="University of Bologna & Tongji University" role="BSc Automation Engineering" />
+            </div>
           </div>
         </Section>
 
@@ -167,7 +156,6 @@ const Index = () => {
           </p>
         </Section>
 
-
         {/* soul.md */}
         <section id="soulmd" className="mt-20 pt-10 border-t border-border">
           <h2 className="text-sm font-mono text-muted-foreground mb-10" style={{ fontFamily: "'JetBrains Mono', monospace" }}>soul.md</h2>
@@ -190,7 +178,6 @@ const Index = () => {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="max-w-[680px] mx-auto px-6 py-10 border-t border-border flex items-center justify-between">
         <p className="text-sm text-muted-foreground">
           Pier Luigi Dovesi — Stockholm, Sweden
@@ -231,15 +218,20 @@ const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: 
   </li>
 );
 
-const TalkItem = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (
-  <li className="leading-snug">
-    <span className="font-medium text-foreground">{title}</span>
-    {tag && <span className="text-primary text-sm ml-2 italic">({tag})</span>}
-    {" — "}
-    <span className="text-muted-foreground text-[16px]">{detail}</span>
-    {" · "}
-    <A href={href}>{linkLabel}</A>
-  </li>
+const TalkTile = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener"
+    className="block rounded-md border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all group"
+  >
+    <div className="flex items-start justify-between gap-2">
+      <h3 className="font-semibold text-foreground text-[16px] leading-snug group-hover:text-primary transition-colors">{title}</h3>
+      {tag && <span className="text-primary text-xs italic whitespace-nowrap mt-0.5">({tag})</span>}
+    </div>
+    <p className="text-muted-foreground text-sm mt-1.5 leading-snug">{detail}</p>
+    <span className="text-primary text-sm mt-2 inline-block opacity-70 group-hover:opacity-100 transition-opacity">{linkLabel} →</span>
+  </a>
 );
 
 const TimelineItem = ({
@@ -247,7 +239,9 @@ const TimelineItem = ({
 }: {
   years: string; org: string; role: string; subtitle?: string; featured?: boolean; children?: React.ReactNode;
 }) => (
-  <div>
+  <div className="relative pl-7">
+    {/* Dot */}
+    <div className="absolute left-0 top-[10px] -translate-x-[5px] w-[10px] h-[10px] rounded-full border-2 border-primary bg-background" />
     <p className="text-sm text-muted-foreground">{years}</p>
     <p className={featured ? "text-primary font-semibold" : "font-semibold text-foreground"}>
       {org}
