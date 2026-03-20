@@ -75,12 +75,12 @@ const Index = () => {
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
           <div className="grid gap-3 sm:grid-cols-2">
-            <TalkTile title="ICLR 2026 — AI4Peace" detail="Autonomous Systems and IHL · Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
+            <TalkTile title="ICLR 2026 — AI4Peace" detail="Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
             <TalkTile title="Warsaw AI Summit 2026" detail="Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
             <TalkTile title="Nordic HPC Summit 2025" detail="Where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
             <TalkTile title="Redeye AI Theme Event" detail="The Good AI Lab · Stockholm, Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
             <TalkTile title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
-            <TalkTile title="Auto.AI Europe 2024" detail="Data Alchemy — Limited Data · Berlin, Sep 2024" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
+            <TalkTile title="Auto.AI Europe 2024" detail="Data Alchemy — Berlin, Sep 2024" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
             <TalkTile title="Nordic Industry Days 2024" detail="Supercomputing for AI · Copenhagen, Sep 2024" href="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" />
             <TalkTile title="GAIA Conference 2024" detail="Embodied AI Beyond Datasets · Gothenburg, Apr 2024" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
           </div>
