@@ -88,7 +88,7 @@ const Index = () => {
 
         {/* News */}
         <Section id="news" title="News">
-          <ul className="space-y-2">
+          <div className="space-y-0">
             <NewsItem date="Apr 2026" text="Invited speaker at" link="https://aiforpeaceworkshop.github.io/" linkText="ICLR 2026 AI4Peace Workshop" suffix=" (Rio de Janeiro) — autonomous systems and international humanitarian law" />
             <NewsItem date="Mar 2026" text="Keynote at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
             <NewsItem date="Feb 2026" text="Submitted" link="https://eccv.ecva.net/" linkText="CV4GOOD Workshop at ECCV 2026" suffix=" — Computer Vision for Humanitarian Action, with MSF" />
@@ -107,7 +107,7 @@ const Index = () => {
             <NewsItem date="Oct 2022" text="" link="https://arxiv.org/abs/2207.10667" linkText="OnDA" suffix=" accepted at ECCV 2022 — online domain adaptation" />
             <NewsItem date="May 2020" text="" link="https://arxiv.org/abs/1910.00541" linkText="Real-Time Semantic Stereo Matching" suffix=" accepted at ICRA 2020" />
             <NewsItem date="Aug 2019" text="" link="https://arxiv.org/abs/1908.03127" linkText="Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry" suffix=" accepted at 3DV 2019" />
-          </ul>
+          </div>
         </Section>
 
         {/* Timeline — dotted line with dots */}
@@ -118,9 +118,8 @@ const Index = () => {
             <div className="space-y-8">
               <TimelineItem years="2025 – Present" org="The Good AI Lab" orgHref="https://thegoodailab.org" role="Co-Founder & Chair" featured>
                 Non-profit AI research for social good. Partnering with MSF. Organizing CV4GOOD at ECCV 2026.
-                {" → "}<A href="https://thegoodailab.org">thegoodailab.org</A>
               </TimelineItem>
-              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead">
+              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead" subtitle="part of AMD">
                 Large GPU ecosystem for Physical AI. World models, VLMs, and VLAs.
               </TimelineItem>
               <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist" subtitle="pre-AMD acquisition">
@@ -151,10 +150,6 @@ const Index = () => {
               {" (Oct 2025)"}
             </li>
           </ul>
-          <p className="mt-4 text-[15px] text-muted-foreground">
-            More at <A href="https://thegoodailab.org/blog">thegoodailab.org/blog</A> · Full publication list on{" "}
-            <A href="https://scholar.google.com/citations?user=t55rm6EAAAAJ&hl=en">Google Scholar</A>
-          </p>
         </Section>
 
         {/* soul.md */}
@@ -211,12 +206,14 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
 );
 
 const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: string; link: string; linkText: string; suffix?: string }) => (
-  <li className="leading-snug py-0.5">
-    <strong>[{date}]</strong>{" "}
-    {text && `${text} `}
-    <A href={link}>{linkText}</A>
-    {suffix}
-  </li>
+  <div className="flex gap-4 py-2.5 border-b border-border/50 last:border-b-0">
+    <span className="text-sm text-muted-foreground whitespace-nowrap pt-0.5 w-[72px] shrink-0">{date}</span>
+    <p className="leading-snug">
+      {text && `${text} `}
+      <A href={link}>{linkText}</A>
+      {suffix}
+    </p>
+  </div>
 );
 
 const TalkTile = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (
