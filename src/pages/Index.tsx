@@ -118,9 +118,8 @@ const Index = () => {
             <div className="space-y-8">
               <TimelineItem years="2025 – Present" org="The Good AI Lab" orgHref="https://thegoodailab.org" role="Co-Founder & Chair" featured>
                 Non-profit AI research for social good. Partnering with MSF. Organizing CV4GOOD at ECCV 2026.
-                {" → "}<A href="https://thegoodailab.org">thegoodailab.org</A>
               </TimelineItem>
-              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead">
+              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead" subtitle="part of AMD">
                 Large GPU ecosystem for Physical AI. World models, VLMs, and VLAs.
               </TimelineItem>
               <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist" subtitle="pre-AMD acquisition">
