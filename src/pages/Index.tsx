@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <nav className="max-w-[680px] mx-auto px-6 pt-8 pb-2">
         <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm tracking-widest uppercase">
-          {["About", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
+          {["About", "Talks", "News", "Timeline", "Writing", ...(dark ? ["soul.md"] : [])].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(".", "")}`}
@@ -152,26 +152,28 @@ const Index = () => {
           </ul>
         </Section>
 
-        {/* soul.md */}
-        <section id="soulmd" className="mt-20 pt-10 border-t border-border">
-          <h2 className="text-sm font-mono text-muted-foreground mb-10" style={{ fontFamily: "'JetBrains Mono', monospace" }}>soul.md</h2>
-          <div className="space-y-10">
-            <Quote
-              text="I think it's important now to tie care to Quality by pointing out that care and Quality are internal and external aspects of the same thing. A person who sees Quality and feels it as he works is a person who cares. A person who cares about what he sees and does is a person who's bound to have some characteristics of Quality."
-              author="Robert M. Pirsig"
-            />
-            <Quote text="Pessimismo della realtà, ottimismo della speranza." author="Antonio Gramsci" />
-            <Quote
-              text="L'inferno dei viventi non è qualcosa che sarà; se ce n'è uno, è quello che è già qui, l'inferno che abitiamo tutti i giorni … Due modi ci sono per non soffrirne. Il primo riesce facile a molti: accettare l'inferno e diventarne parte fino al punto di non vederlo più. Il secondo è rischioso ed esige attenzione e apprendimento continui: cercare e saper riconoscere chi e cosa, in mezzo all'inferno, non è inferno, e farlo durare, e dargli spazio."
-              author="Italo Calvino"
-            />
-            <Quote
-              text="Innovation without a guiding purpose is hollow. Real progress means more than building better tools; it means building them for everyone, especially those too often overlooked or forgotten. [...] We see AI as a force that reveals new paths, includes more voices, and helps reshape society for the better. If we are to contribute with a verse to this powerful play, let it be driven by curiosity and guided by responsibility."
-              author="The Good AI Lab Manifesto"
-              authorHref="https://thegoodailab.org/manifesto"
-            />
-          </div>
-        </section>
+        {/* soul.md — dark mode only */}
+        {dark && (
+          <section id="soulmd" className="mt-20 pt-10 border-t border-border">
+            <h2 className="text-sm font-mono text-muted-foreground mb-10" style={{ fontFamily: "'JetBrains Mono', monospace" }}>soul.md</h2>
+            <div className="space-y-10">
+              <Quote
+                text="I think it's important now to tie care to Quality by pointing out that care and Quality are internal and external aspects of the same thing. A person who sees Quality and feels it as he works is a person who cares. A person who cares about what he sees and does is a person who's bound to have some characteristics of Quality."
+                author="Robert M. Pirsig"
+              />
+              <Quote text="Pessimismo della realtà, ottimismo della speranza." author="Antonio Gramsci" />
+              <Quote
+                text="L'inferno dei viventi non è qualcosa che sarà; se ce n'è uno, è quello che è già qui, l'inferno che abitiamo tutti i giorni … Due modi ci sono per non soffrirne. Il primo riesce facile a molti: accettare l'inferno e diventarne parte fino al punto di non vederlo più. Il secondo è rischioso ed esige attenzione e apprendimento continui: cercare e saper riconoscere chi e cosa, in mezzo all'inferno, non è inferno, e farlo durare, e dargli spazio."
+                author="Italo Calvino"
+              />
+              <Quote
+                text="Innovation without a guiding purpose is hollow. Real progress means more than building better tools; it means building them for everyone, especially those too often overlooked or forgotten. [...] We see AI as a force that reveals new paths, includes more voices, and helps reshape society for the better. If we are to contribute with a verse to this powerful play, let it be driven by curiosity and guided by responsibility."
+                author="The Good AI Lab Manifesto"
+                authorHref="https://thegoodailab.org/manifesto"
+              />
+            </div>
+          </section>
+        )}
       </main>
 
       <footer className="max-w-[680px] mx-auto px-6 py-10 border-t border-border flex items-center justify-between">
