@@ -150,10 +150,6 @@ const Index = () => {
               {" (Oct 2025)"}
             </li>
           </ul>
-          <p className="mt-4 text-[15px] text-muted-foreground">
-            More at <A href="https://thegoodailab.org/blog">thegoodailab.org/blog</A> · Full publication list on{" "}
-            <A href="https://scholar.google.com/citations?user=t55rm6EAAAAJ&hl=en">Google Scholar</A>
-          </p>
         </Section>
 
         {/* soul.md */}
