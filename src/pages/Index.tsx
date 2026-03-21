@@ -88,7 +88,7 @@ const Index = () => {
 
         {/* News */}
         <Section id="news" title="News">
-          <ul className="space-y-2">
+          <div className="space-y-0">
             <NewsItem date="Apr 2026" text="Invited speaker at" link="https://aiforpeaceworkshop.github.io/" linkText="ICLR 2026 AI4Peace Workshop" suffix=" (Rio de Janeiro) — autonomous systems and international humanitarian law" />
             <NewsItem date="Mar 2026" text="Keynote at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
             <NewsItem date="Feb 2026" text="Submitted" link="https://eccv.ecva.net/" linkText="CV4GOOD Workshop at ECCV 2026" suffix=" — Computer Vision for Humanitarian Action, with MSF" />
@@ -107,7 +107,7 @@ const Index = () => {
             <NewsItem date="Oct 2022" text="" link="https://arxiv.org/abs/2207.10667" linkText="OnDA" suffix=" accepted at ECCV 2022 — online domain adaptation" />
             <NewsItem date="May 2020" text="" link="https://arxiv.org/abs/1910.00541" linkText="Real-Time Semantic Stereo Matching" suffix=" accepted at ICRA 2020" />
             <NewsItem date="Aug 2019" text="" link="https://arxiv.org/abs/1908.03127" linkText="Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry" suffix=" accepted at 3DV 2019" />
-          </ul>
+          </div>
         </Section>
 
         {/* Timeline — dotted line with dots */}
