@@ -206,12 +206,14 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
 );
 
 const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: string; link: string; linkText: string; suffix?: string }) => (
-  <li className="leading-snug py-0.5">
-    <strong>[{date}]</strong>{" "}
-    {text && `${text} `}
-    <A href={link}>{linkText}</A>
-    {suffix}
-  </li>
+  <div className="flex gap-4 py-2.5 border-b border-border/50 last:border-b-0">
+    <span className="text-sm text-muted-foreground whitespace-nowrap pt-0.5 w-[72px] shrink-0">{date}</span>
+    <p className="leading-snug">
+      {text && `${text} `}
+      <A href={link}>{linkText}</A>
+      {suffix}
+    </p>
+  </div>
 );
 
 const TalkTile = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (
