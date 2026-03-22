@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import HoughBackground from "@/components/HoughBackground";
 
 const Index = () => {
   const [dark, setDark] = useState(false);
