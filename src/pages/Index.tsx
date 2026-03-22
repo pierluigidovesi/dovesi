@@ -45,8 +45,8 @@ const Index = () => {
 
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
         {/* About */}
-        <header className="mb-16">
-          <h2 className="text-2xl font-semibold text-foreground mb-5">About</h2>
+        <header id="about" className="mb-16 scroll-mt-12">
+          <h1 className="text-2xl font-semibold text-foreground mb-5">About</h1>
 
           <div className="mt-6 relative">
             <img
@@ -59,7 +59,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="mt-4 space-y-4" id="about">
+          <div className="mt-4 space-y-4">
             <p>
               I'm Co-Founder and Chair of{" "}
               <A href="https://thegoodailab.org">The Good AI Lab</A>, an independent AI lab working on foundational AI research and innovation projects for social good. Today we work with Doctors Without Borders (MSF), FMSI, and several universities around Europe.
@@ -74,7 +74,6 @@ const Index = () => {
 
           <p className="mt-6 text-[16px]">
             Find me at{" "}
-            <A href="https://thegoodailab.org">The Good AI Lab</A>,{" "}
             <A href="https://github.com/pierluigidovesi">GitHub</A>,{" "}
             <A href="https://scholar.google.com/citations?user=t55rm6EAAAAJ&hl=en">Google Scholar</A>,{" "}
             <A href="https://www.linkedin.com/in/pierluigidovesi/">LinkedIn</A>,{" "}
@@ -91,7 +90,7 @@ const Index = () => {
         <Section id="talks" title="Talks & Podcasts">
           <div className="grid gap-3 sm:grid-cols-2">
             <TalkTile title="ICLR 2026 — AI4Peace" detail="Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
-            <TalkTile title="Warsaw AI Summit 2026" detail="Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
+            <TalkTile title="Warsaw AI Summit 2026" detail="Warsaw, Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
             <TalkTile title="Nordic HPC Summit 2025" detail="Where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
             <TalkTile title="Redeye AI Theme Event" detail="The Good AI Lab · Stockholm, Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
             <TalkTile title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
