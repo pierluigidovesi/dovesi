@@ -80,6 +80,7 @@ const Index = () => {
             <A href="https://www.linkedin.com/in/pierluigidovesi/">LinkedIn</A>,{" "}
             <A href="https://x.com/dovpie">X</A>,{" "}
             <A href="https://huggingface.co/dovpie">Hugging Face</A>,{" "}
+            <A href="https://rocm.blogs.amd.com/authors/pier-luigi-dovesi.html">ROCm Blog</A>,{" "}
             and <a href="mailto:pierluigidovesi@gmail.com" className="text-primary hover:underline underline-offset-2">email</a>.
           </p>
         </header>
@@ -131,12 +132,12 @@ const Index = () => {
             <div className="absolute left-0 top-2 bottom-2 w-px border-l-2 border-dashed border-border" />
             <div className="space-y-8">
               <TimelineItem years="2025 – Present" org="The Good AI Lab" orgHref="https://thegoodailab.org" role="Co-Founder & Chair" featured>
-                Non-profit AI research for social good. Partnering with MSF. Organizing CV4GOOD at ECCV 2026.
+                Independent AI lab working on foundational AI research and innovation projects for social good.
               </TimelineItem>
-              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="SMTS & Robotics and Autonomous Systems Lead" subtitle="part of AMD">
-                Large GPU ecosystem for Physical AI. World models, VLMs, and VLAs.
+              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="Robotics and Autonomous Systems Lead" subtitle="part of AMD">
+                Open ecosystem for Physical AI. World models, VLMs, and VLAs.
               </TimelineItem>
-              <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist" subtitle="pre-AMD acquisition">
+              <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist">
                 LiDAR perception, LLMs, diffusion models.
               </TimelineItem>
               <TimelineItem years="2019 – 2023" org="Univrses" role="Deep Learning Engineer" subtitle="consulting at Zenseact">
