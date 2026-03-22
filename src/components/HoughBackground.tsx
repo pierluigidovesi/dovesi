@@ -156,11 +156,32 @@ function curveToPath(curve: Curve, baseStroke: number): PathData[] {
 }
 
 const HoughBackground = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [seed] = useState(() => Math.floor(Math.random() * 10000));
+  const [time, setTime] = useState(0);
+  const rafRef = useRef<number>(0);
 
-  // Scroll drives the time parameter — the curves evolve as you scroll
-  const time = scrollY * 0.003;
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let currentTime = 0;
+
+    const onScroll = () => {
+      const newScrollY = window.scrollY;
+      const delta = newScrollY - lastScrollY;
+      lastScrollY = newScrollY;
+      currentTime += delta * 0.002;
+      
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        setTime(currentTime);
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const paths = useMemo(() => {
     const curves = generateScene(seed, time, {
@@ -169,18 +190,11 @@ const HoughBackground = () => {
     return curves.flatMap(c => curveToPath(c, 1.4));
   }, [seed, time]);
 
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <div
       style={{
         position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh",
         pointerEvents: "none", zIndex: 0,
-        transform: `translateY(${scrollY * -0.15}px)`,
       }}
     >
       <svg viewBox="0 0 1200 700" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
