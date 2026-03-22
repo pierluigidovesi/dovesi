@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const [dark, setDark] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -16,7 +18,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
-      <HoughBackground />
+      {!isMobile && <HoughBackground />}
       <nav className="max-w-[680px] mx-auto px-6 pt-8 pb-2">
         <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm tracking-widest uppercase">
           {["About", "Talks", "News", "Timeline", "Writing", ...(dark ? ["soul.md"] : [])].map((item) => (
