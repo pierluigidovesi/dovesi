@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
-import { useIsMobile } from "@/hooks/use-mobile";
-
 const Index = () => {
   const [dark, setDark] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -18,8 +15,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
-      {!isMobile && <HoughBackground />}
-      <nav className="max-w-[680px] mx-auto px-6 pt-8 pb-2">
+      <HoughBackground />
+
+      {/* Smooth vignette: fades background color over Hough lines behind content */}
+      <div
+        className="fixed inset-0 pointer-events-none bg-background transition-colors duration-300"
+        style={{
+          zIndex: 1,
+          maskImage:
+            "radial-gradient(ellipse 55% 70% at 50% 45%, black 0%, black 30%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 55% 70% at 50% 45%, black 0%, black 30%, transparent 100%)",
+        }}
+      />
+
+      <nav className="max-w-[680px] mx-auto px-6 pt-8 pb-2 relative" style={{ zIndex: 2 }}>
         <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm tracking-widest uppercase">
           {["About", "Talks", "News", "Timeline", "Writing", ...(dark ? ["soul.md"] : [])].map((item) => (
             <a
@@ -33,7 +43,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20">
+      <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
         {/* About */}
         <header className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-5">About</h2>
@@ -180,7 +190,7 @@ const Index = () => {
         )}
       </main>
 
-      <footer className="max-w-[680px] mx-auto px-6 py-10 border-t border-border flex items-center justify-between">
+      <footer className="max-w-[680px] mx-auto px-6 py-10 border-t border-border flex items-center justify-between relative" style={{ zIndex: 2 }}>
         <p className="text-sm text-muted-foreground">
           Pier Luigi Dovesi — Stockholm, Sweden
         </p>
