@@ -157,14 +157,17 @@ function curveToPath(curve: Curve, baseStroke: number): PathData[] {
 
 const HoughBackground = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [seed] = useState(() => Math.floor(Math.random() * 10000));
+
+  // Scroll drives the time parameter — the curves evolve as you scroll
+  const time = scrollY * 0.003;
 
   const paths = useMemo(() => {
-    const seed = Math.floor(Math.random() * 10000);
-    const curves = generateScene(seed, 0, {
+    const curves = generateScene(seed, time, {
       clusters: 2, linesPerCluster: 12, spreadAmt: 0.08, strokeVar: 0.6,
     });
     return curves.flatMap(c => curveToPath(c, 1.4));
-  }, []);
+  }, [seed, time]);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
