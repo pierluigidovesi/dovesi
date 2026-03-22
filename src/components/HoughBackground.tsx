@@ -185,7 +185,7 @@ const HoughBackground = () => {
 
   const paths = useMemo(() => {
     const curves = generateScene(seed, time, {
-      clusters: 2, linesPerCluster: 12, spreadAmt: 0.08, strokeVar: 0.6,
+      clusters: 3, linesPerCluster: 8, spreadAmt: 0.15, strokeVar: 0.7,
     });
     return curves.flatMap(c => curveToPath(c, 1.4));
   }, [seed, time]);
