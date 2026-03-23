@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
-const Index = () => {
-  const [dark, setDark] = useState(false);
 
-  useEffect(() => {
-    const hour = new Date().getHours();
-    if (hour >= 22 || hour < 6) setDark(true);
-  }, []);
+const Index = () => {
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
