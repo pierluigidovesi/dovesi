@@ -3,10 +3,15 @@ import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
 
 const Index = () => {
-  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
+  const [dark, setDark] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return document.documentElement.classList.contains("dark");
+  });
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
   return (
@@ -47,7 +52,7 @@ const Index = () => {
           <div className="mt-6 relative">
             <img
               src="/photo.jpg"
-              alt="Pier Luigi Dovesi"
+              alt="Pier Luigi Dovesi speaking at a conference"
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
             <p className="text-foreground">
@@ -205,7 +210,7 @@ const Index = () => {
 /* ---- Helpers ---- */
 
 const A = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a href={href} target="_blank" rel="noopener" className="text-primary hover:underline underline-offset-2">
+  <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-2">
     {children}
   </a>
 );
@@ -254,7 +259,7 @@ const TimelineItem = ({
     <div className="absolute left-0 top-[10px] -translate-x-[5px] w-[10px] h-[10px] rounded-full border-2 border-primary bg-background" />
     <p className="text-sm text-muted-foreground">{years}</p>
     <p className={featured ? "text-primary font-semibold" : "font-semibold text-foreground"}>
-      {orgHref ? <a href={orgHref} target="_blank" rel="noopener" className={featured ? "text-primary hover:underline underline-offset-2" : "text-foreground hover:underline underline-offset-2"}>{org}</a> : org}
+      {orgHref ? <a href={orgHref} target="_blank" rel="noopener noreferrer" className={featured ? "text-primary hover:underline underline-offset-2" : "text-foreground hover:underline underline-offset-2"}>{org}</a> : org}
       <span className="font-normal text-muted-foreground"> — {role}</span>
     </p>
     {subtitle && <p className="text-sm text-muted-foreground italic">{subtitle}</p>}
