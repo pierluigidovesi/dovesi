@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
+import { bio, links, talks, news, timeline, writing, quotes } from "@/data";
 
 const Index = () => {
   const [dark, setDark] = useState(() => {
@@ -56,7 +57,7 @@ const Index = () => {
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
             <p className="text-foreground">
-              Hi, I'm Pier Luigi Dovesi. I go by Pier.
+              Hi, I'm {bio.name}. I go by {bio.shortName}.
             </p>
           </div>
 
@@ -75,13 +76,13 @@ const Index = () => {
 
           <p className="mt-6 text-[16px]">
             Find me at{" "}
-            <A href="https://github.com/pierluigidovesi">GitHub</A>,{" "}
-            <A href="https://scholar.google.com/citations?user=t55rm6EAAAAJ&hl=en">Google Scholar</A>,{" "}
-            <A href="https://www.linkedin.com/in/pierluigidovesi/">LinkedIn</A>,{" "}
-            <A href="https://x.com/dovpie">X</A>,{" "}
-            <A href="https://huggingface.co/dovpie">Hugging Face</A>,{" "}
-            <A href="https://rocm.blogs.amd.com/authors/pier-luigi-dovesi.html">ROCm Blog</A>,{" "}
-            and <a href="mailto:pierluigidovesi@gmail.com" className="text-primary hover:underline underline-offset-2">email</a>.
+            {links.map((l, i) => (
+              <span key={l.label}>
+                <A href={l.href}>{l.label}</A>
+                {i < links.length - 1 ? ", " : ", "}
+              </span>
+            ))}
+            and <a href={`mailto:${bio.email}`} className="text-primary hover:underline underline-offset-2">email</a>.
           </p>
         </header>
 
@@ -90,43 +91,18 @@ const Index = () => {
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
           <div className="grid gap-3 sm:grid-cols-2">
-            <TalkTile title="AMD AI Research Club" detail="Peer-to-peer paper spotlight series · Host, 2025–present" href="https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/" linkLabel="info" tag="recurring" />
-            <TalkTile title="ICLR 2026 — AI4Peace" detail="Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
-            <TalkTile title="Warsaw AI Summit 2026" detail="Warsaw, Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
-            <TalkTile title="Compute to Impact" detail="Advancing Physical AI · Helsinki, Mar 2026" href="https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html" />
-            <TalkTile title="Nordic HPC Summit 2025" detail="Where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
-            <TalkTile title="Redeye AI Theme Event" detail="The Good AI Lab · Stockholm, Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
-            <TalkTile title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
-            <TalkTile title="Auto.AI Europe 2024" detail="Data Alchemy — Berlin, Sep 2024" href="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" />
-            <TalkTile title="Nordic Industry Days 2024" detail="Supercomputing for AI · Copenhagen, Sep 2024" href="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" />
-            <TalkTile title="GAIA Conference 2024" detail="Embodied AI Beyond Datasets · Gothenburg, Apr 2024" href="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" />
+            {talks.map((t) => (
+              <TalkTile key={t.title} title={t.title} detail={t.detail} href={t.href} linkLabel={t.linkLabel} tag={t.tag} />
+            ))}
           </div>
         </Section>
 
         {/* News */}
         <Section id="news" title="News">
           <div className="space-y-0">
-            <NewsItem date="Apr 2026" text="Invited speaker at" link="https://aiforpeaceworkshop.github.io/" linkText="ICLR 2026 AI4Peace Workshop" suffix=" (Rio de Janeiro) — autonomous systems and international humanitarian law" />
-            <NewsItem date="Apr 2026" text="Hosted" link="https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration" linkText="AMD AI Research Club #2" suffix={' — "Depth Foundation Models: Are We There Yet?"'} />
-            <NewsItem date="Mar 2026" text="Speaker at" link="https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html" linkText="Compute to Impact" suffix={' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"'} />
-            <NewsItem date="Mar 2026" text="Launched" link="https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration" linkText="AMD AI Research Club" suffix={' — "Retrieval Augmentation in Multimodal Large Language Models"'} />
-            <NewsItem date="Mar 2026" text="Keynote at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
-            <NewsItem date="Feb 2026" text="Submitted" link="https://eccv.ecva.net/" linkText="CV4GOOD Workshop at ECCV 2026" suffix=" — Computer Vision for Humanitarian Action, with MSF" />
-            <NewsItem date="Jan 2026" text="Published" link="https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars" linkText='"From Self-Driving Cars to Self-Driving Wars"' suffix=" — autonomy, AI weapons, and the illusion of control" />
-            <NewsItem date="Dec 2025" text="" link="https://thegoodailab.org/blog/msf-from-principles-to-practice" linkText='"From Principles to Practice"' suffix=" — our work with Doctors Without Borders" />
-            <NewsItem date="Oct 2025" text="Keynote at" link="https://nordichpcsummit.enccs.se/" linkText="Nordic HPC Summit 2025" suffix={' (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility"'} />
-            <NewsItem date="Oct 2025" text="" link="https://thegoodailab.org/blog/msf-partnership" linkText="GAL and MSF announce partnership" suffix=" to bring responsible AI to humanitarian work" />
-            <NewsItem date="Jul 2025" text="" link="https://thegoodailab.org/blog/vocalign" linkText="VocAlign" suffix=" accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation" />
-            <NewsItem date="Mar 2025" text="" link="https://arxiv.org/abs/2307.15063" linkText="SemLA" suffix=" accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion" />
-            <NewsItem date="Mar 2025" text="Presented GAL at" link="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkText="Redeye AI Theme Event 2025" suffix=" (Stockholm)" />
-            <NewsItem date="Jan 2025" text="Featured on" link="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkText="AIAW Podcast E143" suffix=" — Revolutionizing AI and Autonomous Systems" />
-            <NewsItem date="Sep 2024" text="Speaker at" link="https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/" linkText="Nordic Industry Days 2024" suffix=" (Copenhagen) — Supercomputing for AI, EuroHPC" />
-            <NewsItem date="Sep 2024" text="Speaker at" link="https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2" linkText="Auto.AI Europe" suffix={' (Berlin) — "Data Alchemy: Adapting and Creating with Limited Data"'} />
-            <NewsItem date="Apr 2024" text="Speaker at" link="https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024" linkText="GAIA Conference 2024" suffix={' (Gothenburg) — "Adapting Like Humans: Embodied AI Beyond Datasets and Domains"'} />
-            <NewsItem date="Oct 2023" text="" link="https://arxiv.org/abs/2307.15063" linkText="HAMLET" suffix=" accepted at ICCV 2023 — real-time online domain adaptation" />
-            <NewsItem date="Oct 2022" text="" link="https://arxiv.org/abs/2207.10667" linkText="OnDA" suffix=" accepted at ECCV 2022 — online domain adaptation" />
-            <NewsItem date="May 2020" text="" link="https://arxiv.org/abs/1910.00541" linkText="Real-Time Semantic Stereo Matching" suffix=" accepted at ICRA 2020" />
-            <NewsItem date="Aug 2019" text="" link="https://arxiv.org/abs/1908.03127" linkText="Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry" suffix=" accepted at 3DV 2019" />
+            {news.map((n, i) => (
+              <NewsItem key={i} date={n.date} text={n.text} link={n.link} linkText={n.linkText} suffix={n.suffix} />
+            ))}
           </div>
         </Section>
 
@@ -136,20 +112,11 @@ const Index = () => {
             {/* Vertical line */}
             <div className="absolute left-0 top-2 bottom-2 w-px border-l-2 border-dashed border-border" />
             <div className="space-y-8">
-              <TimelineItem years="2025 – Present" org="The Good AI Lab" orgHref="https://thegoodailab.org" role="Co-Founder & Chair" featured>
-                Independent AI lab working on foundational AI research and innovation projects for social good.
-              </TimelineItem>
-              <TimelineItem years="2024 – Present" org="AMD Silo AI" role="Robotics and Autonomous Systems Lead" subtitle="part of AMD">
-                Open ecosystem for Physical AI. World models, VLMs, and VLAs. Host of the AMD AI Research Club.
-              </TimelineItem>
-              <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist">
-                LiDAR perception, LLMs, diffusion models.
-              </TimelineItem>
-              <TimelineItem years="2019 – 2023" org="Univrses" role="Deep Learning Engineer" subtitle="consulting at Zenseact">
-                Real-time perception and safety for autonomous driving. Lots of HPOs. Domain Adaptation research.
-              </TimelineItem>
-              <TimelineItem years="2017 – 2019" org="KTH Royal Institute of Technology" role="MSc Systems, Control & Robotics" />
-              <TimelineItem years="2013 – 2017" org="University of Bologna & Tongji University" role="BSc Automation Engineering" />
+              {timeline.map((t) => (
+                <TimelineItem key={t.org} years={t.years} org={t.org} orgHref={t.orgHref} role={t.role} subtitle={t.subtitle} featured={t.featured}>
+                  {t.description}
+                </TimelineItem>
+              ))}
             </div>
           </div>
         </Section>
@@ -157,18 +124,12 @@ const Index = () => {
         {/* Writing */}
         <Section id="writing" title="Writing">
           <ul className="space-y-2">
-            <li>
-              <A href="https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars">From Self-Driving Cars to Self-Driving Wars</A>
-              {" — autonomy, AI weapons, and the illusion of control (Jan 2026)"}
-            </li>
-            <li>
-              <A href="https://thegoodailab.org/blog/msf-from-principles-to-practice">From Principles to Practice</A>
-              {" — our work with Doctors Without Borders (Dec 2025)"}
-            </li>
-            <li>
-              <A href="https://thegoodailab.org/blog/msf-partnership">GAL and MSF partner to bring responsible AI to humanitarian work</A>
-              {" (Oct 2025)"}
-            </li>
+            {writing.map((w) => (
+              <li key={w.href}>
+                <A href={w.href}>{w.title}</A>
+                {w.description ? ` — ${w.description} (${w.date})` : ` (${w.date})`}
+              </li>
+            ))}
           </ul>
         </Section>
 
@@ -177,20 +138,9 @@ const Index = () => {
           <section id="soulmd" className="mt-20 pt-10 border-t border-border">
             <h2 className="text-sm font-mono text-muted-foreground mb-10" style={{ fontFamily: "'JetBrains Mono', monospace" }}>soul.md</h2>
             <div className="space-y-10">
-              <Quote
-                text="I think it's important now to tie care to Quality by pointing out that care and Quality are internal and external aspects of the same thing. A person who sees Quality and feels it as he works is a person who cares. A person who cares about what he sees and does is a person who's bound to have some characteristics of Quality."
-                author="Robert M. Pirsig"
-              />
-              <Quote text="Pessimismo della realtà, ottimismo della speranza." author="Antonio Gramsci" />
-              <Quote
-                text="L'inferno dei viventi non è qualcosa che sarà; se ce n'è uno, è quello che è già qui, l'inferno che abitiamo tutti i giorni … Due modi ci sono per non soffrirne. Il primo riesce facile a molti: accettare l'inferno e diventarne parte fino al punto di non vederlo più. Il secondo è rischioso ed esige attenzione e apprendimento continui: cercare e saper riconoscere chi e cosa, in mezzo all'inferno, non è inferno, e farlo durare, e dargli spazio."
-                author="Italo Calvino"
-              />
-              <Quote
-                text="Innovation without a guiding purpose is hollow. Real progress means more than building better tools; it means building them for everyone, especially those too often overlooked or forgotten. [...] We see AI as a force that reveals new paths, includes more voices, and helps reshape society for the better. If we are to contribute with a verse to this powerful play, let it be driven by curiosity and guided by responsibility."
-                author="The Good AI Lab Manifesto"
-                authorHref="https://thegoodailab.org/manifesto"
-              />
+              {quotes.map((q, i) => (
+                <Quote key={i} text={q.text} author={q.author} authorHref={q.authorHref} />
+              ))}
             </div>
           </section>
         )}
@@ -198,7 +148,7 @@ const Index = () => {
 
       <footer className="max-w-[680px] mx-auto px-6 py-10 border-t border-border flex items-center justify-between relative" style={{ zIndex: 2 }}>
         <p className="text-sm text-muted-foreground">
-          Pier Luigi Dovesi — Stockholm, Sweden
+          {bio.name} — {bio.location}
         </p>
         <button
           onClick={() => setDark((d) => !d)}
