@@ -24,6 +24,7 @@ His research spans domain adaptation, self-supervised learning, and real-time pe
 
 ## Selected Talks
 
+- AMD AI Research Club — Host, recurring peer-to-peer paper spotlight series (2025–present)
 - ICLR 2026 AI4Peace Workshop — Rio de Janeiro, Apr 2026
 - Warsaw AI Summit 2026 — keynote, Mar 2026
 - Nordic HPC Summit 2025 — keynote, Stockholm, Oct 2025

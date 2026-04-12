@@ -90,8 +90,10 @@ const Index = () => {
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
           <div className="grid gap-3 sm:grid-cols-2">
+            <TalkTile title="AMD AI Research Club" detail="Peer-to-peer paper spotlight series · Host, 2025–present" href="https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/" linkLabel="info" tag="recurring" />
             <TalkTile title="ICLR 2026 — AI4Peace" detail="Rio de Janeiro, Apr 2026" href="https://aiforpeaceworkshop.github.io/" tag="upcoming" />
             <TalkTile title="Warsaw AI Summit 2026" detail="Warsaw, Mar 2026" href="https://warsawaisummit.com/" tag="keynote" />
+            <TalkTile title="Compute to Impact" detail="Advancing Physical AI · Helsinki, Mar 2026" href="https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html" />
             <TalkTile title="Nordic HPC Summit 2025" detail="Where curiosity meets responsibility · Stockholm, Oct 2025" href="https://nordichpcsummit.enccs.se/" tag="keynote" />
             <TalkTile title="Redeye AI Theme Event" detail="The Good AI Lab · Stockholm, Mar 2025" href="https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13" linkLabel="watch" />
             <TalkTile title="AIAW Podcast E143" detail="Revolutionizing AI and Autonomous Systems · Jan 2025" href="https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/" linkLabel="listen" />
@@ -105,6 +107,9 @@ const Index = () => {
         <Section id="news" title="News">
           <div className="space-y-0">
             <NewsItem date="Apr 2026" text="Invited speaker at" link="https://aiforpeaceworkshop.github.io/" linkText="ICLR 2026 AI4Peace Workshop" suffix=" (Rio de Janeiro) — autonomous systems and international humanitarian law" />
+            <NewsItem date="Apr 2026" text="Hosted" link="https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration" linkText="AMD AI Research Club #2" suffix={' — "Depth Foundation Models: Are We There Yet?"'} />
+            <NewsItem date="Mar 2026" text="Speaker at" link="https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html" linkText="Compute to Impact" suffix={' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"'} />
+            <NewsItem date="Mar 2026" text="Launched" link="https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration" linkText="AMD AI Research Club" suffix={' — "Retrieval Augmentation in Multimodal Large Language Models"'} />
             <NewsItem date="Mar 2026" text="Keynote at" link="https://warsawaisummit.com/" linkText="Warsaw AI Summit 2026" />
             <NewsItem date="Feb 2026" text="Submitted" link="https://eccv.ecva.net/" linkText="CV4GOOD Workshop at ECCV 2026" suffix=" — Computer Vision for Humanitarian Action, with MSF" />
             <NewsItem date="Jan 2026" text="Published" link="https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars" linkText='"From Self-Driving Cars to Self-Driving Wars"' suffix=" — autonomy, AI weapons, and the illusion of control" />
@@ -135,7 +140,7 @@ const Index = () => {
                 Independent AI lab working on foundational AI research and innovation projects for social good.
               </TimelineItem>
               <TimelineItem years="2024 – Present" org="AMD Silo AI" role="Robotics and Autonomous Systems Lead" subtitle="part of AMD">
-                Open ecosystem for Physical AI. World models, VLMs, and VLAs.
+                Open ecosystem for Physical AI. World models, VLMs, and VLAs. Host of the AMD AI Research Club.
               </TimelineItem>
               <TimelineItem years="2023 – 2024" org="Silo AI" role="Senior AI Scientist">
                 LiDAR perception, LLMs, diffusion models.
