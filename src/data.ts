@@ -24,7 +24,7 @@ export const bio = {
   name: "Pier Luigi Dovesi",
   shortName: "Pier",
   location: "Stockholm, Sweden",
-  title: "Pier Luigi Dovesi - Robotics & AI",
+  title: "Pier Luigi Dovesi | Physical AI and AI for Social Good",
   tagline: "AI researcher, robotics engineer, and non-profit founder",
   about: [
     `Co-Founder and Chair of The Good AI Lab, an independent AI lab working on foundational AI research and innovation projects for social good, partnering with Doctors Without Borders (MSF), FMSI, and several universities across Europe.`,
