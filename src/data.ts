@@ -216,3 +216,77 @@ export function generateLlmsTxt(): string {
 
   return lines.join("\n");
 }
+
+// ── Pre-rendered HTML for SEO ──
+// Injected into <div id="root"> at build time so crawlers that don't
+// execute JS still see real content. React's createRoot replaces it.
+function esc(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+export function generatePrerenderedHtml(): string {
+  const h: string[] = [];
+  const ln = (s = "") => h.push(s);
+
+  ln(`<div style="max-width:680px;margin:0 auto;padding:2rem 1.5rem;font-family:'Lora',Georgia,serif;line-height:1.7">`);
+
+  // Nav
+  ln(`<nav style="margin-bottom:2rem">`);
+  ln(`<a href="#about">About</a> · <a href="#talks">Talks</a> · <a href="#news">News</a> · <a href="#timeline">Timeline</a> · <a href="#writing">Writing</a>`);
+  ln(`</nav>`);
+
+  // About
+  ln(`<header id="about">`);
+  ln(`<h1>${esc(bio.name)}</h1>`);
+  ln(`<p>${esc(bio.tagline)} based in ${esc(bio.location)}.</p>`);
+  bio.about.forEach((p) => ln(`<p>${esc(p)}</p>`));
+  ln(`<p>Find me at `);
+  links.forEach((l, i) => {
+    ln(`<a href="${esc(l.href)}">${esc(l.label)}</a>${i < links.length - 1 ? ", " : ""}`);
+  });
+  ln(`, and <a href="mailto:${esc(bio.email)}">email</a>.</p>`);
+  ln(`</header>`);
+
+  // Talks
+  ln(`<section id="talks"><h2>Talks &amp; Podcasts</h2>`);
+  talks.forEach((t) => {
+    const tag = t.tag ? ` <em>(${esc(t.tag)})</em>` : "";
+    ln(`<p><a href="${esc(t.href)}">${esc(t.title)}</a> — ${esc(t.detail)}${tag}</p>`);
+  });
+  ln(`</section>`);
+
+  // News
+  ln(`<section id="news"><h2>News</h2>`);
+  news.forEach((n) => {
+    ln(`<p><strong>${esc(n.date)}</strong> ${esc(n.text)} <a href="${esc(n.link)}">${esc(n.linkText)}</a>${n.suffix ? esc(n.suffix) : ""}</p>`);
+  });
+  ln(`</section>`);
+
+  // Timeline
+  ln(`<section id="timeline"><h2>Timeline</h2>`);
+  timeline.forEach((t) => {
+    const sub = t.subtitle ? ` (${esc(t.subtitle)})` : "";
+    const org = t.orgHref ? `<a href="${esc(t.orgHref)}">${esc(t.org)}</a>` : esc(t.org);
+    ln(`<p>${esc(t.years)} — ${org}${sub} — ${esc(t.role)}${t.description ? `. ${esc(t.description)}` : ""}</p>`);
+  });
+  ln(`</section>`);
+
+  // Writing
+  ln(`<section id="writing"><h2>Writing</h2>`);
+  writing.forEach((w) => {
+    const desc = w.description ? ` — ${esc(w.description)}` : "";
+    ln(`<p><a href="${esc(w.href)}">${esc(w.title)}</a>${desc} (${esc(w.date)})</p>`);
+  });
+  ln(`</section>`);
+
+  // Publications
+  ln(`<section><h2>Selected Publications</h2>`);
+  publications.forEach((p) => ln(`<p>${esc(p)}</p>`));
+  ln(`</section>`);
+
+  // Footer
+  ln(`<footer><p>${esc(bio.name)} — ${esc(bio.location)}</p></footer>`);
+  ln(`</div>`);
+
+  return h.join("\n");
+}

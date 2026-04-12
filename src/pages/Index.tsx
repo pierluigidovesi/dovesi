@@ -54,6 +54,9 @@ const Index = () => {
             <img
               src="/photo.jpg"
               alt="Pier Luigi Dovesi speaking at a conference"
+              width={1578}
+              height={1579}
+              fetchPriority="high"
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
             <p className="text-foreground">
