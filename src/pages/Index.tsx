@@ -215,7 +215,7 @@ const Index = () => {
 /* ---- Helpers ---- */
 
 const A = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-2">
+  <a href={href} target="_blank" rel="noopener" className="text-primary hover:underline underline-offset-2">
     {children}
   </a>
 );
@@ -264,7 +264,7 @@ const TimelineItem = ({
     <div className="absolute left-0 top-[10px] -translate-x-[5px] w-[10px] h-[10px] rounded-full border-2 border-primary bg-background" />
     <p className="text-sm text-muted-foreground">{years}</p>
     <p className={featured ? "text-primary font-semibold" : "font-semibold text-foreground"}>
-      {orgHref ? <a href={orgHref} target="_blank" rel="noopener noreferrer" className={featured ? "text-primary hover:underline underline-offset-2" : "text-foreground hover:underline underline-offset-2"}>{org}</a> : org}
+      {orgHref ? <a href={orgHref} target="_blank" rel="noopener" className={featured ? "text-primary hover:underline underline-offset-2" : "text-foreground hover:underline underline-offset-2"}>{org}</a> : org}
       <span className="font-normal text-muted-foreground"> — {role}</span>
     </p>
     {subtitle && <p className="text-sm text-muted-foreground italic">{subtitle}</p>}
