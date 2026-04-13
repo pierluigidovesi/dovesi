@@ -56,6 +56,7 @@ export interface Talk {
 
 const talksUnsorted: Talk[] = [
   { title: "AMD AI Research Club", detail: "Peer-to-peer paper spotlight series · Host, 2025–present", href: "https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/", linkLabel: "info", tag: "recurring", date: "Dec 9999" },
+  { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 2026", href: "https://eccv.ecva.net/", tag: "host", date: "Sep 2026" },
   { title: "ICLR 2026 — AI4Peace", detail: "Rio de Janeiro, Apr 2026", href: "https://aiforpeaceworkshop.github.io/", tag: "upcoming", date: "Apr 2026" },
   { title: "Warsaw AI Summit 2026", detail: "Warsaw, Mar 2026", href: "https://warsawaisummit.com/", tag: "keynote", date: "Mar 2026" },
   { title: "Compute to Impact", detail: "Advancing Physical AI · Helsinki, Mar 2026", href: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", date: "Mar 2026" },
@@ -79,12 +80,12 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
+  { date: "Apr 2026", text: "", link: "https://eccv.ecva.net/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
   { date: "Apr 2026", text: "Invited speaker at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 AI4Peace Workshop", suffix: " (Rio de Janeiro) — autonomous systems and international humanitarian law" },
   { date: "Apr 2026", text: "Hosted", link: "https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration", linkText: "AMD AI Research Club #2", suffix: ' — "Depth Foundation Models: Are We There Yet?"' },
   { date: "Mar 2026", text: "Speaker at", link: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", linkText: "Compute to Impact", suffix: ' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"' },
   { date: "Mar 2026", text: "Launched", link: "https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration", linkText: "AMD AI Research Club", suffix: ' — "Retrieval Augmentation in Multimodal Large Language Models"' },
   { date: "Mar 2026", text: "Keynote at", link: "https://warsawaisummit.com/", linkText: "Warsaw AI Summit 2026" },
-  { date: "Feb 2026", text: "Submitted", link: "https://eccv.ecva.net/", linkText: "CV4GOOD Workshop at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action, with MSF" },
   { date: "Jan 2026", text: "Published", link: "https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars", linkText: '"From Self-Driving Cars to Self-Driving Wars"', suffix: " — autonomy, AI weapons, and the illusion of control" },
   { date: "Dec 2025", text: "", link: "https://thegoodailab.org/blog/msf-from-principles-to-practice", linkText: '"From Principles to Practice"', suffix: " — our work with Doctors Without Borders" },
   { date: "Oct 2025", text: "Keynote at", link: "https://nordichpcsummit.enccs.se/", linkText: "Nordic HPC Summit 2025", suffix: ' (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility"' },
