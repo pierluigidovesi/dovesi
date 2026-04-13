@@ -73,7 +73,7 @@ const Index = () => {
               By day, I lead the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.
             </p>
             <p>
-              My research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, and ICRA.
+              My research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, and ICRA.
             </p>
           </div>
 

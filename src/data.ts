@@ -29,7 +29,7 @@ export const bio = {
   about: [
     `Co-Founder and Chair of The Good AI Lab, an independent AI lab working on foundational AI research and innovation projects for social good, partnering with Doctors Without Borders (MSF), FMSI, and several universities across Europe.`,
     `Leads the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.`,
-    `Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, and ICRA.`,
+    `Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, and ICRA.`,
   ],
   email: "pierluigidovesi@gmail.com",
 };
