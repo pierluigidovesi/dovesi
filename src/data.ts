@@ -56,7 +56,7 @@ export interface Talk {
 
 const talksUnsorted: Talk[] = [
   { title: "AMD AI Research Club", detail: "Peer-to-peer paper spotlight series · Host, 2025–present", href: "https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/", linkLabel: "info", tag: "recurring", date: "Dec 9999" },
-  { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 2026", href: "https://eccv.ecva.net/", tag: "host", date: "Sep 2026" },
+  { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 2026", href: "https://cv4good.thegoodailab.org/", tag: "host", date: "Sep 2026" },
   { title: "ICLR 2026 — AI4Peace", detail: "Rio de Janeiro, Apr 2026", href: "https://aiforpeaceworkshop.github.io/", tag: "upcoming", date: "Apr 2026" },
   { title: "Warsaw AI Summit 2026", detail: "Warsaw, Mar 2026", href: "https://warsawaisummit.com/", tag: "keynote", date: "Mar 2026" },
   { title: "Compute to Impact", detail: "Advancing Physical AI · Helsinki, Mar 2026", href: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", date: "Mar 2026" },
@@ -81,7 +81,7 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
-  { date: "Apr 2026", text: "", link: "https://eccv.ecva.net/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
+  { date: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
   { date: "Apr 2026", text: "Invited speaker at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 AI4Peace Workshop", suffix: " (Rio de Janeiro) — autonomous systems and international humanitarian law" },
   { date: "Apr 2026", text: "Hosted", link: "https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration", linkText: "AMD AI Research Club #2", suffix: ' — "Depth Foundation Models: Are We There Yet?"' },
   { date: "Mar 2026", text: "Speaker at", link: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", linkText: "Compute to Impact", suffix: ' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"' },
