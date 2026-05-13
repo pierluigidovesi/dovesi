@@ -84,7 +84,7 @@ function buildClusterParams(seed: number): ClusterParams[] {
 
     const lines: ClusterParams["lines"] = [];
     for (let li = 0; li < linesPerCluster; li++) {
-      const relPos = linesPerCluster === 1 ? 0 : (li / (linesPerCluster - 1)) - 0.5;
+      const relPos = (linesPerCluster as number) === 1 ? 0 : (li / (linesPerCluster - 1)) - 0.5;
       const angle = rr(rng, 0, Math.PI * 2);
       const dist = rr(rng, 0, spread);
       const ptX = srcX + Math.cos(angle) * dist;
