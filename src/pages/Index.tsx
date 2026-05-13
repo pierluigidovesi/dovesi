@@ -58,7 +58,8 @@ const Index = () => {
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
         {/* About */}
         <header id="about" className="mb-16 scroll-mt-12">
-          <h1 className="text-2xl font-semibold text-foreground mb-5">Pier Luigi Dovesi — Physical AI &amp; AI for Social Good</h1>
+          <h1 className="text-2xl font-semibold text-foreground">Pier Luigi Dovesi</h1>
+          <p className="text-muted-foreground mt-1 mb-5">Physical AI &amp; AI for Social Good</p>
 
           <div className="mt-6 relative">
             <img
@@ -69,9 +70,9 @@ const Index = () => {
               fetchPriority="high"
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
-            <p className="text-foreground">
-              Hi, I'm {bio.name}. I go by {bio.shortName}.
-            </p>
+          <p className="text-foreground">
+            Hi, I'm Pier.
+          </p>
           </div>
 
           <div className="mt-4 space-y-4">
