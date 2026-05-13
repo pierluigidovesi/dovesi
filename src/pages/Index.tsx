@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import HoughBackground from "@/components/HoughBackground";
 import { bio, links, talks, news, timeline, writing, quotes } from "@/data";
 
@@ -17,6 +18,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
+      <Helmet>
+        <title>Pier Luigi Dovesi | Physical AI and AI for Social Good</title>
+        <meta name="description" content="Pier Luigi Dovesi — Robotics Lead at AMD Silo AI, Co-Founder & Chair of The Good AI Lab. Physical AI, embodied systems, world models, AI for social good." />
+        <link rel="canonical" href="https://dovesi.dev/" />
+        <meta property="og:title" content="Pier Luigi Dovesi | Physical AI and AI for Social Good" />
+        <meta property="og:description" content="Robotics Lead at AMD Silo AI, Co-Founder & Chair of The Good AI Lab. Physical AI, embodied systems, world models, AI for social good." />
+        <meta property="og:url" content="https://dovesi.dev/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <HoughBackground />
 
       {/* Smooth vignette: fades background color over Hough lines behind content */}
@@ -48,7 +58,7 @@ const Index = () => {
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
         {/* About */}
         <header id="about" className="mb-16 scroll-mt-12">
-          <h1 className="text-2xl font-semibold text-foreground mb-5">About</h1>
+          <h1 className="text-2xl font-semibold text-foreground mb-5">Pier Luigi Dovesi — Physical AI &amp; AI for Social Good</h1>
 
           <div className="mt-6 relative">
             <img

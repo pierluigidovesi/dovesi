@@ -169,6 +169,14 @@ export function generateLlmsTxt(): string {
   ln();
   ln(`> Personal website of ${bio.name} — ${bio.tagline} based in ${bio.location}.`);
   ln();
+  ln("## Pages");
+  ln();
+  ln("- [About](/#about): who I am and what I work on.");
+  ln("- [Talks & Podcasts](/#talks): keynotes, conference talks, and podcast appearances.");
+  ln("- [News](/#news): recent updates, publications, and announcements.");
+  ln("- [Timeline](/#timeline): roles, education, and career history.");
+  ln("- [Writing](/#writing): essays and blog posts.");
+  ln();
   ln("## About");
   ln();
   bio.about.forEach((p) => { ln(p); ln(); });
