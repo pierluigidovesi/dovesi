@@ -69,9 +69,9 @@ const Index = () => {
               fetchPriority="high"
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
-            <p className="text-foreground">
-              Hi, I'm {bio.name}. I go by {bio.shortName}.
-            </p>
+          <p className="text-foreground">
+            Hi, I'm Pier.
+          </p>
           </div>
 
           <div className="mt-4 space-y-4">
