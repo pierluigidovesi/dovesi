@@ -71,15 +71,9 @@ const Index = () => {
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
           <p className="text-foreground">
-            Hi, I'm Pier.
+            Hi, I'm Pier — I'm Co-Founder and Chair of{" "}
+            <A href="https://thegoodailab.org">The Good AI Lab</A>, an independent AI lab working on foundational AI research and innovation projects for social good. Today we work with Doctors Without Borders (MSF), FMSI, and several universities around Europe.
           </p>
-          </div>
-
-          <div className="mt-4 space-y-4">
-            <p>
-              I'm Co-Founder and Chair of{" "}
-              <A href="https://thegoodailab.org">The Good AI Lab</A>, an independent AI lab working on foundational AI research and innovation projects for social good. Today we work with Doctors Without Borders (MSF), FMSI, and several universities around Europe.
-            </p>
             <p>
               By day, I lead the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.
             </p>
