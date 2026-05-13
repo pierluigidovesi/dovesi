@@ -77,6 +77,10 @@ const Index = () => {
             </p>
           </div>
 
+          <div className="mt-6 flex justify-center">
+            <Cv4GoodChip />
+          </div>
+
           <p className="mt-6 text-[16px]">
             Find me at{" "}
             {links.map((l, i) => (
@@ -166,6 +170,51 @@ const Index = () => {
 };
 
 /* ---- Helpers ---- */
+
+const Cv4GoodChip = () => (
+  <a
+    href="https://cv4good.thegoodailab.org/"
+    target="_blank"
+    rel="noopener"
+    aria-label="Visit the CV4GOOD ECCV 2026 workshop website"
+    className="cv4good-hover-card group relative mb-3 inline-block overflow-hidden rounded-[1.1rem] border-2 border-[#1A1614] bg-[#FFF7E8] px-5 py-4 text-left shadow-[4px_4px_0_#1A1614] dark:border-[#E8DDD0]/40 dark:bg-[#1C1916] dark:shadow-[4px_4px_0_rgba(12,10,9,0.9)]"
+  >
+    {/* Dot pattern */}
+    <span
+      className="pointer-events-none absolute inset-0 opacity-20 dark:opacity-[0.14]"
+      style={{ backgroundImage: "radial-gradient(circle,rgba(26,22,20,0.16) 1.4px,transparent 1.6px)", backgroundSize: "18px 18px" }}
+      aria-hidden
+    />
+    <span className="relative block">
+      {/* Badges */}
+      <span className="absolute right-0 top-0 flex flex-col items-end gap-1">
+        <span className="whitespace-nowrap rounded-full bg-[#C62828] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#FAF1E3] dark:bg-[#B71C1C]">
+          ECCV 2026
+        </span>
+        <span className="whitespace-nowrap rounded-full bg-[#1E5C1A] px-3 py-1 text-[0.62rem] font-semibold tracking-[0.16em] text-[#FAF1E3] dark:bg-[#2E7D32]">
+          GAL x MSF
+        </span>
+      </span>
+      {/* Title */}
+      <span className="block pr-24 text-[2rem] uppercase leading-[0.88] tracking-[-0.04em]" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
+        <span className="text-[#C62828] dark:text-[#FF8A80]">CV4</span>
+        <span className="text-[#1E5C1A] dark:text-[#A5D6A7]">GOOD</span>
+      </span>
+      {/* Subtitle */}
+      <span className="mt-1 block pr-12 text-[0.9rem] uppercase leading-[0.9] tracking-[-0.04em] text-[#1A1614] dark:text-stone-200" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
+        <span className="block">Computer Vision</span>
+        <span className="block">
+          for{" "}
+          <span className="relative inline-block">
+            <span className="relative z-10">Humanitarian</span>
+            <span className="absolute bottom-[0.08em] left-0 right-0 h-[0.18em] bg-[#D08C3B] dark:bg-[#E8A94F]" aria-hidden />
+          </span>
+        </span>
+        <span className="block">Action</span>
+      </span>
+    </span>
+  </a>
+);
 
 const A = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a href={href} target="_blank" rel="noopener" className="text-primary hover:underline underline-offset-2">

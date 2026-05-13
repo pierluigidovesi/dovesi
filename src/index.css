@@ -1,5 +1,9 @@
 /* Fonts loaded via <link> in index.html for faster preload-scanner discovery */
 
+:root {
+  --font-display: 'Bowlby One', Impact, sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,6 +88,26 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+/* CV4GOOD chip hover animation */
+.cv4good-hover-card {
+  --card-hover-lift: -4px;
+  --card-hover-rotate: 1.6deg;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cv4good-hover-card:hover {
+    transform: translate3d(0, var(--card-hover-lift), 0) rotate(var(--card-hover-rotate));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv4good-hover-card { transition: none; }
+  .cv4good-hover-card:hover { transform: none; }
 }
 
 @layer base {
