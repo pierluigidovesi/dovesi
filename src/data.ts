@@ -120,8 +120,8 @@ export interface TimelineEntry {
 
 export const timeline: TimelineEntry[] = [
   { years: "2025 – Present", org: "The Good AI Lab", orgHref: "https://thegoodailab.org", role: "Co-Founder & Chair", featured: true, description: "Independent AI lab working on foundational AI research and innovation projects for social good." },
-  { years: "2024 – Present", org: "AMD Silo AI", role: "Robotics and Autonomous Systems Lead", subtitle: "part of AMD", description: "Open ecosystem for Physical AI. World models, VLMs, and VLAs. Host of the AMD AI Research Club." },
-  { years: "2023 – 2024", org: "Silo AI", role: "Senior AI Scientist", description: "LiDAR perception, LLMs, diffusion models." },
+  { years: "2024 – Present", org: "AMD Silo AI", role: "Robotics Lead", subtitle: "part of AMD", description: "Robotics team manager. Open ecosystem for Physical AI. World models, VLMs, and VLAs. Host of the AMD AI Research Club." },
+  { years: "2023 – 2024", org: "Silo AI", role: "Senior AI Scientist & Expert Lead", description: "LiDAR perception, LLMs, diffusion models." },
   { years: "2019 – 2023", org: "Univrses", role: "Deep Learning Engineer", subtitle: "consulting at Zenseact", description: "Real-time perception and safety for autonomous driving. Lots of HPOs. Domain Adaptation research." },
   { years: "2017 – 2019", org: "KTH Royal Institute of Technology", role: "MSc Systems, Control & Robotics" },
   { years: "2013 – 2017", org: "University of Bologna & Tongji University", role: "BSc Automation Engineering" },
