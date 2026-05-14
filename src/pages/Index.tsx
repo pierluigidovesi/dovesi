@@ -71,7 +71,7 @@ const Index = () => {
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
           <p className="text-foreground">
-            Hi, I'm Pier — I'm Co-Founder and Chair of{" "}
+            Hi, I'm Pier — I lead{" "}
             <A href="https://thegoodailab.org">The Good AI Lab</A>, an independent AI lab working on foundational AI research and innovation projects for social good. Today we work with Doctors Without Borders (MSF), FMSI, and several universities around Europe.
           </p>
             <p>
