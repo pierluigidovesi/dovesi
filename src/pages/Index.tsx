@@ -75,7 +75,7 @@ const Index = () => {
             <A href="https://thegoodailab.org">The Good AI Lab</A>, an independent AI lab working on foundational AI research and innovation projects for social good. Today we work with Doctors Without Borders (MSF), FMSI, and several universities around Europe.
           </p>
             <p>
-              By day, I lead the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.
+              By day, I lead the Robotics and Autonomous Systems team at <A href="https://www.silo.ai">AMD Silo AI</A>, working on world action models, multimodal AI, and embodied intelligence.
             </p>
             <p>
               My research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.
