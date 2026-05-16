@@ -61,7 +61,7 @@ const talksUnsorted: Talk[] = [
   { title: "Warsaw AI Summit 2026", detail: "Warsaw, Mar 2026", href: "https://warsawaisummit.com/", tag: "keynote", date: "Mar 2026" },
   { title: "Compute to Impact", detail: "Advancing Physical AI · Helsinki, Mar 2026", href: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", date: "Mar 2026" },
   { title: "Nordic HPC Summit 2025", detail: "Where curiosity meets responsibility · Stockholm, Oct 2025", href: "https://nordichpcsummit.enccs.se/", tag: "keynote", date: "Oct 2025" },
-  { title: "GAIA Conference 2026", detail: "Where AI Finds Its Purpose — AI for humanitarian action w/ MSF · Gothenburg, Apr 2026", href: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkLabel: "watch", date: "Apr 2026" },
+  { title: "GAIA Conference 2026", detail: "Where AI Finds Its Purpose — AI for humanitarian action with MSF · Gothenburg, Apr 2026", href: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkLabel: "watch", date: "Apr 2026" },
   { title: "Redeye AI Theme Event", detail: "The Good AI Lab · Stockholm, Mar 2025", href: "https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13", linkLabel: "watch", date: "Mar 2025" },
   { title: "AIAW Podcast E143", detail: "Revolutionizing AI and Autonomous Systems · Jan 2025", href: "https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/", linkLabel: "listen", date: "Jan 2025" },
   { title: "Auto.AI Europe 2024", detail: "Data Alchemy — Berlin, Sep 2024", href: "https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2", date: "Sep 2024" },
@@ -83,7 +83,7 @@ export interface NewsEntry {
 const newsUnsorted: NewsEntry[] = [
   { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
   { date: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
-  { date: "Apr 2026", text: "Speaker at", link: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkText: "GAIA Conference 2026", suffix: ' (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action w/ MSF' },
+  { date: "Apr 2026", text: "Speaker at", link: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkText: "GAIA Conference 2026", suffix: ' (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF' },
   { date: "Apr 2026", text: "Invited speaker at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 AI4Peace Workshop", suffix: " (Rio de Janeiro) — autonomous systems and international humanitarian law" },
   { date: "Apr 2026", text: "Hosted", link: "https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration", linkText: "AMD AI Research Club #2", suffix: ' — "Depth Foundation Models: Are We There Yet?"' },
   { date: "Mar 2026", text: "Speaker at", link: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", linkText: "Compute to Impact", suffix: ' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"' },
