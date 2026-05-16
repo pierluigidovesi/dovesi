@@ -57,7 +57,7 @@ export interface Talk {
 const talksUnsorted: Talk[] = [
   { title: "AMD AI Research Club", detail: "Peer-to-peer paper spotlight series · Host, 2025–present", href: "https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/", linkLabel: "info", tag: "recurring", date: "Dec 9999" },
   { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 2026", href: "https://cv4good.thegoodailab.org/", tag: "host", date: "Sep 2026" },
-  { title: "ICLR 2026 — AI4Peace", detail: "Rio de Janeiro, Apr 2026", href: "https://aiforpeaceworkshop.github.io/", tag: "upcoming", date: "Apr 2026" },
+  { title: "ICLR 2026 — AI4Peace", detail: "Rio de Janeiro, Apr 2026", href: "https://aiforpeaceworkshop.github.io/", date: "Apr 2026" },
   { title: "Warsaw AI Summit 2026", detail: "Warsaw, Mar 2026", href: "https://warsawaisummit.com/", tag: "keynote", date: "Mar 2026" },
   { title: "Compute to Impact", detail: "Advancing Physical AI · Helsinki, Mar 2026", href: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", date: "Mar 2026" },
   { title: "Nordic HPC Summit 2025", detail: "Where curiosity meets responsibility · Stockholm, Oct 2025", href: "https://nordichpcsummit.enccs.se/", tag: "keynote", date: "Oct 2025" },
