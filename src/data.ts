@@ -82,6 +82,9 @@ export interface NewsEntry {
 
 const newsUnsorted: NewsEntry[] = [
   { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
+  { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html", linkText: '"Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models"', suffix: " on ROCm Blog" },
+  { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html", linkText: '"AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes"', suffix: " on ROCm Blog" },
+  { date: "Apr 2026", text: "Published", link: "https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html", linkText: '"Styled Text Image Generation with Eruku on AMD"', suffix: " on ROCm Blog" },
   { date: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
   { date: "Apr 2026", text: "Speaker at", link: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkText: "GAIA Conference 2026", suffix: ' (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF' },
   { date: "Apr 2026", text: "Invited speaker at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 AI4Peace Workshop", suffix: " (Rio de Janeiro) — autonomous systems and international humanitarian law" },
@@ -91,7 +94,9 @@ const newsUnsorted: NewsEntry[] = [
   { date: "Mar 2026", text: "Keynote at", link: "https://warsawaisummit.com/", linkText: "Warsaw AI Summit 2026" },
   { date: "Jan 2026", text: "Published", link: "https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars", linkText: '"From Self-Driving Cars to Self-Driving Wars"', suffix: " — autonomy, AI weapons, and the illusion of control" },
   { date: "Dec 2025", text: "", link: "https://thegoodailab.org/blog/msf-from-principles-to-practice", linkText: '"From Principles to Practice"', suffix: " — our work with Doctors Without Borders" },
+  { date: "Dec 2025", text: "Published", link: "https://rocm.blogs.amd.com/software-tools-optimization/point-2-gaussian/README.html", linkText: '"3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat"', suffix: " on ROCm Blog" },
   { date: "Oct 2025", text: "Keynote at", link: "https://nordichpcsummit.enccs.se/", linkText: "Nordic HPC Summit 2025", suffix: ' (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility"' },
+  { date: "Oct 2025", text: "Published", link: "https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html", linkText: '"Elevating 3D Scene Rendering with GSplat"', suffix: " on ROCm Blog" },
   { date: "Oct 2025", text: "", link: "https://thegoodailab.org/blog/msf-partnership", linkText: "GAL and MSF announce partnership", suffix: " to bring responsible AI to humanitarian work" },
   { date: "Jul 2025", text: "", link: "https://thegoodailab.org/blog/vocalign", linkText: "VocAlign", suffix: " accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation" },
   { date: "Mar 2025", text: "", link: "https://arxiv.org/abs/2307.15063", linkText: "SemLA", suffix: " accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion" },
