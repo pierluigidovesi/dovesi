@@ -58,8 +58,12 @@ const Index = () => {
       <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
         {/* About */}
         <header id="about" className="mb-16 scroll-mt-12">
-          <h1 className="text-2xl font-semibold text-foreground">Pier Luigi Dovesi</h1>
-          <p className="text-muted-foreground mt-1 mb-5">Physical AI &amp; AI for Social Good</p>
+          <h1 className="text-2xl font-semibold text-foreground">
+            Pier Luigi Dovesi
+            <span className="block text-base font-normal text-muted-foreground mt-1 mb-5">
+              Physical AI &amp; AI for Social Good
+            </span>
+          </h1>
 
           <div className="mt-6 relative">
             <img
