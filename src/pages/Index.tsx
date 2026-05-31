@@ -113,7 +113,7 @@ const Index = () => {
         <Section id="news" title="News">
           <div className="space-y-0">
             {news.map((n, i) => (
-              <NewsItem key={i} date={n.date} text={n.text} link={n.link} linkText={n.linkText} suffix={n.suffix} />
+              <NewsItem key={i} date={n.date} displayDate={n.displayDate} text={n.text} link={n.link} linkText={n.linkText} suffix={n.suffix} />
             ))}
           </div>
         </Section>
@@ -234,9 +234,9 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
   </section>
 );
 
-const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: string; link: string; linkText: string; suffix?: string }) => (
+const NewsItem = ({ date, displayDate, text, link, linkText, suffix }: { date: string; displayDate?: string; text: string; link: string; linkText: string; suffix?: string }) => (
   <div className="flex gap-4 py-2.5 border-b border-border/50 last:border-b-0">
-    <span className="text-sm text-muted-foreground whitespace-nowrap pt-0.5 w-[72px] shrink-0">{date}</span>
+    <span className="text-sm text-muted-foreground whitespace-nowrap pt-0.5 w-[72px] shrink-0">{displayDate ?? date}</span>
     <p className="leading-snug">
       {text && `${text} `}
       <A href={link}>{linkText}</A>

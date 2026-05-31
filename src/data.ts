@@ -73,7 +73,8 @@ export const talks = sortByDate(talksUnsorted);
 
 // ── News ──
 export interface NewsEntry {
-  date: string;
+  date: string;        // "Mon YYYY" used for sorting
+  displayDate?: string; // shown in the UI if different from date
   text: string;
   link: string;
   linkText: string;
@@ -86,7 +87,7 @@ const newsUnsorted: NewsEntry[] = [
   { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html", linkText: '"Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models"', suffix: " on ROCm Blog" },
   { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html", linkText: '"AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes"', suffix: " on ROCm Blog" },
   { date: "Apr 2026", text: "Published", link: "https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html", linkText: '"Styled Text Image Generation with Eruku on AMD"', suffix: " on ROCm Blog" },
-  { date: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
+  { date: "Jun 9999", displayDate: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 2026), with MSF" },
   { date: "Apr 2026", text: "Speaker at", link: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkText: "GAIA Conference 2026", suffix: ' (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF' },
   { date: "Apr 2026", text: "Speaker at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 AI4Peace Workshop", suffix: " (Rio de Janeiro) — autonomous systems and international humanitarian law" },
   { date: "Apr 2026", text: "Hosted", link: "https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration", linkText: "AMD AI Research Club #2", suffix: ' — "Depth Foundation Models: Are We There Yet?" with Luca Bartolomei (University of Bologna)' },
