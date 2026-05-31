@@ -82,6 +82,7 @@ export interface NewsEntry {
 
 const newsUnsorted: NewsEntry[] = [
   { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
+  { date: "May 2026", text: "Hosted", link: "https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ", linkText: "AMD AI Research Club #3", suffix: ' — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU Prague)' },
   { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html", linkText: '"Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models"', suffix: " on ROCm Blog" },
   { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html", linkText: '"AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes"', suffix: " on ROCm Blog" },
   { date: "Apr 2026", text: "Published", link: "https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html", linkText: '"Styled Text Image Generation with Eruku on AMD"', suffix: " on ROCm Blog" },
