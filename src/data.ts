@@ -58,6 +58,7 @@ const talksUnsorted: Talk[] = [
   { title: "AMD AI Research Club", detail: "Peer-to-peer paper spotlight series · Host, 2025–present", href: "https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/", linkLabel: "info", tag: "recurring", date: "Dec 9999" },
   { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026", href: "https://cv4good.thegoodailab.org/", tag: "host", date: "Jan 10000" },
   { title: "ICLR 2026 — AI4Peace", detail: "Rio de Janeiro, Apr 2026", href: "https://aiforpeaceworkshop.github.io/", date: "Apr 2026" },
+  { title: "SYSTEC R&I Day 2026", detail: "Faculty of Engineering, University of Porto · Jun 2026", href: "https://systec.fe.up.pt/systec-ri-day", tag: "keynote", date: "Jun 2026" },
   { title: "Warsaw AI Summit 2026", detail: "Warsaw, Mar 2026", href: "https://warsawaisummit.com/", tag: "keynote", date: "Mar 2026" },
   { title: "Compute to Impact", detail: "Advancing Physical AI · Helsinki, Mar 2026", href: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", date: "Mar 2026" },
   { title: "Nordic HPC Summit 2025", detail: "Where curiosity meets responsibility · Stockholm, Oct 2025", href: "https://nordichpcsummit.enccs.se/", tag: "keynote", date: "Oct 2025" },
@@ -83,6 +84,7 @@ export interface NewsEntry {
 const newsUnsorted: NewsEntry[] = [
   { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
   { date: "Jun 2026", text: "Hosting", link: "https://www.linkedin.com/events/7468403201202122752/", linkText: "AMD AI Research Club #4", suffix: ' — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington)' },
+  { date: "Jun 2026", text: "Keynote at", link: "https://systec.fe.up.pt/systec-ri-day", linkText: "SYSTEC Research & Innovation Day", suffix: " (Faculty of Engineering, University of Porto, Jun 18)" },
   { date: "May 2026", text: "Hosted", link: "https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ", linkText: "AMD AI Research Club #3", suffix: ' — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU in Prague)' },
   { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html", linkText: '"Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models"', suffix: " on ROCm Blog" },
   { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html", linkText: '"AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes"', suffix: " on ROCm Blog" },
