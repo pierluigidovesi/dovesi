@@ -127,4 +127,14 @@
     font-size: 18px;
     line-height: 1.7;
   }
+
+  ::selection {
+    background: hsl(36 52% 72%);
+    color: hsl(24 15% 12%);
+  }
+
+  .dark ::selection {
+    background: hsl(12 45% 38%);
+    color: hsl(35 20% 90%);
+  }
 }
