@@ -40,8 +40,6 @@
 
     --radius: 0.5rem;
 
-    --link: 36 52% 40%;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -80,8 +78,6 @@
     --border: 24 8% 18%;
     --input: 24 8% 18%;
     --ring: 4 65% 55%;
-
-    --link: 33 65% 62%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -130,5 +126,15 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
     line-height: 1.7;
+  }
+
+  ::selection {
+    background: hsl(36 52% 72%);
+    color: hsl(24 15% 12%);
+  }
+
+  .dark ::selection {
+    background: hsl(12 45% 38%);
+    color: hsl(35 20% 90%);
   }
 }
