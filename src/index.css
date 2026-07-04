@@ -129,13 +129,15 @@
   }
 
   ::selection {
-    background: hsl(36 78% 72%);
-    color: hsl(24 15% 12%);
+    background: hsl(38 75% 55% / 0.14);
+    color: hsl(32 70% 35%);
+    text-shadow: 0 0 7px hsl(40 90% 58% / 0.75);
   }
 
   .dark ::selection {
-    background: hsl(38 55% 32%);
-    color: hsl(38 45% 92%);
+    background: hsl(40 70% 55% / 0.14);
+    color: hsl(42 85% 72%);
+    text-shadow: 0 0 9px hsl(44 95% 60% / 0.85);
   }
 
 }
