@@ -82,6 +82,7 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
+  { date: "Jul 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html", linkText: '"Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning"', suffix: " on ROCm Blog" },
   { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
   { date: "Jun 2026", text: "Hosting", link: "https://www.linkedin.com/events/7468403201202122752/", linkText: "AMD AI Research Club #4", suffix: ' — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington)' },
   { date: "Jun 2026", text: "Keynote at", link: "https://systec.fe.up.pt/systec-ri-day", linkText: "SYSTEC Research & Innovation Day", suffix: " (Faculty of Engineering, University of Porto, Jun 18)" },
