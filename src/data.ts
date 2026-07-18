@@ -83,7 +83,7 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
-  { date: "Jul 2026", text: "Convened the", link: "https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html", linkText: "World Model Foundry", suffix: " at the University of Trento, together with the Universities of Bologna and Modena e Reggio Emilia" },
+  { date: "Jul 2026", text: "Convened the", link: "https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html", linkText: "World Model Foundry", suffix: " at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia" },
   { date: "Jul 2026", text: "Workshop accepted at", link: "https://aiforpeaceworkshop.github.io/", linkText: "NeurIPS 2026 — AI for Peace", suffix: " (Paris, Dec 12–13, 2026)" },
   { date: "Jul 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html", linkText: '"Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning"', suffix: " on ROCm Blog" },
   { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
