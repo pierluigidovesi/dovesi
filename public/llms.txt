@@ -38,6 +38,7 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 - Jun 2026: Hosting AMD AI Research Club #4 — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington) — https://www.linkedin.com/events/7468403201202122752/
 - Jun 2026: Keynote at SYSTEC Research & Innovation Day (Faculty of Engineering, University of Porto, Jun 18) — https://systec.fe.up.pt/systec-ri-day
 - Jun 2026: Presented The Good AI Lab research at Sapienza University of Rome — https://thegoodailab.org
+- Jun 2026: "Mind the Heads" — preprint on arXiv — head-wise representation alignment (HeRA) for multimodal LLMs, with Davide Caffagni, Sara Sarto, and Marcella Cornia (UniMoRE) — https://arxiv.org/abs/2606.23885
 - May 2026: Outstanding Reviewer at CVPR 2026 (top 5%) — https://cvpr.thecvf.com/Conferences/2026
 - May 2026: Hosted AMD AI Research Club #3 — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU in Prague) — https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ
 - May 2026: Published "Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models" on ROCm Blog — https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html
@@ -51,6 +52,7 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 - Mar 2026: Launched AMD AI Research Club — "Retrieval Augmentation in Multimodal Large Language Models" with Sara Sarto (UniMoRE) — https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration
 - Mar 2026: Keynote at Warsaw AI Summit 2026 — https://warsawaisummit.com/
 - Jan 2026: Published "From Self-Driving Cars to Self-Driving Wars" — autonomy, AI weapons, and the illusion of control — https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars
+- Dec 2025: "Seeing Beyond Words" — preprint on arXiv — JARVIS, a JEPA-inspired self-supervised visual learning framework for MLLMs, with Davide Caffagni, Sara Sarto, and Rita Cucchiara (UniMoRE) — https://arxiv.org/abs/2512.15885
 - Dec 2025: "From Principles to Practice" — our work with Doctors Without Borders — https://thegoodailab.org/blog/msf-from-principles-to-practice
 - Dec 2025: Published "3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat" on ROCm Blog — https://rocm.blogs.amd.com/software-tools-optimization/point-2-gaussian/README.html
 - Oct 2025: Keynote at Nordic HPC Summit 2025 (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility" — https://nordichpcsummit.enccs.se/
