@@ -212,6 +212,14 @@ export function generateLlmsTxt(): string {
   });
   ln();
 
+  ln("## Recent News");
+  ln();
+  news.forEach((n) => {
+    const lead = n.text ? `${n.text} ` : "";
+    ln(`- ${n.date}: ${lead}${n.linkText}${n.suffix ?? ""} — ${n.link}`);
+  });
+  ln();
+
   ln("## Selected Talks");
   ln();
   talks.forEach((t) => {

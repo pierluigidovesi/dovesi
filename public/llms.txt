@@ -12,41 +12,83 @@
 
 ## About
 
-Pier Luigi Dovesi (goes by Pier) is Co-Founder and Chair of The Good AI Lab, an independent AI lab working on foundational AI research and innovation projects for social good, partnering with Doctors Without Borders (MSF), FMSI, and several universities across Europe.
+Co-Founder and Chair of The Good AI Lab, an independent AI lab working on foundational AI research and innovation projects for social good, partnering with Doctors Without Borders (MSF), FMSI, and several universities across Europe.
 
-He leads the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.
+Leads the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.
 
-His research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, and ICRA.
+Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.
 
 ## Current Roles
 
 - Co-Founder & Chair, The Good AI Lab (2025–present) — https://thegoodailab.org
-- Robotics and Autonomous Systems Lead, AMD Silo AI (2024–present)
+- Robotics Lead, AMD Silo AI (2024–present)
 
 ## Previous Roles
 
-- Senior AI Scientist, Silo AI (2023–2024)
-- Deep Learning Engineer, Univrses / consulting at Zenseact (2019–2023)
-- MSc Systems, Control & Robotics, KTH Royal Institute of Technology (2017–2019)
-- BSc Automation Engineering, University of Bologna & Tongji University (2013–2017)
+- Senior AI Scientist & Expert Lead, Silo AI (2023 – 2024)
+- Deep Learning Engineer, Univrses / consulting at Zenseact (2019 – 2023)
+- MSc Systems, Control & Robotics, KTH Royal Institute of Technology (2017 – 2019)
+- BSc Automation Engineering, University of Bologna & Tongji University (2013 – 2017)
+
+## Recent News
+
+- Jul 2026: Workshop accepted at NeurIPS 2026 — AI for Peace (Paris, Dec 12–13, 2026) — https://aiforpeaceworkshop.github.io/
+- Jul 2026: Published "Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning" on ROCm Blog — https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html
+- Jul 2026: Convened the World Model Foundry at the University of Trento, together with the Universities of Bologna and Modena e Reggio Emilia — https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html
+- Jun 2026: Hosting AMD AI Research Club #4 — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington) — https://www.linkedin.com/events/7468403201202122752/
+- Jun 2026: Keynote at SYSTEC Research & Innovation Day (Faculty of Engineering, University of Porto, Jun 18) — https://systec.fe.up.pt/systec-ri-day
+- Jun 2026: Presented The Good AI Lab research at Sapienza University of Rome — https://thegoodailab.org
+- May 2026: Outstanding Reviewer at CVPR 2026 (top 5%) — https://cvpr.thecvf.com/Conferences/2026
+- May 2026: Hosted AMD AI Research Club #3 — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU in Prague) — https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ
+- May 2026: Published "Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models" on ROCm Blog — https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html
+- May 2026: Published "AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes" on ROCm Blog — https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html
+- Apr 2026: Published "Styled Text Image Generation with Eruku on AMD" on ROCm Blog — https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html
+- Apr 2026: CV4GOOD accepted at ECCV 2026 — Computer Vision for Humanitarian Action workshop (Malmö, Sep 8, 2026), with MSF, featuring Yann Rebois, Jamon Van Den Hoek, Corey Scher, Joseph Redmon, and Sara Beery — https://cv4good.thegoodailab.org/
+- Apr 2026: Speaker at GAIA Conference 2026 (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF — https://www.gaia.fish/talks/where-ai-finds-its-purpose
+- Apr 2026: Keynote at ICLR 2026 — AI for Peace Workshop (Rio de Janeiro) — LAWS and international humanitarian law, alongside Timnit Gebru, Alex Hanna, David Gray Widder, Gisela Luján Andrade, and Joseph Redmon — https://aiforpeaceworkshop.github.io/
+- Apr 2026: Hosted AMD AI Research Club #2 — "Depth Foundation Models: Are We There Yet?" with Luca Bartolomei (University of Bologna) — https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration
+- Mar 2026: Speaker at Compute to Impact (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy" — https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html
+- Mar 2026: Launched AMD AI Research Club — "Retrieval Augmentation in Multimodal Large Language Models" with Sara Sarto (UniMoRE) — https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration
+- Mar 2026: Keynote at Warsaw AI Summit 2026 — https://warsawaisummit.com/
+- Jan 2026: Published "From Self-Driving Cars to Self-Driving Wars" — autonomy, AI weapons, and the illusion of control — https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars
+- Dec 2025: "From Principles to Practice" — our work with Doctors Without Borders — https://thegoodailab.org/blog/msf-from-principles-to-practice
+- Dec 2025: Published "3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat" on ROCm Blog — https://rocm.blogs.amd.com/software-tools-optimization/point-2-gaussian/README.html
+- Oct 2025: Keynote at Nordic HPC Summit 2025 (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility" — https://nordichpcsummit.enccs.se/
+- Oct 2025: Published "Elevating 3D Scene Rendering with GSplat" on ROCm Blog — https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html
+- Oct 2025: GAL and MSF announce partnership to bring responsible AI to humanitarian work — https://thegoodailab.org/blog/msf-partnership
+- Jul 2025: VocAlign accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation — https://thegoodailab.org/blog/vocalign
+- Mar 2025: SemLA accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion — https://arxiv.org/abs/2307.15063
+- Mar 2025: Presented GAL at Redeye AI Theme Event 2025 (Stockholm) — https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13
+- Jan 2025: Featured on AIAW Podcast E143 — Revolutionizing AI and Autonomous Systems — https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/
+- Sep 2024: Speaker at Nordic Industry Days 2024 (Copenhagen) — Supercomputing for AI, EuroHPC — https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/
+- Sep 2024: Speaker at Auto.AI Europe (Berlin) — "Data Alchemy: Adapting and Creating with Limited Data" — https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2
+- Apr 2024: Speaker at GAIA Conference 2024 (Gothenburg) — "Adapting Like Humans: Embodied AI Beyond Datasets and Domains" — https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024
+- Oct 2023: HAMLET accepted at ICCV 2023 — real-time online domain adaptation — https://arxiv.org/abs/2307.15063
+- Oct 2022: OnDA accepted at ECCV 2022 — online domain adaptation — https://arxiv.org/abs/2207.10667
+- May 2020: Real-Time Semantic Stereo Matching accepted at ICRA 2020 — https://arxiv.org/abs/1910.00541
+- Aug 2019: Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry accepted at 3DV 2019 — https://arxiv.org/abs/1908.03127
 
 ## Selected Talks
 
-- AMD AI Research Club — Host, recurring peer-to-peer paper spotlight series (2025–present)
-- ICLR 2026 — AI for Peace Workshop — Rio de Janeiro, Apr 2026
-- Warsaw AI Summit 2026 — keynote, Mar 2026
-- Compute to Impact — Advancing Physical AI, Helsinki, Mar 2026
-- Nordic HPC Summit 2025 — keynote, Stockholm, Oct 2025
-- Redeye AI Theme Event — Stockholm, Mar 2025
-- AIAW Podcast E143 — Revolutionizing AI and Autonomous Systems, Jan 2025
-- Auto.AI Europe 2024 — Berlin, Sep 2024
-- Nordic Industry Days 2024 — Supercomputing for AI, Copenhagen, Sep 2024
-- GAIA Conference 2024 — Gothenburg, Apr 2024
+- ECCV 2026 — CV4GOOD — Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026 (host)
+- AMD AI Research Club — Peer-to-peer paper spotlight series · Host, 2025–present (recurring)
+- NeurIPS 2026 — AI for Peace — Paris, Dec 12–13, 2026 (organizer)
+- SYSTEC R&I Day 2026 — Faculty of Engineering, University of Porto · Jun 2026 (keynote)
+- ICLR 2026 — AI for Peace — Rio de Janeiro, Apr 2026 (keynote)
+- GAIA Conference 2026 — Where AI Finds Its Purpose — AI for humanitarian action with MSF · Gothenburg, Apr 2026
+- Warsaw AI Summit 2026 — Warsaw, Mar 2026 (keynote)
+- Compute to Impact — Advancing Physical AI · Helsinki, Mar 2026
+- Nordic HPC Summit 2025 — Where curiosity meets responsibility · Stockholm, Oct 2025 (keynote)
+- Redeye AI Theme Event — The Good AI Lab · Stockholm, Mar 2025
+- AIAW Podcast E143 — Revolutionizing AI and Autonomous Systems · Jan 2025
+- Auto.AI Europe 2024 — Data Alchemy — Berlin, Sep 2024
+- Nordic Industry Days 2024 — Supercomputing for AI · Copenhagen, Sep 2024
+- GAIA Conference 2024 — Embodied AI Beyond Datasets · Gothenburg, Apr 2024
 
 ## Writing
 
 - "From Self-Driving Cars to Self-Driving Wars" — autonomy, AI weapons, and the illusion of control (Jan 2026) — https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars
-- "From Principles to Practice" — work with Doctors Without Borders (Dec 2025) — https://thegoodailab.org/blog/msf-from-principles-to-practice
+- "From Principles to Practice" — our work with Doctors Without Borders (Dec 2025) — https://thegoodailab.org/blog/msf-from-principles-to-practice
 - "GAL and MSF partner to bring responsible AI to humanitarian work" (Oct 2025) — https://thegoodailab.org/blog/msf-partnership
 
 ## Selected Publications
@@ -60,9 +102,8 @@ His research spans domain adaptation, self-supervised learning, and real-time pe
 ## Links
 
 - Website: https://dovesi.dev
-- The Good AI Lab: https://thegoodailab.org
 - GitHub: https://github.com/pierluigidovesi
-- Google Scholar: https://scholar.google.com/citations?user=t55rm6EAAAAJ
+- Google Scholar: https://scholar.google.com/citations?user=t55rm6EAAAAJ&hl=en
 - LinkedIn: https://www.linkedin.com/in/pierluigidovesi/
 - X: https://x.com/dovpie
 - Hugging Face: https://huggingface.co/dovpie

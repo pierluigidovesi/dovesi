@@ -7,16 +7,21 @@ import fs from "fs";
 function generateBuildAssets(): Plugin {
   return {
     name: "generate-build-assets",
-    async writeBundle() {
-      // Dynamic import so it works with TS via Vite's pipeline
+    // Regenerate llms.txt into public/ before the build copies public/ → dist/,
+    // so the committed file can never drift from src/data.ts (single source of truth).
+    // Also runs on dev-server start, keeping /llms.txt fresh in development.
+    async buildStart() {
       const data = await import("./src/data.ts");
-
-      // llms.txt
-      const txt = data.generateLlmsTxt();
-      fs.writeFileSync(path.resolve(__dirname, "dist/llms.txt"), txt, "utf-8");
-      console.log("✓ Generated llms.txt");
-
-      // Pre-rendered HTML for SEO (inject content into <div id="root">)
+      fs.writeFileSync(
+        path.resolve(__dirname, "public/llms.txt"),
+        data.generateLlmsTxt(),
+        "utf-8",
+      );
+      console.log("✓ Generated public/llms.txt");
+    },
+    // After the bundle is written, inject pre-rendered HTML for crawlers/no-JS.
+    async writeBundle() {
+      const data = await import("./src/data.ts");
       const htmlPath = path.resolve(__dirname, "dist/index.html");
       let html = fs.readFileSync(htmlPath, "utf-8");
       const prerendered = data.generatePrerenderedHtml();
