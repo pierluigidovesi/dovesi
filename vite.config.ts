@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
+import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/supabase/vite";
 
 /** Vite plugin: auto-generate llms.txt and pre-render HTML from src/data.ts at build time */
 function generateBuildAssets(): Plugin {
@@ -44,6 +45,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     generateBuildAssets(),
+    mcpPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
