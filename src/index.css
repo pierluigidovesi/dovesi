@@ -90,8 +90,9 @@
   }
 }
 
-/* CV4GOOD chip hover animation */
-.cv4good-hover-card {
+/* Workshop chip hover animations */
+.cv4good-hover-card,
+.ai-for-peace-hover-card {
   --card-hover-lift: -4px;
   --card-hover-rotate: 1.6deg;
   transform: translate3d(0, 0, 0) rotate(0deg);
@@ -100,16 +101,128 @@
   will-change: transform;
   backface-visibility: hidden;
 }
+.ai-for-peace-hover-card {
+  --card-hover-lift: 0;
+  --card-hover-rotate: 0deg;
+  transition: transform 160ms cubic-bezier(.22, 1, .36, 1), box-shadow 160ms cubic-bezier(.22, 1, .36, 1);
+}
 @media (hover: hover) and (pointer: fine) {
   .cv4good-hover-card:hover {
     transform: translate3d(0, var(--card-hover-lift), 0) rotate(var(--card-hover-rotate));
   }
+  .ai-for-peace-hover-card:hover {
+    transform: translate3d(4px, 4px, 0);
+    box-shadow: 0 0 0 #D6321F;
+  }
+  .dark .ai-for-peace-hover-card:hover {
+    box-shadow: 0 0 0 #FF5A44;
+  }
+  .ai-for-peace-hover-card:hover .aifp-wordmark-first-dot {
+    opacity: 0.35;
+    transform: scale(0.72);
+  }
+  .ai-for-peace-hover-card:hover .aifp-dot-grid {
+    background-position: 4px 4px;
+  }
+}
+.ai-for-peace-hover-card:active {
+  transform: translate3d(4px, 4px, 0);
+  box-shadow: 0 0 0 #D6321F;
+  transition-duration: 0ms;
+}
+.dark .ai-for-peace-hover-card:active {
+  box-shadow: 0 0 0 #FF5A44;
+}
+.ai-for-peace-hover-card:active .aifp-wordmark-first-dot {
+  opacity: 0.35;
+  transform: scale(0.72);
+  transition-duration: 0ms;
+}
+.ai-for-peace-hover-card:active .aifp-dot-grid {
+  background-position: 4px 4px;
+  transition-duration: 0ms;
 }
 @media (prefers-reduced-motion: reduce) {
-  .cv4good-hover-card { transition: none; }
-  .cv4good-hover-card:hover { transform: none; }
+  .cv4good-hover-card,
+  .ai-for-peace-hover-card,
+  .aifp-dot-grid { transition: none; }
+  .cv4good-hover-card:hover,
+  .ai-for-peace-hover-card:hover,
+  .ai-for-peace-hover-card:active { transform: none; }
+  .ai-for-peace-hover-card:hover .aifp-wordmark-first-dot,
+  .ai-for-peace-hover-card:active .aifp-wordmark-first-dot {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
+/* AI for Peace wordmark and visual language, adapted from the workshop site. */
+.aifp-dot-grid {
+  background-image: radial-gradient(#D6D1C4 0.9px, transparent 1px);
+  background-size: 8px 8px;
+  mask-image: linear-gradient(#000 0%, #000 30%, transparent 100%);
+  transition: background-position 280ms steps(2, end);
+}
+.dark .aifp-dot-grid {
+  background-image: radial-gradient(#2A2D38 0.9px, transparent 1px);
+}
+.aifp-pixel-label {
+  font-family: 'Press Start 2P', 'JetBrains Mono', monospace;
+  font-size: 0.46rem;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.aifp-wordmark {
+  isolation: isolate;
+  aspect-ratio: 5590 / 810;
+  display: block;
+  position: relative;
+}
+.aifp-wordmark::before,
+.aifp-wordmark::after {
+  content: "";
+  background: currentColor;
+  position: absolute;
+  inset: 0;
+  -webkit-mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_logo_refined-1440.png") 50% / contain no-repeat;
+  mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_logo_refined-1440.png") 50% / contain no-repeat;
+}
+.aifp-wordmark::before {
+  z-index: 1;
+  clip-path: inset(0 14.8% 0 0);
+}
+.aifp-wordmark-pacman-shadow {
+  z-index: 0;
+  background: currentColor;
+  position: absolute;
+  inset: 0;
+  -webkit-mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_pacman_shadow-1440.png") 50% / contain no-repeat;
+  mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_pacman_shadow-1440.png") 50% / contain no-repeat;
+}
+.aifp-wordmark-first-dot {
+  z-index: 2;
+  background: #D6321F;
+  width: 1.24%;
+  height: 8.25%;
+  position: absolute;
+  top: 56.85%;
+  left: 86.12%;
+  transform-origin: center;
+  transition: opacity 160ms steps(2, end), transform 160ms steps(2, end);
+}
+.dark .aifp-wordmark-first-dot {
+  background: #FF5A44;
+}
+.aifp-wordmark::after {
+  z-index: 3;
+  background: #D6321F;
+  clip-path: inset(0 0 0 85.2%);
+}
+.dark .aifp-wordmark::after {
+  background: #FF5A44;
+}
 @layer base {
   * {
     @apply border-border;

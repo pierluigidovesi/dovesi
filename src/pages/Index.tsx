@@ -85,8 +85,9 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Cv4GoodChip />
+            <AiForPeaceChip />
           </div>
 
           <p className="mt-6 text-[16px]">
@@ -185,7 +186,7 @@ const Cv4GoodChip = () => (
     target="_blank"
     rel="noopener"
     aria-label="Visit the CV4GOOD ECCV 2026 workshop website"
-    className="cv4good-hover-card group relative mb-3 inline-block overflow-hidden rounded-[1.1rem] border-2 border-[#1A1614] bg-[#FFF7E8] px-5 py-4 text-left shadow-[4px_4px_0_#1A1614] dark:border-[#E8DDD0]/40 dark:bg-[#1C1916] dark:shadow-[4px_4px_0_rgba(12,10,9,0.9)]"
+    className="cv4good-hover-card group relative inline-block w-full max-w-[19rem] overflow-hidden rounded-[1.1rem] border-2 border-[#1A1614] bg-[#FFF7E8] px-5 py-4 text-left shadow-[4px_4px_0_#1A1614] dark:border-[#E8DDD0]/40 dark:bg-[#1C1916] dark:shadow-[4px_4px_0_rgba(12,10,9,0.9)]"
   >
     {/* Dot pattern */}
     <span
@@ -219,6 +220,38 @@ const Cv4GoodChip = () => (
           </span>
         </span>
         <span className="block">Action</span>
+      </span>
+    </span>
+  </a>
+);
+
+const AiForPeaceChip = () => (
+  <a
+    href="https://aiforpeaceworkshop.github.io/"
+    target="_blank"
+    rel="noopener"
+    aria-label="Visit the AI for Peace NeurIPS 2026 workshop website"
+    className="ai-for-peace-hover-card group relative inline-block w-full max-w-[19rem] overflow-hidden border-2 border-[#16181D] bg-[#F4F2EC] px-5 py-4 text-left shadow-[4px_4px_0_#D6321F] dark:border-[#343846] dark:bg-[#0E0F13] dark:shadow-[4px_4px_0_#FF5A44]"
+  >
+    <span className="aifp-dot-grid pointer-events-none absolute inset-0 opacity-60 dark:opacity-50" aria-hidden />
+    <span className="relative block">
+      <span className="aifp-wordmark mt-1 text-[#16181D] dark:text-[#ECE9E0]" aria-hidden="true">
+        <span className="aifp-wordmark-pacman-shadow" />
+        <span className="aifp-wordmark-first-dot" />
+      </span>
+      <span className="sr-only">AI for Peace</span>
+
+      <span className="mt-2 flex items-center justify-between gap-4 border-t border-[#D6D1C4] pt-1.5 dark:border-[#2A2D38]">
+        <span className="flex items-start gap-2 font-['Space_Grotesk'] text-[0.72rem] font-semibold leading-[1.05] tracking-[-0.02em] text-[#16181D] dark:text-[#ECE9E0]">
+          <span className="mt-[0.22rem] h-1.5 w-1.5 shrink-0 bg-[#D6321F] dark:bg-[#FF5A44]" aria-hidden />
+          <span>
+            <span className="block">Building Bridges,</span>
+            <span className="block">Not Weapons.</span>
+          </span>
+        </span>
+        <span className="aifp-pixel-label whitespace-nowrap border border-[#D6321F] px-1.5 py-1 text-right text-[#D6321F] dark:border-[#FF5A44] dark:text-[#FF5A44]">
+          NeurIPS 2026
+        </span>
       </span>
     </span>
   </a>

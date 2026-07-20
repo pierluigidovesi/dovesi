@@ -13,12 +13,13 @@ A single-page site: bio, talks, news, career timeline, and writing. No CMS, no b
 
 ## Design choices
 
-- **Typography.** [Lora](https://fonts.google.com/specimen/Lora) for body (a bookish serif), [Bowlby One](https://fonts.google.com/specimen/Bowlby+One) for the CV4GOOD display chip, and JetBrains Mono for the `soul.md` easter-egg. Fonts are loaded via `<link>` + `preconnect` in [`index.html`](index.html) so the preload scanner finds them immediately.
+- **Typography.** [Lora](https://fonts.google.com/specimen/Lora) for body (a bookish serif), [Bowlby One](https://fonts.google.com/specimen/Bowlby+One) for the CV4GOOD display chip, Press Start 2P and Space Grotesk for the AI for Peace chip, and JetBrains Mono for the `soul.md` easter-egg. Fonts are loaded via `<link>` + `preconnect` in [`index.html`](index.html) so the preload scanner finds them immediately.
 - **Palette.** Warm parchment and terracotta in light mode, near-black with a clay accent in dark mode. All colors are HSL CSS variables defined in [`src/index.css`](src/index.css) and consumed through Tailwind.
 - **Time-aware theme.** The site defaults to light during the day and dark at night (see the inline script in [`index.html`](index.html)); a manual toggle persists the choice to `localStorage`.
 - **Hough-line background.** The faint linework behind the content is a live Hough-transform render — a nod to the computer-vision work — in [`src/components/HoughBackground.tsx`](src/components/HoughBackground.tsx), faded into the page with a radial mask.
 - **Gold-leaf text selection.** Selecting text produces a warm amber glow rather than a flat highlight (`::selection` in [`src/index.css`](src/index.css)), tying back to the CV4GOOD accent.
 - **CV4GOOD chip.** A hand-styled call-out for the ECCV 2026 workshop, ported from the GAL site, with a hover tilt that respects `prefers-reduced-motion`.
+- **AI for Peace chip.** A compact companion call-out for the NeurIPS 2026 workshop, adapting its pixel wordmark, coral signal color, technical labels, dot grid, and hard-shadow interaction.
 
 ## Tech
 
