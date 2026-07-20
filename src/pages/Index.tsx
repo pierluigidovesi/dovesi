@@ -231,7 +231,7 @@ const AiForPeaceChip = () => (
     target="_blank"
     rel="noopener"
     aria-label="Visit the AI for Peace NeurIPS 2026 workshop website"
-    className="ai-for-peace-hover-card group relative inline-block w-full max-w-[19rem] overflow-hidden border-2 border-[#16181D] bg-[#F4F2EC] px-5 py-4 text-left shadow-[4px_4px_0_#D6321F] dark:border-[#343846] dark:bg-[#0E0F13] dark:shadow-[4px_4px_0_#FF5A44]"
+    className="ai-for-peace-hover-card group relative inline-block w-full max-w-[19rem] overflow-hidden border-2 border-[#16181D] bg-[#F4F2EC] px-5 py-4 text-left dark:border-[#343846] dark:bg-[#0E0F13]"
   >
     <span className="aifp-dot-grid pointer-events-none absolute inset-0 opacity-60 dark:opacity-50" aria-hidden />
     <span className="relative block">
