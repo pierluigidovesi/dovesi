@@ -32,6 +32,7 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 
 ## Recent News
 
+- Sep 2026: "Mind the Heads" — accepted at NeurIPS 2026 — head-wise representation alignment (HeRA) for multimodal LLMs — https://arxiv.org/abs/2606.23885
 - Aug 2026: Hosting AMD AI Research Club #5 — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste) — https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA
 - Jul 2026: Convened the World Model Foundry at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia — https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html
 - Jul 2026: Workshop accepted at NeurIPS 2026 — AI for Peace (Paris, Dec 12–13, 2026) — https://aiforpeaceworkshop.github.io/
@@ -39,7 +40,6 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 - Jun 2026: Hosting AMD AI Research Club #4 — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington) — https://www.linkedin.com/events/7468403201202122752/
 - Jun 2026: Keynote at SYSTEC Research & Innovation Day (Faculty of Engineering, University of Porto, Jun 18) — https://systec.fe.up.pt/systec-ri-day
 - Jun 2026: Presented The Good AI Lab research at Sapienza University of Rome — https://thegoodailab.org
-- Jun 2026: "Mind the Heads" — accepted at NeurIPS 2026 — head-wise representation alignment (HeRA) for multimodal LLMs — https://arxiv.org/abs/2606.23885
 - May 2026: Outstanding Reviewer at CVPR 2026 (top 5%) — https://cvpr.thecvf.com/Conferences/2026
 - May 2026: Hosted AMD AI Research Club #3 — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU in Prague) — https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ
 - May 2026: Published "Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models" on ROCm Blog — https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html
