@@ -36,7 +36,7 @@ interface ClusterParams {
   lines: {
     ptX: number; ptY: number; phaseOff: number; ampMul: number;
     strokeMul: number; opacityMul: number; lineLag: number;
-    lineStart: number; lineEnd: number;
+    lineStart: number; lineEnd: number; averageWidth: number;
   }[];
 }
 
@@ -99,7 +99,19 @@ function buildClusterParams(seed: number): ClusterParams[] {
       const shortenFactor = 1 - Math.abs(relPos) * 0.1;
       const lineStart = (1 - shortenFactor) * 0.5;
       const lineEnd = 1 - (1 - shortenFactor) * 0.5;
-      lines.push({ ptX, ptY, phaseOff, ampMul, strokeMul, opacityMul, lineLag, lineStart, lineEnd });
+      // Pressure is independent of animation time; calculate it only once.
+      let totalWidth = 0;
+      for (let i = 0; i <= 160; i++) {
+        const rawT = i / 160;
+        const endTaper = Math.pow(Math.sin(clamp(rawT, 0.005, 0.995) * Math.PI), 0.3);
+        let pressure = 0.4;
+        for (const bump of pressureBumps) {
+          const d = (rawT - bump.pos) / bump.width;
+          pressure += bump.amp * Math.exp(-0.5 * d * d);
+        }
+        totalWidth += Math.max(0.12, pressure * endTaper);
+      }
+      lines.push({ ptX, ptY, phaseOff, ampMul, strokeMul, opacityMul, lineLag, lineStart, lineEnd, averageWidth: totalWidth / 161 });
     }
 
     clusters.push({
@@ -174,7 +186,6 @@ function drawScene(ctx: CanvasRenderingContext2D, clusters: ClusterParams[], tim
       const animDrift = time * cl.animDriftSpeed;
 
       const points: Point[] = [];
-      const widths: number[] = [];
       for (let i = 0; i <= steps; i++) {
         const rawT = i / steps;
         const mappedT = line.lineStart + (line.lineEnd - line.lineStart) * rawT;
@@ -191,20 +202,12 @@ function drawScene(ctx: CanvasRenderingContext2D, clusters: ClusterParams[], tim
           x: (W * 0.5 + dx * cl.cosTilt - dy * cl.sinTilt) * scaleX,
           y: (H * 0.5 + dx * cl.sinTilt + dy * cl.cosTilt) * scaleY,
         });
-        const endTaper = Math.pow(Math.sin(clamp(rawT, 0.005, 0.995) * Math.PI), 0.3);
-        let pressure = 0.4;
-        for (const bump of cl.pressureBumps) {
-          const d = (rawT - bump.pos) / bump.width;
-          pressure += bump.amp * Math.exp(-0.5 * d * d);
-        }
-        widths.push(Math.max(0.12, pressure * endTaper));
       }
       smooth(points, 2);
 
-      const avgW = widths.reduce((a, b) => a + b, 0) / widths.length;
       ctx.globalAlpha = baseOpacity * line.opacityMul;
       ctx.strokeStyle = color;
-      ctx.lineWidth = avgW * baseStroke * line.strokeMul * Math.max(scaleX, scaleY);
+      ctx.lineWidth = line.averageWidth * baseStroke * line.strokeMul * Math.max(scaleX, scaleY);
       drawCurve(ctx, points, 3);
     }
   }
@@ -233,7 +236,6 @@ const HoughBackground = () => {
   const [seed] = useState(() => Math.floor(Math.random() * 10000));
   const clustersRef = useRef<ClusterParams[]>();
   const timeRef = useRef(0);
-  const lastScrollRef = useRef(0);
 
   // Pre-compute cluster params once
   if (!clustersRef.current) {
@@ -245,43 +247,53 @@ const HoughBackground = () => {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    const clusters = clustersRef.current!;
+    const clusters = clustersRef.current;
+    if (!clusters) return;
 
-    // Size canvas to viewport
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let isDark = document.documentElement.classList.contains("dark");
+    let color = getComputedStyle(document.body).color;
+    let targetTime = timeRef.current;
+    let lastScrollY = window.scrollY;
+    let rafId = 0;
+    let previousFrame = 0;
+    const draw = () => drawScene(ctx, clusters, timeRef.current, color, isDark);
+
+    // Soft decorative lines don't need a full retina-size backing surface.
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
-      // Get stroke color from CSS
-      const isDark = document.documentElement.classList.contains("dark");
-      const color = getComputedStyle(document.body).getPropertyValue("color").trim() || (isDark ? "#e0dad1" : "#1a1a1a");
-      drawScene(ctx, clusters, timeRef.current, color, isDark);
+      const scale = Math.min(1, 1400 / window.innerWidth);
+      canvas.width = Math.round(window.innerWidth * scale);
+      canvas.height = Math.round(window.innerHeight * scale);
+      draw();
     };
     resize();
 
-    let rafId = 0;
-    lastScrollRef.current = window.scrollY;
+    const animate = (now: number) => {
+      rafId = 0;
+      const elapsed = previousFrame ? Math.min(now - previousFrame, 64) : 16.67;
+      previousFrame = now;
+      const difference = targetTime - timeRef.current;
+      timeRef.current += difference * (1 - Math.exp(-elapsed / 70));
+      if (Math.abs(difference) < 0.0005) timeRef.current = targetTime;
+      draw();
+      if (timeRef.current !== targetTime) rafId = requestAnimationFrame(animate);
+      else previousFrame = 0;
+    };
 
     const onScroll = () => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-        const newScrollY = window.scrollY;
-        const delta = newScrollY - lastScrollRef.current;
-        lastScrollRef.current = newScrollY;
-        timeRef.current += delta * 0.002;
-        const isDark = document.documentElement.classList.contains("dark");
-        const color = getComputedStyle(document.body).getPropertyValue("color").trim() || (isDark ? "#e0dad1" : "#1a1a1a");
-        drawScene(ctx, clusters, timeRef.current, color, isDark);
-      });
+      const newScrollY = window.scrollY;
+      const delta = newScrollY - lastScrollY;
+      lastScrollY = newScrollY;
+      if (reducedMotion.matches || document.hidden || delta === 0) return;
+      targetTime += delta * 0.002;
+      if (!rafId) rafId = requestAnimationFrame(animate);
     };
 
     // Observe theme changes to update stroke color
     const themeObserver = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      const color = getComputedStyle(document.body).getPropertyValue("color").trim() || (isDark ? "#e0dad1" : "#1a1a1a");
-      drawScene(ctx, clusters, timeRef.current, color, isDark);
+      isDark = document.documentElement.classList.contains("dark");
+      color = getComputedStyle(document.body).color;
+      draw();
     });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
@@ -299,14 +311,8 @@ const HoughBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        pointerEvents: "none",
-        zIndex: 0,
-        filter: "blur(1.5px)",
-      }}
+      aria-hidden="true"
+      className="hough-background"
     />
   );
 };
