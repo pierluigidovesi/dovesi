@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import HoughBackground from "@/components/HoughBackground";
@@ -16,8 +16,16 @@ const Index = () => {
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
+  // The build's crawlable HTML is replaced by React on load. Restore a direct
+  // hash target against the final layout, before the browser paints it.
+  useLayoutEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (id) document.getElementById(id)?.scrollIntoView({ behavior: "instant", block: "start" });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Helmet>
         <title>Pier Luigi Dovesi | Physical AI and AI for Social Good</title>
         <meta name="description" content="Pier Luigi Dovesi — Robotics Lead at AMD Silo AI, Co-Founder & Chair of The Good AI Lab. Physical AI, embodied systems, world models, AI for social good." />
@@ -31,7 +39,7 @@ const Index = () => {
 
       {/* Smooth vignette: fades background color over Hough lines behind content */}
       <div
-        className="fixed inset-0 pointer-events-none bg-background transition-colors duration-300"
+        className="site-vignette fixed inset-0 pointer-events-none bg-background transition-colors duration-300"
         style={{
           zIndex: 1,
           maskImage:
@@ -55,7 +63,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <main className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
+      <main id="main-content" tabIndex={-1} className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
         {/* About */}
         <header id="about" className="mb-16 scroll-mt-12">
           <h1 className="text-2xl font-semibold text-foreground">
@@ -85,12 +93,12 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <div className="workshop-chips mt-6 flex flex-wrap justify-center gap-4">
             <Cv4GoodChip />
             <AiForPeaceChip />
           </div>
 
-          <p className="mt-6 text-[16px]">
+          <p className="profile-links mt-6 text-[16px]">
             Find me at{" "}
             {links.map((l, i) => (
               <span key={l.label}>
@@ -106,7 +114,7 @@ const Index = () => {
 
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="talk-grid grid gap-3 sm:grid-cols-2">
             {talks.map((t) => (
               <TalkTile key={t.title} title={t.title} detail={t.detail} href={t.href} linkLabel={t.linkLabel} tag={t.tag} />
             ))}
@@ -116,8 +124,8 @@ const Index = () => {
         {/* News */}
         <Section id="news" title="News">
           <div className="space-y-0">
-            {news.map((n, i) => (
-              <NewsItem key={i} date={n.date} text={n.text} link={n.link} linkText={n.linkText} suffix={n.suffix} />
+            {news.map((n) => (
+              <NewsItem key={n.id} id={n.id} date={n.date} text={n.text} link={n.link} linkText={n.linkText} suffix={n.suffix} />
             ))}
           </div>
         </Section>
@@ -168,7 +176,7 @@ const Index = () => {
         </p>
         <button
           onClick={() => setDark((d) => !d)}
-          className="text-muted-foreground hover:text-foreground transition-colors p-1"
+          className="theme-toggle text-muted-foreground hover:text-foreground transition-colors p-1"
           aria-label="Toggle dark mode"
         >
           {dark ? <Sun size={14} /> : <Moon size={14} />}
@@ -265,13 +273,18 @@ const A = ({ href, children }: { href: string; children: React.ReactNode }) => (
 
 const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
   <section id={id} className="mb-14 scroll-mt-12">
-    <h2 className="text-2xl font-semibold text-foreground mb-5">{title}</h2>
+    <h2 className="section-heading text-2xl font-semibold text-foreground mb-5">
+      {title}
+      <a href={`#${id}`} className="section-anchor" aria-label={`Link to ${title} section`}>
+        <span aria-hidden="true">#</span>
+      </a>
+    </h2>
     {children}
   </section>
 );
 
-const NewsItem = ({ date, text, link, linkText, suffix }: { date: string; text: string; link: string; linkText: string; suffix?: string }) => (
-  <div className="flex gap-4 py-2.5 border-b border-border/50 last:border-b-0">
+const NewsItem = ({ id, date, text, link, linkText, suffix }: { id: string; date: string; text: string; link: string; linkText: string; suffix?: string }) => (
+  <div id={id} className="news-item scroll-mt-12 flex gap-4 py-2.5 border-b border-border/50 last:border-b-0">
     <span className="text-sm text-muted-foreground whitespace-nowrap pt-0.5 w-[72px] shrink-0">{date}</span>
     <p className="leading-snug">
       {text && `${text} `}
@@ -286,7 +299,7 @@ const TalkTile = ({ title, detail, href, linkLabel = "info", tag }: { title: str
     href={href}
     target="_blank"
     rel="noopener"
-    className="block rounded-md border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all group"
+    className="talk-tile block rounded-md border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all group"
   >
     <div className="flex items-start justify-between gap-2">
       <h3 className="font-semibold text-foreground text-[16px] leading-snug group-hover:text-primary transition-colors">{title}</h3>
@@ -302,7 +315,7 @@ const TimelineItem = ({
 }: {
   years: string; org: string; orgHref?: string; role: string; subtitle?: string; featured?: boolean; children?: React.ReactNode;
 }) => (
-  <div className="relative pl-7">
+  <div className="timeline-item relative pl-7">
     {/* Dot */}
     <div className="absolute left-0 top-[10px] -translate-x-[5px] w-[10px] h-[10px] rounded-full border-2 border-primary bg-background" />
     <p className="text-sm text-muted-foreground">{years}</p>

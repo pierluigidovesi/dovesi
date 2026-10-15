@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Pier Luigi Dovesi — News</title>
+    <link>https://dovesi.dev/#news</link>
+    <description>News, research, talks, and writing by Pier Luigi Dovesi.</description>
+    <language>en</language>
+    <item>
+      <title>Mind the Heads</title>
+      <link>https://dovesi.dev/#news-009</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-009</guid>
+      <description>Sep 2026 — Mind the Heads accepted at NeurIPS 26 — head-wise representation alignment (HeRA) for multimodal LLMs</description>
+    </item>
+    <item>
+      <title>AMD AI Research Club #5</title>
+      <link>https://dovesi.dev/#news-001</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-001</guid>
+      <description>Aug 2026 — Hosting AMD AI Research Club #5 — &quot;Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle&quot; with Antonio Cinà (University of Trieste)</description>
+    </item>
+    <item>
+      <title>World Model Foundry</title>
+      <link>https://dovesi.dev/#news-002</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-002</guid>
+      <description>Jul 2026 — Convened the World Model Foundry at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia</description>
+    </item>
+    <item>
+      <title>NeurIPS 2026 — AI for Peace</title>
+      <link>https://dovesi.dev/#news-003</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-003</guid>
+      <description>Jul 2026 — Workshop accepted at NeurIPS 2026 — AI for Peace (Paris, Dec 12–13, 2026)</description>
+    </item>
+    <item>
+      <title>&quot;Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning&quot;</title>
+      <link>https://dovesi.dev/#news-004</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-004</guid>
+      <description>Jul 2026 — Published &quot;Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning&quot; on ROCm Blog</description>
+    </item>
+    <item>
+      <title>AMD AI Research Club #4</title>
+      <link>https://dovesi.dev/#news-006</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-006</guid>
+      <description>Jun 2026 — Hosting AMD AI Research Club #4 — &quot;Rethinking Benchmarks for Robotic Manipulation&quot; with Yi Ru (Helen) Wang (University of Washington)</description>
+    </item>
+    <item>
+      <title>SYSTEC Research &amp; Innovation Day</title>
+      <link>https://dovesi.dev/#news-007</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-007</guid>
+      <description>Jun 2026 — Keynote at SYSTEC Research &amp; Innovation Day (Faculty of Engineering, University of Porto, Jun 18)</description>
+    </item>
+    <item>
+      <title>The Good AI Lab</title>
+      <link>https://dovesi.dev/#news-008</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-008</guid>
+      <description>Jun 2026 — Presented The Good AI Lab research at Sapienza University of Rome</description>
+    </item>
+    <item>
+      <title>CVPR 2026</title>
+      <link>https://dovesi.dev/#news-005</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-005</guid>
+      <description>May 2026 — Outstanding Reviewer at CVPR 2026 (top 5%)</description>
+    </item>
+    <item>
+      <title>AMD AI Research Club #3</title>
+      <link>https://dovesi.dev/#news-010</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-010</guid>
+      <description>May 2026 — Hosted AMD AI Research Club #3 — &quot;Invisible Shortcuts: Why Vision Encoders Know Your Camera&quot; with Giorgos Tolias (CTU in Prague)</description>
+    </item>
+    <item>
+      <title>&quot;Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models&quot;</title>
+      <link>https://dovesi.dev/#news-011</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-011</guid>
+      <description>May 2026 — Published &quot;Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models&quot; on ROCm Blog</description>
+    </item>
+    <item>
+      <title>&quot;AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes&quot;</title>
+      <link>https://dovesi.dev/#news-012</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-012</guid>
+      <description>May 2026 — Published &quot;AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes&quot; on ROCm Blog</description>
+    </item>
+    <item>
+      <title>&quot;Styled Text Image Generation with Eruku on AMD&quot;</title>
+      <link>https://dovesi.dev/#news-013</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-013</guid>
+      <description>Apr 2026 — Published &quot;Styled Text Image Generation with Eruku on AMD&quot; on ROCm Blog</description>
+    </item>
+    <item>
+      <title>CV4GOOD accepted at ECCV 2026</title>
+      <link>https://dovesi.dev/#news-014</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-014</guid>
+      <description>Apr 2026 — CV4GOOD accepted at ECCV 2026 — Computer Vision for Humanitarian Action workshop (Malmö, Sep 8, 2026), with MSF, featuring Yann Rebois, Jamon Van Den Hoek, Corey Scher, Joseph Redmon, and Sara Beery</description>
+    </item>
+    <item>
+      <title>GAIA Conference 2026</title>
+      <link>https://dovesi.dev/#news-015</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-015</guid>
+      <description>Apr 2026 — Speaker at GAIA Conference 2026 (Gothenburg, Apr 20) — &quot;Where AI Finds Its Purpose&quot; — AI for humanitarian action with MSF</description>
+    </item>
+    <item>
+      <title>ICLR 2026 — AI for Peace Workshop</title>
+      <link>https://dovesi.dev/#news-016</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-016</guid>
+      <description>Apr 2026 — Keynote at ICLR 2026 — AI for Peace Workshop (Rio de Janeiro) — LAWS and international humanitarian law, alongside Timnit Gebru, Alex Hanna, David Gray Widder, Gisela Luján Andrade, and Joseph Redmon</description>
+    </item>
+    <item>
+      <title>AMD AI Research Club #2</title>
+      <link>https://dovesi.dev/#news-017</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-017</guid>
+      <description>Apr 2026 — Hosted AMD AI Research Club #2 — &quot;Depth Foundation Models: Are We There Yet?&quot; with Luca Bartolomei (University of Bologna)</description>
+    </item>
+    <item>
+      <title>Compute to Impact</title>
+      <link>https://dovesi.dev/#news-018</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-018</guid>
+      <description>Mar 2026 — Speaker at Compute to Impact (Helsinki) — &quot;Advancing Physical AI: the AMD Open Ecosystem for Autonomy&quot;</description>
+    </item>
+    <item>
+      <title>AMD AI Research Club</title>
+      <link>https://dovesi.dev/#news-019</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-019</guid>
+      <description>Mar 2026 — Launched AMD AI Research Club — &quot;Retrieval Augmentation in Multimodal Large Language Models&quot; with Sara Sarto (UniMoRE)</description>
+    </item>
+    <item>
+      <title>Warsaw AI Summit 2026</title>
+      <link>https://dovesi.dev/#news-020</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-020</guid>
+      <description>Mar 2026 — Keynote at Warsaw AI Summit 2026</description>
+    </item>
+    <item>
+      <title>&quot;From Self-Driving Cars to Self-Driving Wars&quot;</title>
+      <link>https://dovesi.dev/#news-021</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-021</guid>
+      <description>Jan 2026 — Published &quot;From Self-Driving Cars to Self-Driving Wars&quot; — autonomy, AI weapons, and the illusion of control</description>
+    </item>
+    <item>
+      <title>&quot;Seeing Beyond Words&quot;</title>
+      <link>https://dovesi.dev/#news-022</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-022</guid>
+      <description>Dec 2025 — &quot;Seeing Beyond Words&quot; — preprint on arXiv — JARVIS, a JEPA-inspired self-supervised visual learning framework for MLLMs</description>
+    </item>
+    <item>
+      <title>&quot;From Principles to Practice&quot;</title>
+      <link>https://dovesi.dev/#news-023</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-023</guid>
+      <description>Dec 2025 — &quot;From Principles to Practice&quot; — our work with Doctors Without Borders</description>
+    </item>
+    <item>
+      <title>&quot;3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat&quot;</title>
+      <link>https://dovesi.dev/#news-024</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-024</guid>
+      <description>Dec 2025 — Published &quot;3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat&quot; on ROCm Blog</description>
+    </item>
+    <item>
+      <title>Nordic HPC Summit 2025</title>
+      <link>https://dovesi.dev/#news-025</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-025</guid>
+      <description>Oct 2025 — Keynote at Nordic HPC Summit 2025 (Stockholm) — &quot;Building The Good AI Lab: where curiosity meets responsibility&quot;</description>
+    </item>
+    <item>
+      <title>&quot;Elevating 3D Scene Rendering with GSplat&quot;</title>
+      <link>https://dovesi.dev/#news-026</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-026</guid>
+      <description>Oct 2025 — Published &quot;Elevating 3D Scene Rendering with GSplat&quot; on ROCm Blog</description>
+    </item>
+    <item>
+      <title>GAL and MSF announce partnership</title>
+      <link>https://dovesi.dev/#news-027</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-027</guid>
+      <description>Oct 2025 — GAL and MSF announce partnership to bring responsible AI to humanitarian work</description>
+    </item>
+    <item>
+      <title>VocAlign</title>
+      <link>https://dovesi.dev/#news-028</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-028</guid>
+      <description>Jul 2025 — VocAlign accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation</description>
+    </item>
+    <item>
+      <title>SemLA</title>
+      <link>https://dovesi.dev/#news-029</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-029</guid>
+      <description>Mar 2025 — SemLA accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion</description>
+    </item>
+    <item>
+      <title>Redeye AI Theme Event 2025</title>
+      <link>https://dovesi.dev/#news-030</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-030</guid>
+      <description>Mar 2025 — Presented GAL at Redeye AI Theme Event 2025 (Stockholm)</description>
+    </item>
+    <item>
+      <title>AIAW Podcast E143</title>
+      <link>https://dovesi.dev/#news-031</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-031</guid>
+      <description>Jan 2025 — Featured on AIAW Podcast E143 — Revolutionizing AI and Autonomous Systems</description>
+    </item>
+    <item>
+      <title>Nordic Industry Days 2024</title>
+      <link>https://dovesi.dev/#news-032</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-032</guid>
+      <description>Sep 2024 — Speaker at Nordic Industry Days 2024 (Copenhagen) — Supercomputing for AI, EuroHPC</description>
+    </item>
+    <item>
+      <title>Auto.AI Europe</title>
+      <link>https://dovesi.dev/#news-033</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-033</guid>
+      <description>Sep 2024 — Speaker at Auto.AI Europe (Berlin) — &quot;Data Alchemy: Adapting and Creating with Limited Data&quot;</description>
+    </item>
+    <item>
+      <title>GAIA Conference 2024</title>
+      <link>https://dovesi.dev/#news-034</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-034</guid>
+      <description>Apr 2024 — Speaker at GAIA Conference 2024 (Gothenburg) — &quot;Adapting Like Humans: Embodied AI Beyond Datasets and Domains&quot;</description>
+    </item>
+    <item>
+      <title>HAMLET</title>
+      <link>https://dovesi.dev/#news-035</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-035</guid>
+      <description>Oct 2023 — HAMLET accepted at ICCV 2023 — real-time online domain adaptation</description>
+    </item>
+    <item>
+      <title>OnDA</title>
+      <link>https://dovesi.dev/#news-036</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-036</guid>
+      <description>Oct 2022 — OnDA accepted at ECCV 2022 — online domain adaptation</description>
+    </item>
+    <item>
+      <title>Real-Time Semantic Stereo Matching</title>
+      <link>https://dovesi.dev/#news-037</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-037</guid>
+      <description>May 2020 — Real-Time Semantic Stereo Matching accepted at ICRA 2020</description>
+    </item>
+    <item>
+      <title>Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry</title>
+      <link>https://dovesi.dev/#news-038</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-038</guid>
+      <description>Aug 2019 — Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry accepted at 3DV 2019</description>
+    </item>
+  </channel>
+</rss>

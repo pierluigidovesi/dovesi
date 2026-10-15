@@ -142,11 +142,13 @@
   box-shadow: 2px 2px 0 #FF5A44;
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
   .cv4good-hover-card,
   .ai-for-peace-hover-card { transition: none; }
   .cv4good-hover-card:hover,
   .ai-for-peace-hover-card:hover,
   .ai-for-peace-hover-card:active { transform: none; }
+  .section-anchor { transition: none !important; }
 }
 
 /* AI for Peace wordmark and visual language, adapted from the workshop site. */
@@ -243,4 +245,87 @@
     text-shadow: 0 0 9px hsl(44 95% 60% / 0.85);
   }
 
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 3px;
+}
+
+#main-content:focus { outline: none; }
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--primary));
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+.section-anchor {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  color: hsl(var(--primary));
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.section-heading:hover .section-anchor,
+.section-anchor:focus-visible {
+  opacity: 1;
+}
+@media (hover: none) {
+  .section-anchor { opacity: 0.65; }
+}
+
+@media print {
+  @page { margin: 16mm; }
+
+  html { scroll-behavior: auto; }
+  body, #root { background: #fff !important; color: #000 !important; }
+  #root * {
+    background-color: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  canvas, .site-vignette, nav, .theme-toggle, .workshop-chips, #soulmd,
+  .skip-link, .section-anchor { display: none !important; }
+  main { padding-top: 0 !important; padding-bottom: 0 !important; }
+  #about { margin-bottom: 1rem !important; }
+  hr { margin-bottom: 1rem !important; }
+  section { margin-bottom: 1.5rem !important; }
+  h1, h2, h3 { break-after: avoid; }
+  .news-item, .talk-tile, .timeline-item, blockquote { break-inside: avoid; }
+  .talk-grid { display: block !important; }
+  #root .talk-tile {
+    padding: 0 !important;
+    margin-bottom: 0.6rem;
+    border: 0 !important;
+  }
+  .talk-tile > span { display: none !important; }
+  .news-item { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+  a { text-decoration: underline; }
+  #about a[href^="http"]::after,
+  #writing a[href^="http"]::after,
+  #about a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.7em;
+    overflow-wrap: anywhere;
+  }
+  #about .profile-links a[href^="http"]::after { content: none; }
 }

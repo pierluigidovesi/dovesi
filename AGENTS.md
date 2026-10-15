@@ -1,3 +1,3 @@
 # Project guidance
 
-- Keep the decorative scroll-driven canvas isolated on its own composited layer with a capped backing resolution; cache static geometry and theme styles outside animation frames to preserve native scrolling performance.
+- Keep the decorative Hough canvas still during scrolling, isolated on its own composited layer with a capped backing resolution. Redraw only when the viewport or theme changes so native scrolling stays responsive.

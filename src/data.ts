@@ -1,6 +1,6 @@
 // ── Shared site data ──
 // Single source of truth for all content. Index.tsx renders it;
-// the Vite plugin in vite.config.ts generates llms.txt from it at build time.
+// the Vite plugin in vite.config.ts generates llms.txt and rss.xml from it at build time.
 
 // ── Date helpers for auto-sorting ──
 const MONTHS: Record<string, number> = {
@@ -75,6 +75,7 @@ export const talks = sortByDate(talksUnsorted);
 
 // ── News ──
 export interface NewsEntry {
+  id: string;
   date: string;
   text: string;
   link: string;
@@ -83,47 +84,84 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
-  { date: "Aug 2026", text: "Hosting", link: "https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA", linkText: "AMD AI Research Club #5", suffix: ' — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste)' },
-  { date: "Jul 2026", text: "Convened the", link: "https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html", linkText: "World Model Foundry", suffix: " at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia" },
-  { date: "Jul 2026", text: "Workshop accepted at", link: "https://aiforpeaceworkshop.github.io/", linkText: "NeurIPS 2026 — AI for Peace", suffix: " (Paris, Dec 12–13, 2026)" },
-  { date: "Jul 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html", linkText: '"Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning"', suffix: " on ROCm Blog" },
-  { date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
-  { date: "Jun 2026", text: "Hosting", link: "https://www.linkedin.com/events/7468403201202122752/", linkText: "AMD AI Research Club #4", suffix: ' — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington)' },
-  { date: "Jun 2026", text: "Keynote at", link: "https://systec.fe.up.pt/systec-ri-day", linkText: "SYSTEC Research & Innovation Day", suffix: " (Faculty of Engineering, University of Porto, Jun 18)" },
-  { date: "Jun 2026", text: "Presented", link: "https://thegoodailab.org", linkText: "The Good AI Lab", suffix: " research at Sapienza University of Rome" },
-  { date: "Sep 2026", text: "", link: "https://arxiv.org/abs/2606.23885", linkText: "Mind the Heads", suffix: " accepted at NeurIPS 26 — head-wise representation alignment (HeRA) for multimodal LLMs" },
-  { date: "May 2026", text: "Hosted", link: "https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ", linkText: "AMD AI Research Club #3", suffix: ' — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU in Prague)' },
-  { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html", linkText: '"Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models"', suffix: " on ROCm Blog" },
-  { date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html", linkText: '"AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes"', suffix: " on ROCm Blog" },
-  { date: "Apr 2026", text: "Published", link: "https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html", linkText: '"Styled Text Image Generation with Eruku on AMD"', suffix: " on ROCm Blog" },
-  { date: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 8, 2026), with MSF, featuring Yann Rebois, Jamon Van Den Hoek, Corey Scher, Joseph Redmon, and Sara Beery" },
-  { date: "Apr 2026", text: "Speaker at", link: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkText: "GAIA Conference 2026", suffix: ' (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF' },
-  { date: "Apr 2026", text: "Keynote at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 — AI for Peace Workshop", suffix: " (Rio de Janeiro) — LAWS and international humanitarian law, alongside Timnit Gebru, Alex Hanna, David Gray Widder, Gisela Luján Andrade, and Joseph Redmon" },
-  { date: "Apr 2026", text: "Hosted", link: "https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration", linkText: "AMD AI Research Club #2", suffix: ' — "Depth Foundation Models: Are We There Yet?" with Luca Bartolomei (University of Bologna)' },
-  { date: "Mar 2026", text: "Speaker at", link: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", linkText: "Compute to Impact", suffix: ' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"' },
-  { date: "Mar 2026", text: "Launched", link: "https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration", linkText: "AMD AI Research Club", suffix: ' — "Retrieval Augmentation in Multimodal Large Language Models" with Sara Sarto (UniMoRE)' },
-  { date: "Mar 2026", text: "Keynote at", link: "https://warsawaisummit.com/", linkText: "Warsaw AI Summit 2026" },
-  { date: "Jan 2026", text: "Published", link: "https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars", linkText: '"From Self-Driving Cars to Self-Driving Wars"', suffix: " — autonomy, AI weapons, and the illusion of control" },
-  { date: "Dec 2025", text: "", link: "https://arxiv.org/abs/2512.15885", linkText: '"Seeing Beyond Words"', suffix: " — preprint on arXiv — JARVIS, a JEPA-inspired self-supervised visual learning framework for MLLMs" },
-  { date: "Dec 2025", text: "", link: "https://thegoodailab.org/blog/msf-from-principles-to-practice", linkText: '"From Principles to Practice"', suffix: " — our work with Doctors Without Borders" },
-  { date: "Dec 2025", text: "Published", link: "https://rocm.blogs.amd.com/software-tools-optimization/point-2-gaussian/README.html", linkText: '"3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat"', suffix: " on ROCm Blog" },
-  { date: "Oct 2025", text: "Keynote at", link: "https://nordichpcsummit.enccs.se/", linkText: "Nordic HPC Summit 2025", suffix: ' (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility"' },
-  { date: "Oct 2025", text: "Published", link: "https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html", linkText: '"Elevating 3D Scene Rendering with GSplat"', suffix: " on ROCm Blog" },
-  { date: "Oct 2025", text: "", link: "https://thegoodailab.org/blog/msf-partnership", linkText: "GAL and MSF announce partnership", suffix: " to bring responsible AI to humanitarian work" },
-  { date: "Jul 2025", text: "", link: "https://thegoodailab.org/blog/vocalign", linkText: "VocAlign", suffix: " accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation" },
-  { date: "Mar 2025", text: "", link: "https://arxiv.org/abs/2307.15063", linkText: "SemLA", suffix: " accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion" },
-  { date: "Mar 2025", text: "Presented GAL at", link: "https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13", linkText: "Redeye AI Theme Event 2025", suffix: " (Stockholm)" },
-  { date: "Jan 2025", text: "Featured on", link: "https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/", linkText: "AIAW Podcast E143", suffix: " — Revolutionizing AI and Autonomous Systems" },
-  { date: "Sep 2024", text: "Speaker at", link: "https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/", linkText: "Nordic Industry Days 2024", suffix: " (Copenhagen) — Supercomputing for AI, EuroHPC" },
-  { date: "Sep 2024", text: "Speaker at", link: "https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2", linkText: "Auto.AI Europe", suffix: ' (Berlin) — "Data Alchemy: Adapting and Creating with Limited Data"' },
-  { date: "Apr 2024", text: "Speaker at", link: "https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024", linkText: "GAIA Conference 2024", suffix: ' (Gothenburg) — "Adapting Like Humans: Embodied AI Beyond Datasets and Domains"' },
-  { date: "Oct 2023", text: "", link: "https://arxiv.org/abs/2307.15063", linkText: "HAMLET", suffix: " accepted at ICCV 2023 — real-time online domain adaptation" },
-  { date: "Oct 2022", text: "", link: "https://arxiv.org/abs/2207.10667", linkText: "OnDA", suffix: " accepted at ECCV 2022 — online domain adaptation" },
-  { date: "May 2020", text: "", link: "https://arxiv.org/abs/1910.00541", linkText: "Real-Time Semantic Stereo Matching", suffix: " accepted at ICRA 2020" },
-  { date: "Aug 2019", text: "", link: "https://arxiv.org/abs/1908.03127", linkText: "Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry", suffix: " accepted at 3DV 2019" },
+  { id: "news-001", date: "Aug 2026", text: "Hosting", link: "https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA", linkText: "AMD AI Research Club #5", suffix: ' — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste)' },
+  { id: "news-002", date: "Jul 2026", text: "Convened the", link: "https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html", linkText: "World Model Foundry", suffix: " at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia" },
+  { id: "news-003", date: "Jul 2026", text: "Workshop accepted at", link: "https://aiforpeaceworkshop.github.io/", linkText: "NeurIPS 2026 — AI for Peace", suffix: " (Paris, Dec 12–13, 2026)" },
+  { id: "news-004", date: "Jul 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html", linkText: '"Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning"', suffix: " on ROCm Blog" },
+  { id: "news-005", date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
+  { id: "news-006", date: "Jun 2026", text: "Hosting", link: "https://www.linkedin.com/events/7468403201202122752/", linkText: "AMD AI Research Club #4", suffix: ' — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington)' },
+  { id: "news-007", date: "Jun 2026", text: "Keynote at", link: "https://systec.fe.up.pt/systec-ri-day", linkText: "SYSTEC Research & Innovation Day", suffix: " (Faculty of Engineering, University of Porto, Jun 18)" },
+  { id: "news-008", date: "Jun 2026", text: "Presented", link: "https://thegoodailab.org", linkText: "The Good AI Lab", suffix: " research at Sapienza University of Rome" },
+  { id: "news-009", date: "Sep 2026", text: "", link: "https://arxiv.org/abs/2606.23885", linkText: "Mind the Heads", suffix: " accepted at NeurIPS 26 — head-wise representation alignment (HeRA) for multimodal LLMs" },
+  { id: "news-010", date: "May 2026", text: "Hosted", link: "https://amd.zoom.us/webinar/register/WN_XtuA5kyQRVqyJ4YiUmKlWQ", linkText: "AMD AI Research Club #3", suffix: ' — "Invisible Shortcuts: Why Vision Encoders Know Your Camera" with Giorgos Tolias (CTU in Prague)' },
+  { id: "news-011", date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/semantic-fencing/README.html", linkText: '"Semantic Fencing of Video Streams Using Embedding Splits from Vision Foundation Models"', suffix: " on ROCm Blog" },
+  { id: "news-012", date: "May 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/street-gaussians/README.html", linkText: '"AMD-Powered 3D Gaussian Splatting for Autonomous Driving Scenes"', suffix: " on ROCm Blog" },
+  { id: "news-013", date: "Apr 2026", text: "Published", link: "https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html", linkText: '"Styled Text Image Generation with Eruku on AMD"', suffix: " on ROCm Blog" },
+  { id: "news-014", date: "Apr 2026", text: "", link: "https://cv4good.thegoodailab.org/", linkText: "CV4GOOD accepted at ECCV 2026", suffix: " — Computer Vision for Humanitarian Action workshop (Malmö, Sep 8, 2026), with MSF, featuring Yann Rebois, Jamon Van Den Hoek, Corey Scher, Joseph Redmon, and Sara Beery" },
+  { id: "news-015", date: "Apr 2026", text: "Speaker at", link: "https://www.gaia.fish/talks/where-ai-finds-its-purpose", linkText: "GAIA Conference 2026", suffix: ' (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF' },
+  { id: "news-016", date: "Apr 2026", text: "Keynote at", link: "https://aiforpeaceworkshop.github.io/", linkText: "ICLR 2026 — AI for Peace Workshop", suffix: " (Rio de Janeiro) — LAWS and international humanitarian law, alongside Timnit Gebru, Alex Hanna, David Gray Widder, Gisela Luján Andrade, and Joseph Redmon" },
+  { id: "news-017", date: "Apr 2026", text: "Hosted", link: "https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration", linkText: "AMD AI Research Club #2", suffix: ' — "Depth Foundation Models: Are We There Yet?" with Luca Bartolomei (University of Bologna)' },
+  { id: "news-018", date: "Mar 2026", text: "Speaker at", link: "https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html", linkText: "Compute to Impact", suffix: ' (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy"' },
+  { id: "news-019", date: "Mar 2026", text: "Launched", link: "https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration", linkText: "AMD AI Research Club", suffix: ' — "Retrieval Augmentation in Multimodal Large Language Models" with Sara Sarto (UniMoRE)' },
+  { id: "news-020", date: "Mar 2026", text: "Keynote at", link: "https://warsawaisummit.com/", linkText: "Warsaw AI Summit 2026" },
+  { id: "news-021", date: "Jan 2026", text: "Published", link: "https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars", linkText: '"From Self-Driving Cars to Self-Driving Wars"', suffix: " — autonomy, AI weapons, and the illusion of control" },
+  { id: "news-022", date: "Dec 2025", text: "", link: "https://arxiv.org/abs/2512.15885", linkText: '"Seeing Beyond Words"', suffix: " — preprint on arXiv — JARVIS, a JEPA-inspired self-supervised visual learning framework for MLLMs" },
+  { id: "news-023", date: "Dec 2025", text: "", link: "https://thegoodailab.org/blog/msf-from-principles-to-practice", linkText: '"From Principles to Practice"', suffix: " — our work with Doctors Without Borders" },
+  { id: "news-024", date: "Dec 2025", text: "Published", link: "https://rocm.blogs.amd.com/software-tools-optimization/point-2-gaussian/README.html", linkText: '"3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat"', suffix: " on ROCm Blog" },
+  { id: "news-025", date: "Oct 2025", text: "Keynote at", link: "https://nordichpcsummit.enccs.se/", linkText: "Nordic HPC Summit 2025", suffix: ' (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility"' },
+  { id: "news-026", date: "Oct 2025", text: "Published", link: "https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html", linkText: '"Elevating 3D Scene Rendering with GSplat"', suffix: " on ROCm Blog" },
+  { id: "news-027", date: "Oct 2025", text: "", link: "https://thegoodailab.org/blog/msf-partnership", linkText: "GAL and MSF announce partnership", suffix: " to bring responsible AI to humanitarian work" },
+  { id: "news-028", date: "Jul 2025", text: "", link: "https://thegoodailab.org/blog/vocalign", linkText: "VocAlign", suffix: " accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation" },
+  { id: "news-029", date: "Mar 2025", text: "", link: "https://arxiv.org/abs/2307.15063", linkText: "SemLA", suffix: " accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion" },
+  { id: "news-030", date: "Mar 2025", text: "Presented GAL at", link: "https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13", linkText: "Redeye AI Theme Event 2025", suffix: " (Stockholm)" },
+  { id: "news-031", date: "Jan 2025", text: "Featured on", link: "https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/", linkText: "AIAW Podcast E143", suffix: " — Revolutionizing AI and Autonomous Systems" },
+  { id: "news-032", date: "Sep 2024", text: "Speaker at", link: "https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/", linkText: "Nordic Industry Days 2024", suffix: " (Copenhagen) — Supercomputing for AI, EuroHPC" },
+  { id: "news-033", date: "Sep 2024", text: "Speaker at", link: "https://www.auto-ai.eu/peoples/pier-luigi-dovesi-2", linkText: "Auto.AI Europe", suffix: ' (Berlin) — "Data Alchemy: Adapting and Creating with Limited Data"' },
+  { id: "news-034", date: "Apr 2024", text: "Speaker at", link: "https://www.gaia.fish/speakers2/pier-luigi-dovesi-2024", linkText: "GAIA Conference 2024", suffix: ' (Gothenburg) — "Adapting Like Humans: Embodied AI Beyond Datasets and Domains"' },
+  { id: "news-035", date: "Oct 2023", text: "", link: "https://arxiv.org/abs/2307.15063", linkText: "HAMLET", suffix: " accepted at ICCV 2023 — real-time online domain adaptation" },
+  { id: "news-036", date: "Oct 2022", text: "", link: "https://arxiv.org/abs/2207.10667", linkText: "OnDA", suffix: " accepted at ECCV 2022 — online domain adaptation" },
+  { id: "news-037", date: "May 2020", text: "", link: "https://arxiv.org/abs/1910.00541", linkText: "Real-Time Semantic Stereo Matching", suffix: " accepted at ICRA 2020" },
+  { id: "news-038", date: "Aug 2019", text: "", link: "https://arxiv.org/abs/1908.03127", linkText: "Enhancing Self-Supervised Monocular Depth Estimation with Traditional Visual Odometry", suffix: " accepted at 3DV 2019" },
 ];
 
 export const news = sortByDate(newsUnsorted);
+
+function escapeXml(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+}
+
+export function generateRssXml(): string {
+  const ids = new Set<string>();
+  const items = news.map((item) => {
+    if (ids.has(item.id)) throw new Error(`Duplicate news ID: ${item.id}`);
+    ids.add(item.id);
+    const url = `https://dovesi.dev/#${item.id}`;
+    const description = `${item.date} — ${[item.text, item.linkText + (item.suffix ?? "")].filter(Boolean).join(" ")}`;
+    return [
+      "    <item>",
+      `      <title>${escapeXml(item.linkText)}</title>`,
+      `      <link>${escapeXml(url)}</link>`,
+      `      <guid isPermaLink="true">${escapeXml(url)}</guid>`,
+      `      <description>${escapeXml(description)}</description>`,
+      "    </item>",
+    ].join("\n");
+  });
+
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<rss version="2.0">',
+    "  <channel>",
+    "    <title>Pier Luigi Dovesi — News</title>",
+    "    <link>https://dovesi.dev/#news</link>",
+    "    <description>News, research, talks, and writing by Pier Luigi Dovesi.</description>",
+    "    <language>en</language>",
+    ...items,
+    "  </channel>",
+    "</rss>",
+    "",
+  ].join("\n");
+}
 
 // ── Timeline ──
 export interface TimelineEntry {
@@ -295,7 +333,7 @@ export function generatePrerenderedHtml(): string {
   // News
   ln(`<section id="news"><h2>News</h2>`);
   news.forEach((n) => {
-    ln(`<p><strong>${esc(n.date)}</strong> ${esc(n.text)} <a href="${esc(n.link)}">${esc(n.linkText)}</a>${n.suffix ? esc(n.suffix) : ""}</p>`);
+    ln(`<p id="${esc(n.id)}"><strong>${esc(n.date)}</strong> ${esc(n.text)} <a href="${esc(n.link)}">${esc(n.linkText)}</a>${n.suffix ? esc(n.suffix) : ""}</p>`);
   });
   ln(`</section>`);
 

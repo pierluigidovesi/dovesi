@@ -235,31 +235,21 @@ const HoughBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [seed] = useState(() => Math.floor(Math.random() * 10000));
   const clustersRef = useRef<ClusterParams[]>();
-  const timeRef = useRef(0);
 
-  // Pre-compute cluster params once
-  if (!clustersRef.current) {
-    clustersRef.current = buildClusterParams(seed);
-  }
+  if (!clustersRef.current) clustersRef.current = buildClusterParams(seed);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    if (!ctx) return;
     const clusters = clustersRef.current;
-    if (!clusters) return;
+    if (!ctx || !clusters) return;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let isDark = document.documentElement.classList.contains("dark");
     let color = getComputedStyle(document.body).color;
-    let targetTime = timeRef.current;
-    let lastScrollY = window.scrollY;
-    let rafId = 0;
-    let previousFrame = 0;
-    const draw = () => drawScene(ctx, clusters, timeRef.current, color, isDark);
+    const draw = () => drawScene(ctx, clusters, 0, color, isDark);
 
-    // Soft decorative lines don't need a full retina-size backing surface.
+    // Soft lines need only a modest backing surface. Scroll does not redraw it.
     const resize = () => {
       const scale = Math.min(1, 1400 / window.innerWidth);
       canvas.width = Math.round(window.innerWidth * scale);
@@ -268,53 +258,21 @@ const HoughBackground = () => {
     };
     resize();
 
-    const animate = (now: number) => {
-      rafId = 0;
-      const elapsed = previousFrame ? Math.min(now - previousFrame, 64) : 16.67;
-      previousFrame = now;
-      const difference = targetTime - timeRef.current;
-      timeRef.current += difference * (1 - Math.exp(-elapsed / 70));
-      if (Math.abs(difference) < 0.0005) timeRef.current = targetTime;
-      draw();
-      if (timeRef.current !== targetTime) rafId = requestAnimationFrame(animate);
-      else previousFrame = 0;
-    };
-
-    const onScroll = () => {
-      const newScrollY = window.scrollY;
-      const delta = newScrollY - lastScrollY;
-      lastScrollY = newScrollY;
-      if (reducedMotion.matches || document.hidden || delta === 0) return;
-      targetTime += delta * 0.002;
-      if (!rafId) rafId = requestAnimationFrame(animate);
-    };
-
-    // Observe theme changes to update stroke color
     const themeObserver = new MutationObserver(() => {
       isDark = document.documentElement.classList.contains("dark");
       color = getComputedStyle(document.body).color;
       draw();
     });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", resize);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
       themeObserver.disconnect();
-      cancelAnimationFrame(rafId);
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      aria-hidden="true"
-      className="hough-background"
-    />
-  );
+  return <canvas ref={canvasRef} aria-hidden="true" className="hough-background" />;
 };
 
 export default HoughBackground;

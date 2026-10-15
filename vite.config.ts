@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
 
-/** Vite plugin: auto-generate llms.txt and pre-render HTML from src/data.ts at build time */
+/** Vite plugin: auto-generate feeds and pre-render HTML from src/data.ts at build time */
 function generateBuildAssets(): Plugin {
   return {
     name: "generate-build-assets",
@@ -17,7 +17,12 @@ function generateBuildAssets(): Plugin {
         data.generateLlmsTxt(),
         "utf-8",
       );
-      console.log("✓ Generated public/llms.txt");
+      fs.writeFileSync(
+        path.resolve(__dirname, "public/rss.xml"),
+        data.generateRssXml(),
+        "utf-8",
+      );
+      console.log("✓ Generated public/llms.txt and public/rss.xml");
     },
     // After the bundle is written, inject pre-rendered HTML for crawlers/no-JS.
     async writeBundle() {
