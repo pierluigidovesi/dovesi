@@ -4,6 +4,7 @@ import { buildClusterParams, drawScene } from "./houghScene";
 const HoughBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [seed] = useState(() => Math.floor(Math.random() * 10000));
+  const [workerFailed, setWorkerFailed] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,6 +21,22 @@ const HoughBackground = () => {
     let targetTime = 0;
     let rafId = 0;
     let previousFrame = 0;
+    let disposed = false;
+
+    const stopWorker = () => {
+      if (!worker) return;
+      worker.onerror = null;
+      worker.onmessageerror = null;
+      worker.terminate();
+    };
+    const fallbackToMainThread = () => {
+      if (disposed) return;
+      disposed = true;
+      stopWorker();
+      // A transferred canvas cannot regain its 2D context. Mount a fresh one
+      // before starting the fallback, including when worker loading fails later.
+      setWorkerFailed(true);
+    };
 
     const dimensions = () => {
       const scale = Math.min(1, 1400 / window.innerWidth);
@@ -31,17 +48,22 @@ const HoughBackground = () => {
 
     // Curve drawing runs in a worker where supported, leaving native scrolling
     // free to run on the page's main thread.
-    if (typeof canvas.transferControlToOffscreen === "function") {
+    if (!workerFailed && typeof canvas.transferControlToOffscreen === "function") {
       try {
         worker = new Worker(new URL("./hough.worker.ts", import.meta.url), { type: "module" });
+        worker.onerror = (event) => {
+          event.preventDefault();
+          fallbackToMainThread();
+        };
+        worker.onmessageerror = fallbackToMainThread;
         const surface = canvas.transferControlToOffscreen();
         worker.postMessage({
           type: "init", canvas: surface, seed, ...dimensions(), color, isDark,
           reducedMotion: reducedMotion.matches,
         }, [surface]);
       } catch {
-        worker?.terminate();
-        worker = undefined;
+        fallbackToMainThread();
+        return;
       }
     }
 
@@ -123,17 +145,18 @@ const HoughBackground = () => {
     reducedMotion.addEventListener("change", onMotionChange);
 
     return () => {
+      disposed = true;
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
       document.removeEventListener("visibilitychange", onVisibilityChange);
       reducedMotion.removeEventListener("change", onMotionChange);
       themeObserver.disconnect();
       cancelAnimationFrame(rafId);
-      worker?.terminate();
+      stopWorker();
     };
-  }, [seed]);
+  }, [seed, workerFailed]);
 
-  return <canvas ref={canvasRef} aria-hidden="true" className="hough-background" />;
+  return <canvas key={workerFailed ? "main" : "worker"} ref={canvasRef} aria-hidden="true" className="hough-background" />;
 };
 
 export default HoughBackground;
