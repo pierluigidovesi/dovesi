@@ -80,7 +80,7 @@ const Index = () => {
               alt="Pier Luigi Dovesi speaking at a conference"
               width={480}
               height={480}
-              className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
+              className="mb-6 block w-32 rounded-sm object-cover sm:float-right sm:mb-4 sm:ml-6 sm:w-40"
             />
           <p className="text-foreground">
             Hi, I'm Pier — I lead{" "}

@@ -47,16 +47,16 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 - Apr 2026: Published "Styled Text Image Generation with Eruku on AMD" on ROCm Blog — https://rocm.blogs.amd.com/ecosystems-and-partners/eruku-genai/README.html
 - Apr 2026: CV4GOOD accepted at ECCV 2026 — Computer Vision for Humanitarian Action workshop (Malmö, Sep 8, 2026), with MSF, featuring Yann Rebois, Jamon Van Den Hoek, Corey Scher, Joseph Redmon, and Sara Beery — https://cv4good.thegoodailab.org/
 - Apr 2026: Speaker at GAIA Conference 2026 (Gothenburg, Apr 20) — "Where AI Finds Its Purpose" — AI for humanitarian action with MSF — https://www.gaia.fish/talks/where-ai-finds-its-purpose
-- Apr 2026: Keynote at ICLR 2026 — AI for Peace Workshop (Rio de Janeiro) — LAWS and international humanitarian law, alongside Timnit Gebru, Alex Hanna, David Gray Widder, Gisela Luján Andrade, and Joseph Redmon — https://aiforpeaceworkshop.github.io/
+- Apr 2026: Keynote at ICLR 2026 — AI for Peace Workshop (Rio de Janeiro) — LAWS and international humanitarian law, alongside Timnit Gebru, Alex Hanna, David Gray Widder, Gisela Luján Andrade, and Joseph Redmon — https://aiforpeaceworkshop.github.io/iclr-2026/
 - Apr 2026: Hosted AMD AI Research Club #2 — "Depth Foundation Models: Are We There Yet?" with Luca Bartolomei (University of Bologna) — https://webinar.amd.com/Active-Stereo-Without-Pattern-Projector/en/registration
 - Mar 2026: Speaker at Compute to Impact (Helsinki) — "Advancing Physical AI: the AMD Open Ecosystem for Autonomy" — https://discover.amd.com/q1-2025-compute-to-impact-helsinki.html
 - Mar 2026: Launched AMD AI Research Club — "Retrieval Augmentation in Multimodal Large Language Models" with Sara Sarto (UniMoRE) — https://webinar.amd.com/Retrieval-Augmentation-in-Multimodal-Large-Language-Models/en/registration
-- Mar 2026: Keynote at Warsaw AI Summit 2026 — https://warsawaisummit.com/
+- Mar 2026: Keynote at Warsaw AI Summit 2026 — https://www.linkedin.com/posts/pierluigidovesi_happy-to-keynote-the-warsaw-ai-summit-today-activity-7434563685957648384-_xj5
 - Jan 2026: Published "From Self-Driving Cars to Self-Driving Wars" — autonomy, AI weapons, and the illusion of control — https://thegoodailab.org/blog/from-self-driving-cars-to-self-driving-wars
 - Dec 2025: "Seeing Beyond Words" — preprint on arXiv — JARVIS, a JEPA-inspired self-supervised visual learning framework for MLLMs — https://arxiv.org/abs/2512.15885
 - Dec 2025: "From Principles to Practice" — our work with Doctors Without Borders — https://thegoodailab.org/blog/msf-from-principles-to-practice
 - Dec 2025: Published "3D Scene Reconstruction from the Inside: Explore the Mathematics Behind gsplat" on ROCm Blog — https://rocm.blogs.amd.com/software-tools-optimization/point-2-gaussian/README.html
-- Oct 2025: Keynote at Nordic HPC Summit 2025 (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility" — https://nordichpcsummit.enccs.se/
+- Oct 2025: Keynote at Nordic HPC Summit 2025 (Stockholm) — "Building The Good AI Lab: where curiosity meets responsibility" — https://nordichpcsummit.enccs.se/wp-content/uploads/2025/10/Nordic-HPC-Summit-Agenda-.pdf
 - Oct 2025: Published "Elevating 3D Scene Rendering with GSplat" on ROCm Blog — https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html
 - Oct 2025: GAL and MSF announce partnership to bring responsible AI to humanitarian work — https://thegoodailab.org/blog/msf-partnership
 - Jul 2025: VocAlign accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation — https://thegoodailab.org/blog/vocalign
