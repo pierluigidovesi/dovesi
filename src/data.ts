@@ -199,10 +199,39 @@ const writingUnsorted: WritingEntry[] = [
 
 export const writing = sortByDate(writingUnsorted);
 
-// ── Publications ──
-export const publications = [
-  "VocAlign — source-free domain adaptation for open-vocabulary segmentation (BMVC 2025)",
-  "SemLA — domain adaptation with LoRA retrieval and fusion (CVPR 2025)",
+// ── Selected research ──
+export const research = [
+  {
+    title: "Mind the Heads (HeRA)",
+    venue: "NeurIPS 2026",
+    description: "Aligns individual attention heads with a vision model to improve visual reasoning and reduce hallucinations in multimodal LLMs.",
+    paper: "https://arxiv.org/abs/2606.23885",
+    resource: { label: "Project", href: "https://aimagelab.github.io/HeRA/" },
+  },
+  {
+    title: "Seeing Beyond Words (JARVIS)",
+    venue: "Preprint · 2025",
+    description: "Teaches multimodal LLMs to learn visual structure directly from images, beyond what text descriptions can convey.",
+    paper: "https://arxiv.org/abs/2512.15885",
+    resource: { label: "Project", href: "https://github.com/aimagelab/JARVIS" },
+  },
+  {
+    title: "VocAlign",
+    venue: "BMVC 2025",
+    description: "Adapts image segmentation to new environments by aligning category vocabularies, without access to the original training data.",
+    paper: "https://arxiv.org/abs/2509.15225",
+    resource: { label: "Code", href: "https://github.com/Sisso16/VocAlign" },
+  },
+  {
+    title: "Semantic Library Adaptation (SemLA)",
+    venue: "CVPR 2025",
+    description: "Retrieves and combines lightweight model adapters to tailor segmentation to each image, without additional training at test time.",
+    paper: "https://arxiv.org/abs/2503.21780",
+    resource: { label: "Code", href: "https://github.com/rezaqorbani/SemLA" },
+  },
+];
+
+const earlierPublications = [
   "HAMLET — real-time online domain adaptation (ICCV 2023)",
   "OnDA — online domain adaptation (ECCV 2022)",
   "Real-Time Semantic Stereo Matching (ICRA 2020)",
@@ -228,6 +257,7 @@ export function generateLlmsTxt(): string {
   ln("## Pages");
   ln();
   ln("- [About](/#about): who I am and what I work on.");
+  ln("- [Selected Research](/#research): papers, contributions, and project or code links.");
   ln("- [Talks & Podcasts](/#talks): keynotes, conference talks, and podcast appearances.");
   ln("- [News](/#news): recent updates, publications, and announcements.");
   ln("- [Timeline](/#timeline): roles, education, and career history.");
@@ -279,7 +309,11 @@ export function generateLlmsTxt(): string {
 
   ln("## Selected Publications");
   ln();
-  publications.forEach((p) => ln(`- ${p}`));
+  research.forEach((p) => {
+    ln(`- ${p.title} (${p.venue}): ${p.description}`);
+    ln(`  Paper: ${p.paper} | ${p.resource.label}: ${p.resource.href}`);
+  });
+  earlierPublications.forEach((p) => ln(`- ${p}`));
   ln();
 
   ln("## Links");

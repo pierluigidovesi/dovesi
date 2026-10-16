@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
-import { bio, links, talks, news, timeline, writing, quotes } from "@/data";
+import { bio, links, talks, research, timeline, writing, quotes } from "@/data";
+import NewsArchive from "@/components/NewsArchive";
 
 const Index = () => {
   // The first-paint script sets the theme before styles load. Keeping the
@@ -39,7 +40,7 @@ const Index = () => {
 
       <nav aria-label="Main navigation" className="max-w-[680px] mx-auto px-6 pt-6 pb-2 relative flex items-start justify-between gap-3" style={{ zIndex: 2 }}>
         <div className="flex flex-wrap gap-x-5 gap-y-1 pt-3 text-sm tracking-widest uppercase">
-          {["About", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
+          {["About", "Research", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(".", "")}`}
@@ -113,6 +114,25 @@ const Index = () => {
 
         <hr className="border-border mb-14" />
 
+        <Section id="research" title="Selected Research">
+          <ul className="space-y-6">
+            {research.map((paper) => (
+              <li key={paper.paper} className="research-item">
+                <h3 className="font-semibold text-foreground">{paper.title}</h3>
+                <p className="text-sm text-muted-foreground">{paper.venue}</p>
+                <p className="mt-1 leading-snug">{paper.description}</p>
+                <p className="research-links mt-1 text-sm flex gap-4">
+                  <A href={paper.paper}>Paper<span className="sr-only">: {paper.title}</span></A>
+                  <A href={paper.resource.href}>{paper.resource.label}<span className="sr-only">: {paper.title}</span></A>
+                </p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm">
+            <A href={links.find((link) => link.label === "Google Scholar")!.href}>All publications on Google Scholar →</A>
+          </p>
+        </Section>
+
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
           <div className="talk-grid grid gap-3 sm:grid-cols-2">
@@ -124,11 +144,7 @@ const Index = () => {
 
         {/* News */}
         <Section id="news" title="News">
-          <div className="space-y-0">
-            {news.map((n) => (
-              <NewsItem key={n.id} id={n.id} date={n.date} text={n.text} link={n.link} linkText={n.linkText} suffix={n.suffix} />
-            ))}
-          </div>
+          <NewsArchive />
         </Section>
 
         {/* Timeline — dotted line with dots */}
@@ -273,17 +289,6 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
     </h2>
     {children}
   </section>
-);
-
-const NewsItem = ({ id, date, text, link, linkText, suffix }: { id: string; date: string; text: string; link: string; linkText: string; suffix?: string }) => (
-  <div id={id} className="news-item scroll-mt-12 flex gap-4 py-2.5 border-b border-border/50 last:border-b-0">
-    <span className="text-sm text-muted-foreground whitespace-nowrap pt-0.5 w-[72px] shrink-0">{date}</span>
-    <p className="leading-snug">
-      {text && `${text} `}
-      <A href={link}>{linkText}</A>
-      {suffix}
-    </p>
-  </div>
 );
 
 const TalkTile = ({ title, detail, href, linkLabel = "info", tag }: { title: string; detail: string; href: string; linkLabel?: string; tag?: string }) => (

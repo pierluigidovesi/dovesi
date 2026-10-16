@@ -304,13 +304,17 @@
     text-shadow: none !important;
   }
   canvas, .site-vignette, nav, .theme-toggle, .workshop-chips, #soulmd,
-  .skip-link, .section-anchor { display: none !important; }
+  .skip-link, .section-anchor, .news-archive > summary { display: none !important; }
+  .news-archive::details-content {
+    display: block !important;
+    content-visibility: visible !important;
+  }
   main { padding-top: 0 !important; padding-bottom: 0 !important; }
   #about { margin-bottom: 1rem !important; }
   hr { margin-bottom: 1rem !important; }
   section { margin-bottom: 1.5rem !important; }
   h1, h2, h3 { break-after: avoid; }
-  .news-item, .talk-tile, .timeline-item, blockquote { break-inside: avoid; }
+  .news-item, .research-item, .talk-tile, .timeline-item, blockquote { break-inside: avoid; }
   .talk-grid { display: block !important; }
   #root .talk-tile {
     padding: 0 !important;
@@ -319,9 +323,11 @@
   }
   .talk-tile > span { display: none !important; }
   .news-item { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+  .research-links, .research-links a { display: block !important; }
   a { text-decoration: underline; }
   #about a[href^="http"]::after,
   #writing a[href^="http"]::after,
+  .research-links a[href^="http"]::after,
   #about a[href^="mailto:"]::after {
     content: " (" attr(href) ")";
     font-size: 0.7em;

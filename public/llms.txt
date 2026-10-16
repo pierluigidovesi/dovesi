@@ -5,6 +5,7 @@
 ## Pages
 
 - [About](/#about): who I am and what I work on.
+- [Selected Research](/#research): papers, contributions, and project or code links.
 - [Talks & Podcasts](/#talks): keynotes, conference talks, and podcast appearances.
 - [News](/#news): recent updates, publications, and announcements.
 - [Timeline](/#timeline): roles, education, and career history.
@@ -96,8 +97,14 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 
 ## Selected Publications
 
-- VocAlign — source-free domain adaptation for open-vocabulary segmentation (BMVC 2025)
-- SemLA — domain adaptation with LoRA retrieval and fusion (CVPR 2025)
+- Mind the Heads (HeRA) (NeurIPS 2026): Aligns individual attention heads with a vision model to improve visual reasoning and reduce hallucinations in multimodal LLMs.
+  Paper: https://arxiv.org/abs/2606.23885 | Project: https://aimagelab.github.io/HeRA/
+- Seeing Beyond Words (JARVIS) (Preprint · 2025): Teaches multimodal LLMs to learn visual structure directly from images, beyond what text descriptions can convey.
+  Paper: https://arxiv.org/abs/2512.15885 | Project: https://github.com/aimagelab/JARVIS
+- VocAlign (BMVC 2025): Adapts image segmentation to new environments by aligning category vocabularies, without access to the original training data.
+  Paper: https://arxiv.org/abs/2509.15225 | Code: https://github.com/Sisso16/VocAlign
+- Semantic Library Adaptation (SemLA) (CVPR 2025): Retrieves and combines lightweight model adapters to tailor segmentation to each image, without additional training at test time.
+  Paper: https://arxiv.org/abs/2503.21780 | Code: https://github.com/rezaqorbani/SemLA
 - HAMLET — real-time online domain adaptation (ICCV 2023)
 - OnDA — online domain adaptation (ECCV 2022)
 - Real-Time Semantic Stereo Matching (ICRA 2020)
