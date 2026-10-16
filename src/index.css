@@ -60,7 +60,7 @@
     --popover: 24 12% 7%;
     --popover-foreground: 35 20% 85%;
 
-    --primary: 4 65% 55%;
+    --primary: 4 65% 60%;
     --primary-foreground: 24 12% 7%;
 
     --secondary: 24 8% 14%;
@@ -69,7 +69,7 @@
     --muted: 24 8% 14%;
     --muted-foreground: 30 10% 55%;
 
-    --accent: 4 65% 55%;
+    --accent: 4 65% 60%;
     --accent-foreground: 24 12% 7%;
 
     --destructive: 0 63% 31%;
@@ -77,7 +77,7 @@
 
     --border: 24 8% 18%;
     --input: 24 8% 18%;
-    --ring: 4 65% 55%;
+    --ring: 4 65% 60%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -254,6 +254,14 @@
 
 #main-content:focus { outline: none; }
 
+/* Inline links remain identifiable without relying on the accent color. */
+main p a,
+#writing li > a {
+  text-decoration-line: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.15em;
+}
+
 .skip-link {
   position: fixed;
   top: 1rem;
@@ -304,7 +312,7 @@
     text-shadow: none !important;
   }
   canvas, .site-vignette, nav, .theme-toggle, .workshop-chips, #soulmd,
-  .skip-link, .section-anchor, .news-archive > summary { display: none !important; }
+  .skip-link, .section-anchor, .news-subscription, .news-archive > summary { display: none !important; }
   .news-archive::details-content {
     display: block !important;
     content-visibility: visible !important;

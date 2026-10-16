@@ -144,6 +144,9 @@ const Index = () => {
 
         {/* News */}
         <Section id="news" title="News">
+          <p className="news-subscription mb-3 text-sm text-muted-foreground">
+            Follow updates via <a href="/rss.xml" className="text-primary hover:underline underline-offset-2">RSS</a>.
+          </p>
           <NewsArchive />
         </Section>
 
@@ -303,7 +306,7 @@ const TalkTile = ({ title, detail, href, linkLabel = "info", tag }: { title: str
       {tag && <span className="text-primary text-xs italic whitespace-nowrap mt-0.5">({tag})</span>}
     </div>
     <p className="text-muted-foreground text-sm mt-1.5 leading-snug">{detail}</p>
-    <span className="text-primary text-sm mt-2 inline-block opacity-70 group-hover:opacity-100 transition-opacity">{linkLabel} →</span>
+    <span className="text-primary text-sm mt-2 inline-block">{linkLabel} →</span>
   </a>
 );
 
