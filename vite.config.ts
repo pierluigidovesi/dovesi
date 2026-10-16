@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from "vite";
+import { createServer, defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
@@ -26,14 +26,23 @@ function generateBuildAssets(): Plugin {
     },
     // After the bundle is written, inject pre-rendered HTML for crawlers/no-JS.
     async writeBundle() {
-      const data = await import("./src/data.ts");
       const htmlPath = path.resolve(__dirname, "dist/index.html");
       let html = fs.readFileSync(htmlPath, "utf-8");
-      const prerendered = data.generatePrerenderedHtml();
-      html = html.replace(
-        '<div id="root"></div>',
-        `<div id="root">${prerendered}</div>`,
-      );
+      // Render the real component tree so React hydrates the existing layout.
+      const renderer = await createServer({
+        configFile: false,
+        appType: "custom",
+        server: { middlewareMode: true, hmr: false },
+        optimizeDeps: { noDiscovery: true },
+        esbuild: { jsx: "automatic", jsxDev: false },
+        resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
+      });
+      try {
+        const { renderPage } = await renderer.ssrLoadModule("/src/prerender.tsx");
+        html = html.replace('<div id="root"></div>', `<div id="root">${renderPage()}</div>`);
+      } finally {
+        await renderer.close();
+      }
       fs.writeFileSync(htmlPath, html, "utf-8");
       console.log("✓ Injected pre-rendered HTML");
     },

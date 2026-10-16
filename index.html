@@ -4,21 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts: preconnect + link (faster than CSS @import) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
-    <link rel="preload" as="image" href="/photo.jpg" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/lora-normal-latin.woff2" crossorigin />
+    <link rel="preload" as="image" href="/photo-320.webp" imagesrcset="/photo-160.webp 160w, /photo-320.webp 320w, /photo-480.webp 480w" imagesizes="(min-width: 640px) 160px, 128px" fetchpriority="high" />
 
     <script>
       (() => {
+        let preference;
+        try { preference = localStorage.getItem("theme"); } catch {}
         const hour = new Date().getHours();
-        document.documentElement.classList.toggle("dark", hour >= 22 || hour < 6);
+        const dark = preference === "dark" || (preference !== "light" && (hour >= 22 || hour < 6));
+        document.documentElement.classList.toggle("dark", dark);
       })();
     </script>
     <title>Pier Luigi Dovesi | Physical AI and AI for Social Good</title>
     <meta name="description" content="Robotics Lead at AMD Silo AI, Co-Founder and Chair of The Good AI Lab. Working on physical AI, embodied systems, world models, and AI for social good." />
     <meta name="author" content="Pier Luigi Dovesi" />
+    <link rel="canonical" href="https://dovesi.dev/" data-rh="true" />
     <meta name="google-site-verification" content="A7sR0Y-YTFhinRDojKTGAJGw9zYpZxBa81FKTIf-Jzw" />
 
     <!-- LLM-friendly structured content -->

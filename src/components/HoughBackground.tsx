@@ -11,7 +11,8 @@ const HoughBackground = () => {
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let isDark = document.documentElement.classList.contains("dark");
-    let color = getComputedStyle(document.body).color;
+    const themeColor = () => `hsl(${getComputedStyle(document.documentElement).getPropertyValue("--foreground").trim()})`;
+    let color = themeColor();
     let lastScrollY = window.scrollY;
     let worker: Worker | undefined;
     let drawOnMainThread: ((time: number) => void) | undefined;
@@ -91,7 +92,7 @@ const HoughBackground = () => {
 
     const onThemeChange = () => {
       isDark = document.documentElement.classList.contains("dark");
-      color = getComputedStyle(document.body).color;
+      color = themeColor();
       if (worker) worker.postMessage({ type: "theme", color, isDark });
       else drawOnMainThread?.(time);
     };

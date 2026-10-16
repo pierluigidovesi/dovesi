@@ -13,9 +13,10 @@ A single-page site: bio, talks, news, career timeline, and writing. No CMS, no b
 
 ## Design choices
 
-- **Typography.** [Lora](https://fonts.google.com/specimen/Lora) for body (a bookish serif), [Bowlby One](https://fonts.google.com/specimen/Bowlby+One) for the CV4GOOD display chip, Press Start 2P and Space Grotesk for the AI for Peace chip, and JetBrains Mono for the `soul.md` easter-egg. Fonts are loaded via `<link>` + `preconnect` in [`index.html`](index.html) so the preload scanner finds them immediately.
+- **Typography.** [Lora](https://fonts.google.com/specimen/Lora) for body (a bookish serif), [Bowlby One](https://fonts.google.com/specimen/Bowlby+One) for the CV4GOOD display chip, Press Start 2P and Space Grotesk for the AI for Peace chip, and JetBrains Mono for the `soul.md` easter-egg. Used weights and character subsets are self-hosted as WOFF2 in `public/fonts/`, with their original SIL Open Font Licenses. The body font is preloaded.
 - **Palette.** Warm parchment and terracotta in light mode, near-black with a clay accent in dark mode. All colors are HSL CSS variables defined in [`src/index.css`](src/index.css) and consumed through Tailwind.
-- **Time-aware theme.** The site defaults to light during the day and dark at night (see the inline script in [`index.html`](index.html)); a manual toggle persists the choice to `localStorage`.
+- **Time-aware theme.** The first-paint script in [`index.html`](index.html) honors an explicit saved choice, otherwise choosing light during the day and dark at night. Only pressing the navigation's theme button saves an override; blocked storage still permits toggling within the page.
+- **Local visual assets.** The portrait uses 160/320/480-pixel WebP variants with responsive selection and preload. The original JPEG remains available for profile metadata. AI for Peace masks are optimized local copies of the workshop's existing wordmark and shadow artwork, sourced from its [website](https://aiforpeaceworkshop.github.io/).
 - **Hough-line background.** The linework behind the content moves gently with scrolling — a nod to the computer-vision work — in [`src/components/HoughBackground.tsx`](src/components/HoughBackground.tsx). A worker draws the curves off the scrolling thread where supported, with a main-thread fallback and reduced-motion support.
 - **Gold-leaf text selection.** Selecting text produces a warm amber glow rather than a flat highlight (`::selection` in [`src/index.css`](src/index.css)), tying back to the CV4GOOD accent.
 - **CV4GOOD chip.** A hand-styled call-out for the ECCV 2026 workshop, ported from the GAL site, with a hover tilt that respects `prefers-reduced-motion`.
@@ -28,7 +29,7 @@ A single-page site: bio, talks, news, career timeline, and writing. No CMS, no b
 - **Build-time generation.** A small Vite plugin in [`vite.config.ts`](vite.config.ts) derives files from the same `data.ts`:
   - writes `public/llms.txt` — a structured Markdown summary for language models;
   - writes `public/rss.xml` — a discoverable feed of News items;
-  - injects a fully pre-rendered HTML snapshot into `<div id="root">`, so crawlers and no-JS clients see real content. React's `createRoot` replaces it on hydration.
+  - renders the real page component through [`src/prerender.tsx`](src/prerender.tsx) and injects it into `<div id="root">`, so crawlers and no-JS clients see the same layout. React hydrates that markup rather than replacing it. The dark-only section is controlled by CSS in both versions.
 - **SEO.** Per-page `<title>`/meta via `react-helmet-async`, Open Graph + Twitter cards, a `ProfilePage`/`Person` JSON-LD block, `sitemap.xml`, and `robots.txt`.
 - **Routing.** `react-router-dom` with a single home route plus a `noindex` 404 page.
 

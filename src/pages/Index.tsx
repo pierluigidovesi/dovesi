@@ -1,40 +1,28 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import HoughBackground from "@/components/HoughBackground";
 import { bio, links, talks, news, timeline, writing, quotes } from "@/data";
 
 const Index = () => {
-  const [dark, setDark] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved === "dark";
-    return document.documentElement.classList.contains("dark");
-  });
+  // The first-paint script sets the theme before styles load. Keeping the
+  // initial React state deterministic also lets us hydrate the built page.
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-    localStorage.setItem("theme", dark ? "dark" : "light");
-  }, [dark]);
-
-  // The build's crawlable HTML is replaced by React on load. Restore a direct
-  // hash target against the final layout, before the browser paints it.
-  useLayoutEffect(() => {
-    const id = window.location.hash.slice(1);
-    if (id) document.getElementById(id)?.scrollIntoView({ behavior: "instant", block: "start" });
+    setDark(document.documentElement.classList.contains("dark"));
   }, []);
+
+  const toggleTheme = () => {
+    const nextDark = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", nextDark);
+    setDark(nextDark);
+    // Only a deliberate choice overrides the automatic time-of-day theme.
+    try { localStorage.setItem("theme", nextDark ? "dark" : "light"); } catch { /* Storage can be unavailable. */ }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
       <a href="#main-content" className="skip-link">Skip to content</a>
-      <Helmet>
-        <title>Pier Luigi Dovesi | Physical AI and AI for Social Good</title>
-        <meta name="description" content="Pier Luigi Dovesi — Robotics Lead at AMD Silo AI, Co-Founder & Chair of The Good AI Lab. Physical AI, embodied systems, world models, AI for social good." />
-        <link rel="canonical" href="https://dovesi.dev/" />
-        <meta property="og:title" content="Pier Luigi Dovesi | Physical AI and AI for Social Good" />
-        <meta property="og:description" content="Robotics Lead at AMD Silo AI, Co-Founder & Chair of The Good AI Lab. Physical AI, embodied systems, world models, AI for social good." />
-        <meta property="og:url" content="https://dovesi.dev/" />
-        <meta property="og:type" content="website" />
-      </Helmet>
       <HoughBackground />
 
       {/* Smooth vignette: fades background color over Hough lines behind content */}
@@ -49,18 +37,29 @@ const Index = () => {
         }}
       />
 
-      <nav className="max-w-[680px] mx-auto px-6 pt-8 pb-2 relative" style={{ zIndex: 2 }}>
-        <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm tracking-widest uppercase">
-          {["About", "Talks", "News", "Timeline", "Writing", ...(dark ? ["soul.md"] : [])].map((item) => (
+      <nav aria-label="Main navigation" className="max-w-[680px] mx-auto px-6 pt-6 pb-2 relative flex items-start justify-between gap-3" style={{ zIndex: 2 }}>
+        <div className="flex flex-wrap gap-x-5 gap-y-1 pt-3 text-sm tracking-widest uppercase">
+          {["About", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(".", "")}`}
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className={`${item === "soul.md" ? "hidden dark:inline " : ""}text-muted-foreground hover:text-primary transition-colors`}
             >
               {item}
             </a>
           ))}
         </div>
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="theme-toggle shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Dark mode"
+          aria-pressed={dark}
+          title="Toggle light and dark mode"
+        >
+          <Sun size={18} className="hidden dark:block" aria-hidden="true" />
+          <Moon size={18} className="block dark:hidden" aria-hidden="true" />
+        </button>
       </nav>
 
       <main id="main-content" tabIndex={-1} className="max-w-[680px] mx-auto px-6 pt-10 pb-20 relative" style={{ zIndex: 2 }}>
@@ -75,10 +74,12 @@ const Index = () => {
 
           <div className="mt-6 relative">
             <img
-              src="/photo.jpg"
+              src="/photo-320.webp"
+              srcSet="/photo-160.webp 160w, /photo-320.webp 320w, /photo-480.webp 480w"
+              sizes="(min-width: 640px) 160px, 128px"
               alt="Pier Luigi Dovesi speaking at a conference"
-              width={1578}
-              height={1579}
+              width={480}
+              height={480}
               className="float-right ml-6 mb-4 w-32 sm:w-40 rounded-sm object-cover"
             />
           <p className="text-foreground">
@@ -158,29 +159,20 @@ const Index = () => {
         </Section>
 
         {/* soul.md — dark mode only */}
-        {dark && (
-          <section id="soulmd" className="mt-20 pt-10 border-t border-border">
-            <h2 className="text-sm font-mono text-muted-foreground mb-10" style={{ fontFamily: "'JetBrains Mono', monospace" }}>soul.md</h2>
-            <div className="space-y-10">
-              {quotes.map((q, i) => (
-                <Quote key={i} text={q.text} author={q.author} authorHref={q.authorHref} />
-              ))}
-            </div>
-          </section>
-        )}
+        <section id="soulmd" className="hidden dark:block mt-20 pt-10 border-t border-border">
+          <h2 className="text-sm font-mono text-muted-foreground mb-10" style={{ fontFamily: "'JetBrains Mono', monospace" }}>soul.md</h2>
+          <div className="space-y-10">
+            {quotes.map((q, i) => (
+              <Quote key={i} text={q.text} author={q.author} authorHref={q.authorHref} />
+            ))}
+          </div>
+        </section>
       </main>
 
       <footer className="max-w-[680px] mx-auto px-6 py-10 border-t border-border flex items-center justify-between relative" style={{ zIndex: 2 }}>
         <p className="text-sm text-muted-foreground">
           {bio.name} — {bio.location}
         </p>
-        <button
-          onClick={() => setDark((d) => !d)}
-          className="theme-toggle text-muted-foreground hover:text-foreground transition-colors p-1"
-          aria-label="Toggle dark mode"
-        >
-          {dark ? <Sun size={14} /> : <Moon size={14} />}
-        </button>
       </footer>
     </div>
   );

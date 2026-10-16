@@ -60,7 +60,7 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 - Oct 2025: Published "Elevating 3D Scene Rendering with GSplat" on ROCm Blog — https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html
 - Oct 2025: GAL and MSF announce partnership to bring responsible AI to humanitarian work — https://thegoodailab.org/blog/msf-partnership
 - Jul 2025: VocAlign accepted at BMVC 25 — source-free domain adaptation for open-vocabulary segmentation — https://thegoodailab.org/blog/vocalign
-- Mar 2025: SemLA accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion — https://arxiv.org/abs/2307.15063
+- Mar 2025: SemLA accepted at CVPR 25 — domain adaptation with LoRA retrieval and fusion — https://arxiv.org/abs/2503.21780
 - Mar 2025: Presented GAL at Redeye AI Theme Event 2025 (Stockholm) — https://www.redeye.se/video/event-presentation/1088678/the-good-ai-lab-co-founder-chair-ai-industry-expert-pier-luigi-dovesi-presents-at-redeye-theme-event-artificial-intelligence-2025-march-13
 - Jan 2025: Featured on AIAW Podcast E143 — Revolutionizing AI and Autonomous Systems — https://hyperight.com/aiaw-podcast-e143-revolutionizing-ai-and-autonomous-systems-pier-luigi-dovesi/
 - Sep 2024: Speaker at Nordic Industry Days 2024 (Copenhagen) — Supercomputing for AI, EuroHPC — https://enccs.se/news/2024/09/nordic-industry-days-2024-in-retrospect/

@@ -1,4 +1,4 @@
-/* Fonts loaded via <link> in index.html for faster preload-scanner discovery */
+@import "./fonts.css";
 
 :root {
   --font-display: 'Bowlby One', Impact, sans-serif;
@@ -179,8 +179,8 @@
   background: currentColor;
   position: absolute;
   inset: 0;
-  -webkit-mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_logo_refined-1440.png") 50% / contain no-repeat;
-  mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_logo_refined-1440.png") 50% / contain no-repeat;
+  -webkit-mask: url("/workshops/ai-for-peace-wordmark.webp") 50% / contain no-repeat;
+  mask: url("/workshops/ai-for-peace-wordmark.webp") 50% / contain no-repeat;
 }
 .aifp-wordmark::before {
   z-index: 1;
@@ -191,8 +191,8 @@
   background: currentColor;
   position: absolute;
   inset: 0;
-  -webkit-mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_pacman_shadow-1440.png") 50% / contain no-repeat;
-  mask: url("https://aiforpeaceworkshop.github.io/img/aiforpeace_pacman_shadow-1440.png") 50% / contain no-repeat;
+  -webkit-mask: url("/workshops/ai-for-peace-shadow.webp") 50% / contain no-repeat;
+  mask: url("/workshops/ai-for-peace-shadow.webp") 50% / contain no-repeat;
 }
 .aifp-wordmark-first-dot {
   z-index: 2;
