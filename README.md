@@ -2,7 +2,7 @@
 
 The personal site of **Pier Luigi Dovesi** — Robotics Lead at AMD Silo AI, Co-Founder & Chair of The Good AI Lab. Live at [dovesi.dev](https://dovesi.dev).
 
-A single-page site: bio, selected research, talks, news, career timeline, and writing. No CMS, no backend — everything is driven from one typed data file and rendered as static HTML at build time.
+A single-page site: bio, talks, news, career timeline, and writing. No CMS, no backend — everything is driven from one typed data file and rendered as static HTML at build time.
 
 ## Philosophy
 
@@ -25,7 +25,7 @@ A single-page site: bio, selected research, talks, news, career timeline, and wr
 ## Tech
 
 - **Vite 5 + React 18 + TypeScript**, styled with **Tailwind CSS**. That's the whole stack — no UI kit, no state library, no backend.
-- **Single source of truth.** [`src/data.ts`](src/data.ts) exports the bio, links, research, talks, news, timeline, and writing. A `sortByDate` helper keeps time-ordered sections sorted from the `date` field, so entries can be added in any order.
+- **Single source of truth.** [`src/data.ts`](src/data.ts) exports the bio, links, talks, news, timeline, writing, and publications. A `sortByDate` helper keeps time-ordered sections sorted from the `date` field, so entries can be added in any order.
 - **News archive.** The ten most recent updates are visible initially. A native disclosure keeps the full history available without JavaScript. Direct links to older entries open the archive after hydration, printing includes every entry, and RSS always contains the full history. The News section links to the feed for subscribing.
 - **Build-time generation.** A small Vite plugin in [`vite.config.ts`](vite.config.ts) derives files from the same `data.ts`:
   - writes `public/llms.txt` — a structured Markdown summary for language models;

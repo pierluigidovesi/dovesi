@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
-import { bio, links, talks, research, timeline, writing, quotes } from "@/data";
+import { bio, links, talks, timeline, writing, quotes } from "@/data";
 import NewsArchive from "@/components/NewsArchive";
 
 const Index = () => {
@@ -40,7 +40,7 @@ const Index = () => {
 
       <nav aria-label="Main navigation" className="max-w-[680px] mx-auto px-6 pt-6 pb-2 relative flex items-start justify-between gap-3" style={{ zIndex: 2 }}>
         <div className="flex flex-wrap gap-x-5 gap-y-1 pt-3 text-sm tracking-widest uppercase">
-          {["About", "Research", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
+          {["About", "Talks", "News", "Timeline", "Writing", "soul.md"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(".", "")}`}
@@ -113,25 +113,6 @@ const Index = () => {
         </header>
 
         <hr className="border-border mb-14" />
-
-        <Section id="research" title="Selected Research">
-          <ul className="space-y-6">
-            {research.map((paper) => (
-              <li key={paper.paper} className="research-item">
-                <h3 className="font-semibold text-foreground">{paper.title}</h3>
-                <p className="text-sm text-muted-foreground">{paper.venue}</p>
-                <p className="mt-1 leading-snug">{paper.description}</p>
-                <p className="research-links mt-1 text-sm flex gap-4">
-                  <A href={paper.paper}>Paper<span className="sr-only">: {paper.title}</span></A>
-                  <A href={paper.resource.href}>{paper.resource.label}<span className="sr-only">: {paper.title}</span></A>
-                </p>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-sm">
-            <A href={links.find((link) => link.label === "Google Scholar")!.href}>All publications on Google Scholar →</A>
-          </p>
-        </Section>
 
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
