@@ -6,6 +6,12 @@
     <description>News, research, talks, and writing by Pier Luigi Dovesi.</description>
     <language>en</language>
     <item>
+      <title>Bibliotheca Hertziana – Max Planck Institute</title>
+      <link>https://dovesi.dev/#news-039</link>
+      <guid isPermaLink="true">https://dovesi.dev/#news-039</guid>
+      <description>Nov 2026 — Presented my research at Bibliotheca Hertziana – Max Planck Institute (Nov 2)</description>
+    </item>
+    <item>
       <title>Mind the Heads</title>
       <link>https://dovesi.dev/#news-009</link>
       <guid isPermaLink="true">https://dovesi.dev/#news-009</guid>
@@ -15,7 +21,7 @@
       <title>AMD AI Research Club #5</title>
       <link>https://dovesi.dev/#news-001</link>
       <guid isPermaLink="true">https://dovesi.dev/#news-001</guid>
-      <description>Aug 2026 — Hosting AMD AI Research Club #5 — &quot;Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle&quot; with Antonio Cinà (University of Trieste)</description>
+      <description>Aug 2026 — Hosted AMD AI Research Club #5 — &quot;Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle&quot; with Antonio Cinà (University of Trieste)</description>
     </item>
     <item>
       <title>World Model Foundry</title>
@@ -39,7 +45,7 @@
       <title>AMD AI Research Club #4</title>
       <link>https://dovesi.dev/#news-006</link>
       <guid isPermaLink="true">https://dovesi.dev/#news-006</guid>
-      <description>Jun 2026 — Hosting AMD AI Research Club #4 — &quot;Rethinking Benchmarks for Robotic Manipulation&quot; with Yi Ru (Helen) Wang (University of Washington)</description>
+      <description>Jun 2026 — Hosted AMD AI Research Club #4 — &quot;Rethinking Benchmarks for Robotic Manipulation&quot; with Yi Ru (Helen) Wang (University of Washington)</description>
     </item>
     <item>
       <title>SYSTEC Research &amp; Innovation Day</title>

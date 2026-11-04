@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import HoughBackground from "@/components/HoughBackground";
-import { bio, links, talks, timeline, writing, quotes } from "@/data";
+import { bio, links, talks, timeline, writing, quotes, phdResearchers, phdResearchSummary } from "@/data";
 import NewsArchive from "@/components/NewsArchive";
 
 const Index = () => {
@@ -91,9 +91,13 @@ const Index = () => {
               By day, I lead the Robotics and Autonomous Systems team at <A href="https://www.silo.ai">AMD Silo AI</A>, working on world action models, multimodal AI, and embodied intelligence.
             </p>
             <p>
-              My research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.
+              My research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at NeurIPS, CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.
             </p>
           </div>
+
+          <p className="clear-both mt-6">
+            I also co-supervise {phdResearchers.length} PhD researchers: {phdResearchSummary}.
+          </p>
 
           <div className="workshop-chips mt-6 flex flex-wrap justify-center gap-4">
             <Cv4GoodChip />

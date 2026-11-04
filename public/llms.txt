@@ -16,7 +16,9 @@ Co-Founder and Chair of The Good AI Lab, an independent AI lab working on founda
 
 Leads the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.
 
-Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.
+Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at NeurIPS, CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.
+
+Co-supervises 4 PhD researchers: Gabriele Pattarozzi and Mehdi Amlal at University of Bologna, and Nicola Ricciardi and Giovanni Grotto at University of Modena and Reggio Emilia.
 
 ## Current Roles
 
@@ -32,12 +34,13 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 
 ## Recent News
 
+- Nov 2026: Presented my research at Bibliotheca Hertziana – Max Planck Institute (Nov 2) — https://www.biblhertz.it/en/home
 - Sep 2026: Mind the Heads accepted at NeurIPS 26 — head-wise representation alignment (HeRA) for multimodal LLMs — https://arxiv.org/abs/2606.23885
-- Aug 2026: Hosting AMD AI Research Club #5 — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste) — https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA
+- Aug 2026: Hosted AMD AI Research Club #5 — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste) — https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA
 - Jul 2026: Convened the World Model Foundry at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia — https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html
 - Jul 2026: Workshop accepted at NeurIPS 2026 — AI for Peace (Paris, Dec 12–13, 2026) — https://aiforpeaceworkshop.github.io/
 - Jul 2026: Published "Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning" on ROCm Blog — https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html
-- Jun 2026: Hosting AMD AI Research Club #4 — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington) — https://www.linkedin.com/events/7468403201202122752/
+- Jun 2026: Hosted AMD AI Research Club #4 — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington) — https://www.linkedin.com/events/7468403201202122752/
 - Jun 2026: Keynote at SYSTEC Research & Innovation Day (Faculty of Engineering, University of Porto, Jun 18) — https://systec.fe.up.pt/systec-ri-day
 - Jun 2026: Presented The Good AI Lab research at Sapienza University of Rome — https://thegoodailab.org
 - May 2026: Outstanding Reviewer at CVPR 2026 (top 5%) — https://cvpr.thecvf.com/Conferences/2026
@@ -73,9 +76,10 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 
 ## Selected Talks
 
-- ECCV 2026 — CV4GOOD — Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026 (host)
 - AMD AI Research Club — Peer-to-peer paper spotlight series · Host, 2025–present (recurring)
 - NeurIPS 2026 — AI for Peace — Paris, Dec 12–13, 2026 (organizer)
+- Bibliotheca Hertziana – Max Planck Institute — Research presentation · Nov 2, 2026
+- ECCV 2026 — CV4GOOD — Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026 (host)
 - SYSTEC R&I Day 2026 — Faculty of Engineering, University of Porto · Jun 2026 (keynote)
 - ICLR 2026 — AI for Peace — Rio de Janeiro, Apr 2026 (keynote)
 - GAIA Conference 2026 — Where AI Finds Its Purpose — AI for humanitarian action with MSF · Gothenburg, Apr 2026
@@ -96,6 +100,7 @@ Research spans domain adaptation, self-supervised learning, and real-time percep
 
 ## Selected Publications
 
+- Mind the Heads — head-wise representation alignment (HeRA) for multimodal LLMs (NeurIPS 2026)
 - VocAlign — source-free domain adaptation for open-vocabulary segmentation (BMVC 2025)
 - SemLA — domain adaptation with LoRA retrieval and fusion (CVPR 2025)
 - HAMLET — real-time online domain adaptation (ICCV 2023)

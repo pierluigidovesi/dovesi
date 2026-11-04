@@ -2,6 +2,7 @@ import { act } from "react";
 import { renderToString } from "react-dom/server";
 import { hydrateRoot, type Root } from "react-dom/client";
 import Index from "../pages/Index";
+import { news } from "../data";
 
 vi.mock("../components/HoughBackground", () => ({
   default: () => <canvas aria-hidden="true" className="hough-background" />,
@@ -25,7 +26,7 @@ it.each([false, true])("hydrates the built layout in dark=%s without replacing c
   expect(errors).toEqual([]);
   expect(container.firstElementChild).toBe(initialTree);
   expect(container.querySelector("#news-009")).toBe(initialNews);
-  expect(container.querySelectorAll(".news-item")).toHaveLength(38);
+  expect(container.querySelectorAll(".news-item")).toHaveLength(news.length);
   expect(localStorage.getItem("theme")).toBeNull();
   const toggle = container.querySelector<HTMLButtonElement>(".theme-toggle")!;
   expect(toggle.getAttribute("aria-pressed")).toBe(String(dark));

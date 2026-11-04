@@ -20,6 +20,17 @@ function sortByDate<T extends { date: string }>(items: T[]): T[] {
 }
 
 // ── Bio ──
+export const phdResearchers = [
+  { name: "Gabriele Pattarozzi", university: "University of Bologna" },
+  { name: "Mehdi Amlal", university: "University of Bologna" },
+  { name: "Nicola Ricciardi", university: "University of Modena and Reggio Emilia" },
+  { name: "Giovanni Grotto", university: "University of Modena and Reggio Emilia" },
+];
+
+export const phdResearchSummary = [...new Set(phdResearchers.map((researcher) => researcher.university))]
+  .map((university) => `${phdResearchers.filter((researcher) => researcher.university === university).map((researcher) => researcher.name).join(" and ")} at ${university}`)
+  .join(", and ");
+
 export const bio = {
   name: "Pier Luigi Dovesi",
   shortName: "Pier",
@@ -29,7 +40,8 @@ export const bio = {
   about: [
     `Co-Founder and Chair of The Good AI Lab, an independent AI lab working on foundational AI research and innovation projects for social good, partnering with Doctors Without Borders (MSF), FMSI, and several universities across Europe.`,
     `Leads the Robotics and Autonomous Systems team at AMD Silo AI, working on world action models, multimodal AI, and embodied intelligence.`,
-    `Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.`,
+    `Research spans domain adaptation, self-supervised learning, and real-time perception, with recent work extending toward vision-language models. Publications at NeurIPS, CVPR, ECCV, ICCV, 3DV, BMVC, and ICRA.`,
+    `Co-supervises ${phdResearchers.length} PhD researchers: ${phdResearchSummary}.`,
   ],
   email: "pierluigidovesi@gmail.com",
 };
@@ -55,9 +67,10 @@ export interface Talk {
 }
 
 const talksUnsorted: Talk[] = [
+  { title: "Bibliotheca Hertziana – Max Planck Institute", detail: "Research presentation · Nov 2, 2026", href: "https://www.biblhertz.it/en/home", linkLabel: "institute", date: "Nov 2026" },
   { title: "NeurIPS 2026 — AI for Peace", detail: "Paris, Dec 12–13, 2026", href: "https://aiforpeaceworkshop.github.io/", tag: "organizer", date: "Dec 2026" },
   { title: "AMD AI Research Club", detail: "Peer-to-peer paper spotlight series · Host, 2025–present", href: "https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/", linkLabel: "info", tag: "recurring", date: "Dec 9999" },
-  { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026", href: "https://cv4good.thegoodailab.org/", tag: "host", date: "Jan 10000" },
+  { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026", href: "https://cv4good.thegoodailab.org/", tag: "host", date: "Sep 2026" },
   { title: "ICLR 2026 — AI for Peace", detail: "Rio de Janeiro, Apr 2026", href: "https://aiforpeaceworkshop.github.io/iclr-2026/", tag: "keynote", date: "Apr 2026" },
   { title: "SYSTEC R&I Day 2026", detail: "Faculty of Engineering, University of Porto · Jun 2026", href: "https://systec.fe.up.pt/systec-ri-day", tag: "keynote", date: "Jun 2026" },
   { title: "Warsaw AI Summit 2026", detail: "Warsaw, Mar 2026", href: "https://www.linkedin.com/posts/pierluigidovesi_happy-to-keynote-the-warsaw-ai-summit-today-activity-7434563685957648384-_xj5", linkLabel: "event post", tag: "keynote", date: "Mar 2026" },
@@ -84,12 +97,13 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
-  { id: "news-001", date: "Aug 2026", text: "Hosting", link: "https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA", linkText: "AMD AI Research Club #5", suffix: ' — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste)' },
+  { id: "news-039", date: "Nov 2026", text: "Presented my research at", link: "https://www.biblhertz.it/en/home", linkText: "Bibliotheca Hertziana – Max Planck Institute", suffix: " (Nov 2)" },
+  { id: "news-001", date: "Aug 2026", text: "Hosted", link: "https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA", linkText: "AMD AI Research Club #5", suffix: ' — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste)' },
   { id: "news-002", date: "Jul 2026", text: "Convened the", link: "https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html", linkText: "World Model Foundry", suffix: " at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia" },
   { id: "news-003", date: "Jul 2026", text: "Workshop accepted at", link: "https://aiforpeaceworkshop.github.io/", linkText: "NeurIPS 2026 — AI for Peace", suffix: " (Paris, Dec 12–13, 2026)" },
   { id: "news-004", date: "Jul 2026", text: "Published", link: "https://rocm.blogs.amd.com/artificial-intelligence/auto-speed/README.html", linkText: '"Efficient Hyperparameter Optimization for Autonomous Driving Models with AMD Instinct GPU Partitioning"', suffix: " on ROCm Blog" },
   { id: "news-005", date: "May 2026", text: "Outstanding Reviewer at", link: "https://cvpr.thecvf.com/Conferences/2026", linkText: "CVPR 2026", suffix: " (top 5%)" },
-  { id: "news-006", date: "Jun 2026", text: "Hosting", link: "https://www.linkedin.com/events/7468403201202122752/", linkText: "AMD AI Research Club #4", suffix: ' — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington)' },
+  { id: "news-006", date: "Jun 2026", text: "Hosted", link: "https://www.linkedin.com/events/7468403201202122752/", linkText: "AMD AI Research Club #4", suffix: ' — "Rethinking Benchmarks for Robotic Manipulation" with Yi Ru (Helen) Wang (University of Washington)' },
   { id: "news-007", date: "Jun 2026", text: "Keynote at", link: "https://systec.fe.up.pt/systec-ri-day", linkText: "SYSTEC Research & Innovation Day", suffix: " (Faculty of Engineering, University of Porto, Jun 18)" },
   { id: "news-008", date: "Jun 2026", text: "Presented", link: "https://thegoodailab.org", linkText: "The Good AI Lab", suffix: " research at Sapienza University of Rome" },
   { id: "news-009", date: "Sep 2026", text: "", link: "https://arxiv.org/abs/2606.23885", linkText: "Mind the Heads", suffix: " accepted at NeurIPS 26 — head-wise representation alignment (HeRA) for multimodal LLMs" },
@@ -201,6 +215,7 @@ export const writing = sortByDate(writingUnsorted);
 
 // ── Publications ──
 export const publications = [
+  "Mind the Heads — head-wise representation alignment (HeRA) for multimodal LLMs (NeurIPS 2026)",
   "VocAlign — source-free domain adaptation for open-vocabulary segmentation (BMVC 2025)",
   "SemLA — domain adaptation with LoRA retrieval and fusion (CVPR 2025)",
   "HAMLET — real-time online domain adaptation (ICCV 2023)",
