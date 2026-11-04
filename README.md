@@ -61,3 +61,9 @@ public/                    # favicons, photo, og-image, sitemap, robots, llms.tx
 ## Editing content
 
 Almost every update is a one-line change in [`src/data.ts`](src/data.ts) — add an object to `talks`, `news`, `writing`, etc. Dates use the `"Mon YYYY"` format (e.g. `"Sep 2026"`) and sort automatically. News items also need a permanent, unique `id` for feed and direct links. The `llms.txt`, RSS feed, and SEO pre-render update themselves on the next build.
+
+## Publishing
+
+GitHub Pages builds and publishes pushes to `main` through [the deployment workflow](.github/workflows/deploy-pages.yml). It installs the locked npm dependencies, runs lint and tests, builds the static page and feeds, and deploys `dist/`. No backend credentials are needed. A failed check stops deployment. The workflow can also be started manually from GitHub Actions.
+
+The production domain is `dovesi.dev`, managed at Porkbun. GitHub Pages custom-domain settings and DNS determine where it is hosted; Lovable can still edit the connected repository. Publishing from Lovable updates its own hosting, rather than GitHub Pages.
