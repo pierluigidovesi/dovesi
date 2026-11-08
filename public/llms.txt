@@ -34,6 +34,7 @@ Co-supervises 4 PhD researchers: Gabriele Pattarozzi and Mehdi Amlal at Universi
 
 ## Recent News
 
+- Nov 2026: Examiner on the PhD defence committee of the Italian National PhD Program in AI for Society (Modena, Nov 9) — https://phd-ai-society.di.unipi.it/
 - Nov 2026: Presented my research at Bibliotheca Hertziana – Max Planck Institute (Nov 2) — https://www.biblhertz.it/en/home
 - Sep 2026: Mind the Heads accepted at NeurIPS 26 — head-wise representation alignment (HeRA) for multimodal LLMs — https://arxiv.org/abs/2606.23885
 - Aug 2026: Hosted AMD AI Research Club #5 — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste) — https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA
