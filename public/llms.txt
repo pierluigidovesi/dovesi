@@ -79,7 +79,6 @@ Co-supervises 4 PhD researchers: Gabriele Pattarozzi and Mehdi Amlal at Universi
 
 - AMD AI Research Club — Peer-to-peer paper spotlight series · Host, 2025–present (recurring)
 - NeurIPS 2026 — AI for Peace — Paris, Dec 12–13, 2026 (organizer)
-- Bibliotheca Hertziana – Max Planck Institute — Research presentation · Nov 2, 2026
 - ECCV 2026 — CV4GOOD — Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026 (host)
 - SYSTEC R&I Day 2026 — Faculty of Engineering, University of Porto · Jun 2026 (keynote)
 - ICLR 2026 — AI for Peace — Rio de Janeiro, Apr 2026 (keynote)

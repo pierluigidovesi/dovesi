@@ -312,8 +312,8 @@ main p a,
     text-shadow: none !important;
   }
   canvas, .site-vignette, nav, .theme-toggle, .workshop-chips, #soulmd,
-  .skip-link, .section-anchor, .news-subscription, .news-archive > summary { display: none !important; }
-  .news-archive::details-content {
+  .skip-link, .section-anchor, .news-subscription, .news-archive > summary, .talks-archive > summary { display: none !important; }
+  .news-archive::details-content, .talks-archive::details-content {
     display: block !important;
     content-visibility: visible !important;
   }

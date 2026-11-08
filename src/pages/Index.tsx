@@ -121,10 +121,23 @@ const Index = () => {
         {/* Talks & Podcasts — tiles */}
         <Section id="talks" title="Talks & Podcasts">
           <div className="talk-grid grid gap-3 sm:grid-cols-2">
-            {talks.map((t) => (
+            {talks.slice(0, 6).map((t) => (
               <TalkTile key={t.title} title={t.title} detail={t.detail} href={t.href} linkLabel={t.linkLabel} tag={t.tag} />
             ))}
           </div>
+          {talks.length > 6 && (
+            <details className="talks-archive mt-3 group">
+              <summary className="cursor-pointer text-primary text-sm py-2 hover:underline underline-offset-2">
+                <span className="group-open:hidden">More talks &amp; podcasts ({talks.length - 6})</span>
+                <span className="hidden group-open:inline">Hide earlier talks &amp; podcasts</span>
+              </summary>
+              <div className="talk-grid grid gap-3 sm:grid-cols-2">
+                {talks.slice(6).map((t) => (
+                  <TalkTile key={t.title} title={t.title} detail={t.detail} href={t.href} linkLabel={t.linkLabel} tag={t.tag} />
+                ))}
+              </div>
+            </details>
+          )}
         </Section>
 
         {/* News */}

@@ -67,7 +67,6 @@ export interface Talk {
 }
 
 const talksUnsorted: Talk[] = [
-  { title: "Bibliotheca Hertziana – Max Planck Institute", detail: "Research presentation · Nov 2, 2026", href: "https://www.biblhertz.it/en/home", linkLabel: "institute", date: "Nov 2026" },
   { title: "NeurIPS 2026 — AI for Peace", detail: "Paris, Dec 12–13, 2026", href: "https://aiforpeaceworkshop.github.io/", tag: "organizer", date: "Dec 2026" },
   { title: "AMD AI Research Club", detail: "Peer-to-peer paper spotlight series · Host, 2025–present", href: "https://www.linkedin.com/posts/amdsiloai_join-us-for-the-first-session-of-the-amd-activity-7437130083900956672-PCda/", linkLabel: "info", tag: "recurring", date: "Dec 9999" },
   { title: "ECCV 2026 — CV4GOOD", detail: "Computer Vision for Humanitarian Action · Malmö, Sep 8, 2026", href: "https://cv4good.thegoodailab.org/", tag: "host", date: "Sep 2026" },
