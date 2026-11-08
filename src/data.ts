@@ -97,7 +97,7 @@ export interface NewsEntry {
 }
 
 const newsUnsorted: NewsEntry[] = [
-  { id: "news-040", date: "Nov 2026", text: "Examiner on the PhD defence committee of the", link: "https://phd-ai-society.di.unipi.it/", linkText: "Italian National PhD Program in AI for Society", suffix: " (Modena, Nov 9)" },
+  { id: "news-040", date: "Nov 2026", text: "Chairing the final PhD examination committee of the", link: "https://phd-ai-society.di.unipi.it/", linkText: "Italian National PhD Program in AI for Society", suffix: " (Modena, Nov 9)" },
   { id: "news-039", date: "Nov 2026", text: "Presented my research at", link: "https://www.biblhertz.it/en/home", linkText: "Bibliotheca Hertziana – Max Planck Institute", suffix: " (Nov 2)" },
   { id: "news-001", date: "Aug 2026", text: "Hosted", link: "https://amd.zoom.us/webinar/register/WN_PmsbS-OSTrq9enpSrsIXTA", linkText: "AMD AI Research Club #5", suffix: ' — "Attack, Benchmark, Defend, Repeat: The Adversarial AI Cycle" with Antonio Cinà (University of Trieste)' },
   { id: "news-002", date: "Jul 2026", text: "Convened the", link: "https://www.amd.com/en/blogs/2026/amd-silo-ai-and-unimore-to-advance-physical-ai.html", linkText: "World Model Foundry", suffix: " at the University of Trento, together with GBionics, the Universities of Bologna and Modena e Reggio Emilia" },
